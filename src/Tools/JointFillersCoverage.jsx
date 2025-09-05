@@ -158,7 +158,7 @@ function JointFillersCoverage() {
   }, [totalArea, areaUnit, tileWidth, tileLength, totalLength, lengthUnit, jointWidth, tileThickness])
 
   return (
-    <div className="w-full min-h-screen mx-auto bg-white overflow-hidden p-6 rounded-b-3xl mb-10">
+    <div className="w-full min-h-screen mx-auto bg-white overflow-hidden p-6 rounded-b-3xl mb-16">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-8">

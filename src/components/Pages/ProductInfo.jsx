@@ -5,12 +5,12 @@ import { motion } from "framer-motion";
 const products = [
   {
     name: "Tile, Block & Stone Adhesive",
-    slug: "/products/tile-block-adhesive",
-    img: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1756894736/Gemini_Generated_Image_usszpdusszpdussz_pgfovh.png", 
+    slug: "/category/tile-adhesive",
+    img: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1756894358/Gemini_Generated_Image_hbr0ikhbr0ikhbr0_q9poqz.png", 
   },
   {
     name: "Epoxy & Tile Grout",
-    slug: "/products/epoxy-tile-grout",
+    slug: "/category/epoxy-grout",
     img: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1756894562/Gemini_Generated_Image_oio72boio72boio7_qh25n4.png",
   },
   {
@@ -26,7 +26,8 @@ const products = [
   {
     name: "Tile Cleaner",
     slug: "/products/tile-cleaner",
-    img: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1756894358/Gemini_Generated_Image_hbr0ikhbr0ikhbr0_q9poqz.png",
+    img: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1756894736/Gemini_Generated_Image_usszpdusszpdussz_pgfovh.png",
+    
   },
 ];
 

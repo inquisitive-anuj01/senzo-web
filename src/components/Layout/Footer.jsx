@@ -1,7 +1,44 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+
+const productsLink = [
+  {
+    name: "Tile & Stone Adhesive",
+    slug: "/category/tile-adhesive",
+  },
+  {
+    name: "Grouts",
+    slug: "/category/epoxy-grout",
+  },
+  {
+    name: "Tools",
+    slug: "/tools/tile-joint-filler-visualizer",
+  },
+  {
+    name: "Cleaner",
+    slug: "/products/tile-cleaner",
+  },
+];
+
+const footerLinks = [
+  {
+    name: "About Us",
+    slug: "/about",
+  },
+  {
+    name: "Privacy Policy",
+    slug: "/privacy-policy",
+  },
+  {
+    name: "Terms and Conditions",
+    slug: "/terms-and-conditions",
+  },
+];
 
 const Footer = () => {
+  const navigate = useNavigate();
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -26,7 +63,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className=" relative z-50 bg-gradient-to-b from-gray-800 to-gray-900 text-gray-300 pt-16 pb-8 px-6 sm:px-12 rounded-t-[48px] overflow-hidden mt-[-80px] ">
+    <footer className=" relative z-40 bg-gradient-to-b from-gray-800 to-gray-900 text-gray-300 pt-16 pb-8 px-6 sm:px-12 rounded-t-[48px] overflow-hidden mt-[-80px] ">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -126,25 +163,23 @@ const Footer = () => {
             <span className="absolute -bottom-2 left-0 w-12 h-1 bg-amber-500 rounded-full"></span>
           </motion.h4>
           <ul className="space-y-4">
-            {["Tile & Stone Adhesive", "Grouts", "Tools", "Cleaner"].map(
-              (product, index) => (
-                <motion.li
-                  key={index}
-                  className="group"
-                  whileHover={{ x: 5 }}
-                  transition={{ type: "spring", stiffness: 300 }}
+            {productsLink.map((product, index) => (
+              <motion.li
+                key={index}
+                className="group"
+                whileHover={{ x: 5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <Link
+                  to={product.slug}
+                  className="relative transition-all duration-300 hover:text-amber-400 flex items-center"
                 >
-                  <a
-                    href="#"
-                    className="relative transition-all duration-300 hover:text-amber-400 flex items-center"
-                  >
-                    <span className="w-2 h-2 bg-amber-500 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                    {product}
-                    <span className="absolute left-0 bottom-0 h-0.5 bg-amber-500 w-0 transition-all duration-300 group-hover:w-full"></span>
-                  </a>
-                </motion.li>
-              )
-            )}
+                  <span className="w-2 h-2 bg-amber-500 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                  {product.name}
+                  <span className="absolute left-0 bottom-0 h-0.5 bg-amber-500 w-0 transition-all duration-300 group-hover:w-full"></span>
+                </Link>
+              </motion.li>
+            ))}
           </ul>
         </motion.div>
 
@@ -226,10 +261,10 @@ const Footer = () => {
                 <polyline points="22,6 12,13 2,6"></polyline>
               </svg>
               <a
-                href="mailto:homeprideadhesive1@gmail.com"
+                href="mailto:senzoadhesives@gmail.com"
                 className="hover:text-white transition-colors duration-300"
               >
-                homeprideadhesive1@gmail.com
+                senzoadhesives@gmail.com
               </a>
             </motion.div>
           </div>
@@ -251,7 +286,7 @@ const Footer = () => {
           </p>
 
           <p className="text-gray-400 text-sm ">
-            Designed & Developed by - {" "}
+            Designed & Developed by -{" "}
             <a
               href="https://inquisitivedigital.com/"
               target="_blank"
@@ -263,18 +298,15 @@ const Footer = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6">
-            {["About us", "Privacy policy", "Terms and condition"].map(
-              (item, index) => (
-                <motion.a
-                  key={index}
-                  href="#"
-                  whileHover={{ scale: 1.05, color: "#f59e0b" }}
-                  className="text-gray-500 hover:text-amber-500 transition-colors duration-300 text-sm"
-                >
-                  {item}
-                </motion.a>
-              )
-            )}
+            {footerLinks.map((item, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ scale: 1.05 }}
+                className="text-gray-500 hover:text-amber-500 transition-colors duration-300 text-sm"
+              >
+                <Link to={item.slug}>{item.name}</Link>
+              </motion.div>
+            ))}
           </div>
         </div>
       </motion.div>

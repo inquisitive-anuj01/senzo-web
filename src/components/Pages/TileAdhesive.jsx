@@ -5,7 +5,7 @@ import { tileAdhesive } from "../ProductsInfo/product";
 
 const TileAdhesive = () => {
   return (
-    <div className="min-h-screen bg-gray-50 pt-10 pb-16 mb-5">
+    <div className="min-h-screen bg-gray-50 pt-10 pb-16 mb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div

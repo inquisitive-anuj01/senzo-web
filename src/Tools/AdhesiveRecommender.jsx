@@ -176,7 +176,7 @@ function AdhesiveSelector() {
   const { roomCategories, applicationAreas, substrateTypes, tileTypes, tileSizes, productRecommendations } = adhesiveData.current;
 
   return (
-    <div className=" bg-white min-h-screen text-gray-800 p-4 sm:p-8 mb-10">
+    <div className=" bg-white min-h-screen text-gray-800 p-4 sm:p-8 mb-14">
       {/* Header and Progress Bar */}
       <div className="max-w-7xl mx-auto mb-8">
         <div className="text-center">

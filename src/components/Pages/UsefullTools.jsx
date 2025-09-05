@@ -30,7 +30,7 @@ const UsefulTools = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="bg-[#B6B6B6] z-30 min-h-screen text-black py-20 px-6 sm:px-12 rounded-t-[48px] relative mt-[-40px] pt-[40px] ">
+    <section id="tools" className="bg-[#B6B6B6] z-30 min-h-screen text-black py-20 px-6 sm:px-12 rounded-t-[48px] relative mt-[-40px] pt-[40px] ">
       <div className="max-w-7xl mx-auto text-center mb-20">
         <h2 className="text-3xl md:text-5xl font-bold">Useful Tools</h2>
         <p className="mt-4 max-w-2xl mx-auto">
