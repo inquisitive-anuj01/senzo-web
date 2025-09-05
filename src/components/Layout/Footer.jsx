@@ -26,7 +26,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className=" relative z-30 bg-gradient-to-b from-gray-800 to-gray-900 text-gray-300 pt-16 pb-8 px-6 sm:px-12 rounded-t-[48px] overflow-hidden mt-[-45px] ">
+    <footer className=" relative z-50 bg-gradient-to-b from-gray-800 to-gray-900 text-gray-300 pt-16 pb-8 px-6 sm:px-12 rounded-t-[48px] overflow-hidden mt-[-45px] ">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -248,6 +248,18 @@ const Footer = () => {
         <div className="flex flex-col sm:flex-row items-center justify-between text-center sm:text-left space-y-4 sm:space-y-0">
           <p className="text-gray-500 text-sm">
             &copy; {new Date().getFullYear()} Senzo. All rights reserved.
+          </p>
+
+          <p className="text-gray-400 text-sm ">
+            Designed & Developed by - {" "}
+            <a
+              href="https://inquisitivedigital.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-amber-500 transition-colors duration-300"
+            >
+              <span className="font-bold">Inquisitive Digital</span>
+            </a>
           </p>
 
           <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6">

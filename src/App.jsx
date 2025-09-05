@@ -17,7 +17,7 @@ import OtherProducts from './components/Pages/OtherProducts.jsx';
 
 function App() {
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="min-h-screen bg-gray-50 text-black">
       <Router>
         <ScrollToTop />
         <Header />

@@ -14,7 +14,7 @@ export const tileAdhesive = [
     shelflife: "Until 12 months since the date of production when stored in undamaged dry conditions and original packaging.",
     characteristics: "For Gres and vitrified tiles, Control tile slippage ceramic tiles, Application up to 10mm, Prolonged workability, Adjustable surfaces, Excellent workability, plaster, cement ground coat",
     scope: "SENZO S-11 is a tile adhesive designed, for Gres tiles and glazed, terracotta, Indoor use, On horizontal and vertical, On cement and cement-lime, Cement screeds and concrete",
-    modal: "S-11"
+    itemNo: "S-11"
     
   },
 
@@ -32,7 +32,7 @@ export const tileAdhesive = [
     shelflife: "Until 12 months since the date of production when stored in undamaged dry conditions and original packaging.",
     characteristics: "Perfect adherence adhesive, Allows installation of tiles from top towards the bottom, Ideal for new tile flooring surfaces-Application up to 10mm plaster & Creamy ground coats Bled open time",
     scope: "SENZO S-21 is a tile adhesive designed for vitrified tiles and glazed, terracotta Indoor use On horizontal and vertical On cement and cement-lime Cement screeds and concrete",
-    modal: "S-21",
+    itemNo: "S-21",
   },
 
   {
@@ -49,7 +49,7 @@ export const tileAdhesive = [
     shelflife: "Until 12 months since the date of production when stored in undamaged dry conditions and original packaging.",
     characteristics: "For use on difficult substrates For tile and stones of size more than 1200 x 1200 mm",
     scope: "SENZO S-51 is used to laying vitrified tiles (semi and fully), cement and stone tiles, large format and heavy duty tiles, thin tiles.Its features keep elastic connection with substrate which allowed to carry over shear stresses between tile and substrate.On horizontal and vertical surfaces",
-    modal: "S-51",
+    itemNo: "S-51",
   },
 
   {
@@ -66,7 +66,7 @@ export const tileAdhesive = [
     shelflife: "Until 12 months since the date of production when stored in undamaged dry conditions and original packaging.",
     characteristics: "For ceramic, vitrified (semi and fully) tiles, glass mosaic and natural stone (non-sensitive) On balconies, terraces, wet rooms and bathrooms Da water proof and moisture proof layers For inside and outside useLonger open time for safer application Application up to 12mm For Tile on Tile application",
     scope: "SENZO S-31 adhesive mortar for layramic tile, vitrified (semi and fully) tiles and al stone (non sensitive & color fast).Indoors and Outdoors.Senzo S-31mortars can be used in room exposed to water.It is recommended for floors with elevated functional loads, in shopping malls, staircas",
-    modal: "S-31",
+    itemNo: "S-31",
   },
 
   {
@@ -83,7 +83,7 @@ export const tileAdhesive = [
     shelflife: "Until 12 months since the date of production when stored in undamaged dry conditions and original packaging.",
     characteristics: "With visible fibres for strength and flexibility balancing substrate deformations on critical surfaces like balconies, terraces, wet rooms, bathrooms, swimming pool and external facade etc. For ceramic, vitrified tiles (semi and fully), glass mosaic and natural stone (non-sensitive) Suitable for large scale and heavy duty vitrified tiles",
     scope: "SENZO S-41 is used to laying vitrified tilles (semi and fully), cement and stone tihus, large format and heavy duty tiles, thin tiles. Its features keep elastic connection with substrate which allowed to carry over shear stresses between tile and substrate. On horizontal and vertical surface - Polymer Modified Bonds with various substrates",
-    modal: "S-41",
+    itemNo: "S-41",
   },
 ]
 

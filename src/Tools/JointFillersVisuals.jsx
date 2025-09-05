@@ -1,41 +1,35 @@
 import React, { useState, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-// import html2canvas from "html2canvas";
-// import * as htmlToImage from "html-to-image";
+import * as htmlToImage from "html-to-image";
 
 const jointColors = [
-  { name: "SNOW WHITE", hex: "#e9ebe7" },
-  { name: "PASTEL GREY", hex: "#979492" },
-  { name: "IVORY", hex: "#c5bca9" },
-  { name: "KHAKI", hex: "#b79f8b" },
-  { name: "BURLYWOOD", hex: "#7f6a64" },
-  { name: "SLATE GREY", hex: "#5a5051" },
-  { name: "STEEL GREY", hex: "#4d4d53" },
-  { name: "COFFEE BROWN", hex: "#382c2c" },
-  { name: "DARK GREY", hex: "#373437" },
-  { name: "JET BLACK", hex: "#292929" },
-  { name: "DARK CHOCOLATE", hex: "#332f2f" },
-  { name: "PASTEL BROWN", hex: "#904140" },
-  { name: "TERRACOTTA", hex: "#812c2c" },
-  { name: "RED", hex: "#ad393c" },
-  { name: "SCARLET", hex: "#b82c37" },
-  { name: "BURGUNDY", hex: "#a97362" },
-  { name: "ARCTIC BLUE", hex: "#4a7697" },
-  { name: "SAPPHIRE BLUE", hex: "#29446f" },
-  { name: "SKY BLUE", hex: "#82bfc9" },
-  { name: "ALPINE BLUE", hex: "#135a7f" },
-  { name: "MEDOW GREEN", hex: "#314512" },
-  { name: "DARK GREEN", hex: "#2d5345" },
-  { name: "PASTEL GREEN", hex: "#639f9e" },
-  { name: "BEIGE", hex: "#a89957" },
-  { name: "JAISALMER", hex: "#c28e2a" },
-  { name: "LILY WHITE", hex: "#fef2bc" },
-  { name: "SEA SHELL", hex: "#ece9a4" },
-  { name: "ANTIQUE WHITE", hex: "#c5c47f" },
-  { name: "RAINY DAY", hex: "#b7b483" },
-  { name: "NATURAL", hex: "#fddc7b" },
-  { name: "YELLOW", hex: "#dcc580" },
-  { name: "MUSTARD", hex: "#c4b12c" },
+  { name: "BRIGHT WHITE 24", hex: "#FFFFFF" },
+  { name: "QUARRY RED 46", hex: "#613e3a" },
+  { name: "SILK 03", hex: "#ffe7c4" },
+  { name: "ANTIQUE 33", hex: "#c5b6a7" },
+  { name: "DUSTY ROSE 54", hex: "#bb8a84" },
+  { name: "PARCHMENT 61", hex: "#b39981" },
+
+  { name: "BUFF 51", hex: "#736766" },
+  { name: "MOCHA 35", hex: "#d4beac" },
+  { name: "SANDSTONE", hex: "#736766" },
+  { name: "MARBLE BEIGE 17", hex: "#b8a89b" },
+  { name: "MIDNIGHT BLACK 22", hex: "#212829" },
+  { name: "SKY BLUE 101", hex: "#a1cecd" },
+
+  { name: "ALPINE BLUE 108", hex: "#6a92af" },
+  { name: "BURGUNDY 101", hex: "#795b5d" },
+  { name: "SILVER SHADOW 88", hex: "#b8bec0" },
+  { name: "SLATE GREY 91", hex: "#6d7b84" },
+  { name: "PLATINUM 42", hex: "#5c6669" },
+  { name: "RAVEN 45", hex: "#36434c" },
+
+  { name: "MUSHROOM 105", hex: "#fff1c0" },
+  { name: "SABLE 05", hex: "#462624" },
+  { name: "HEMP 27", hex: "#9b8879" },
+  { name: "IVY 25", hex: "#667f50" },
+  { name: "INCA GOLD 11", hex: "#cc9667" },
+  { name: "SMOKE GREY 89", hex: "#cdcbc2" },
 ];
 
 const sparkleImages = [
@@ -54,27 +48,26 @@ const sparkleImages = [
 ];
 
 const templateImages = [
-  "https://www.roff.in/wp-content/uploads/2021/02/tile-template-1.webp",
-  "https://www.roff.in/wp-content/uploads/2021/02/tile-template-2.webp",
-  "https://www.roff.in/wp-content/uploads/2021/02/tile-template-3.webp",
-  "https://www.roff.in/wp-content/uploads/2021/02/tile-template-4.webp",
-  "https://www.roff.in/wp-content/uploads/2021/02/tile-template-5.webp",
-  "https://www.roff.in/wp-content/uploads/2021/02/tile-template-6.webp",
-  "https://www.roff.in/wp-content/uploads/2021/02/tile-template-7.webp",
-  "https://www.roff.in/wp-content/uploads/2021/02/tile-template-8.webp",
-  "https://www.roff.in/wp-content/uploads/2021/02/tile-template-9.webp",
+  "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1756979029/1_jzo5lt.webp",
+  "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1756979028/2_a2d3ef.webp",
+  "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1756979028/3_rrvv78.webp",
+  "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1756979029/4_lrwdbb.webp",
+  "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1756979028/5_ardble.webp",
+  "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1756979028/6_ntsfoi.webp",
+  "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1756979029/7_grvuid.webp",
+  "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1756979028/8_fdoya6.webp",
+  "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1756979028/9_q4hhkx.webp",
 ];
 
 const JointFillersVisuals = () => {
   const [isTemplateSelected, setIsTemplateSelected] = useState(false);
   const [uploadedImage, setUploadedImage] = useState(null);
-
-  const [surface, setSurface] = useState("floor");
+  const [surface, setSurface] = useState("wall");
   const [tileType, setTileType] = useState("square");
   const [tileLayout, setTileLayout] = useState("standard");
   const [tileSize, setTileSize] = useState("Small");
   const [jointSize, setJointSize] = useState("3mm");
-  const [jointColor, setJointColor] = useState("#e9ebe7");
+  const [jointColor, setJointColor] = useState("#FFFFFF");
   const [sparkleImage, setSparkleImage] = useState(null);
   const [selectedSparkleUrl, setSelectedSparkleUrl] = useState(null);
   const [colorPage, setColorPage] = useState(0);
@@ -82,43 +75,45 @@ const JointFillersVisuals = () => {
   const containerRef = useRef(null);
   const fileInputRefInitial = useRef(null);
   const fileInputRefSidebar = useRef(null);
+  const [loading, setLoading] = useState(false);
 
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        setUploadedImage(reader.result); 
+        setUploadedImage(reader.result);
         setIsTemplateSelected(true);
-        setSelectedTemplate(reader.result); 
+        setSelectedTemplate(reader.result);
       };
       reader.readAsDataURL(file);
     }
   };
 
-// download previow logic !
-// const handleDownload = async () => {
-//   if (!containerRef.current) return;
+  // download image logic !
+  const handleDownload = async () => {
+    if (!containerRef.current) return;
+    setLoading(true);
 
-//   try {
-//     const dataUrl = await htmlToImage.toPng(containerRef.current, {
-//       quality: 1,
-//       cacheBust: true,   // prevent cached image issues
-//       useCORS: true,     // allow cross-origin images like your template & sparkles
-//     });
+    try {
+      const dataUrl = await htmlToImage.toPng(containerRef.current, {
+        cacheBust: true,
+        useCORS: true,
+        backgroundColor: "#ffffff",
+      });
 
-//     const link = document.createElement("a");
-//     link.download = "visualizer.png";
-//     link.href = dataUrl;
-//     link.click();
-//   } catch (error) {
-//     console.error("Error generating image:", error);
-//   }
-// };
-
+      const link = document.createElement("a");
+      link.download = "tile-preview.png";
+      link.href = dataUrl;
+      link.click();
+    } catch (error) {
+      console.error("Image download failed:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   // pagination logic !
-
   const colorsPerPage = 21;
 
   const totalPages = Math.ceil(jointColors.length / colorsPerPage);
@@ -145,7 +140,7 @@ const JointFillersVisuals = () => {
     setColorPage((prevPage) => (prevPage - 1 + totalPages) % totalPages);
   };
 
-  // joints width 
+  // joints width
   const getJointWidth = () => {
     switch (jointSize) {
       case "3mm":
@@ -180,7 +175,7 @@ const JointFillersVisuals = () => {
 
   const handleReset = () => {
     setIsTemplateSelected(false);
-    setSurface("floor");
+    setSurface("wall");
     setTileType("square");
     setJointSize("3mm");
     setJointColor("#e9ebe7");
@@ -199,12 +194,12 @@ const JointFillersVisuals = () => {
       if (tileType === "square") {
         switch (tileSize) {
           case "Small":
-            rows = 3;
+            rows = 4;
             cols = 5;
             break;
           case "Medium":
             rows = 3;
-            cols = 3;
+            cols = 4;
             break;
           case "Large":
             rows = 2;
@@ -273,7 +268,6 @@ const JointFillersVisuals = () => {
         }
       }
     }
-
     const jointWidth = getJointWidth();
     const jointColorValue = jointColor;
     const tiles = [];
@@ -286,12 +280,11 @@ const JointFillersVisuals = () => {
           extraStyle.transform = "translateX(50%)";
         }
         if (tileLayout === "verticalSkew" && col % 2 === 1) {
-          extraStyle.transform = "translateY(-30%)";
+          extraStyle.transform = "translateY(-50%)";
         }
 
-        // ✅ enforce rectangle look
         if (tileType === "rectangle") {
-          extraStyle.aspectRatio = "2 / 1"; // width:height
+          extraStyle.aspectRatio = "2 / 1"; 
         }
 
         tiles.push(
@@ -311,7 +304,6 @@ const JointFillersVisuals = () => {
         );
       }
     }
-
     // -------- Floor container --------
     if (surface === "floor") {
       return (
@@ -534,6 +526,7 @@ const JointFillersVisuals = () => {
                       <img
                         src={sparkle.url}
                         alt={`${sparkle.name} Sparkle`}
+                        crossOrigin="anonymous"
                         className="w-full h-full object-cover opacity-50"
                       />
                     </div>
@@ -707,10 +700,10 @@ const JointFillersVisuals = () => {
               )}
             </div>
             {/* Right Main Viewport */}
-            <div className="flex-1 flex flex-col p-6 rounded-2xl shadow-lg bg-white relative"
-            ref={containerRef}
+            <div
+              className="flex-1 flex flex-col p-6 rounded-2xl shadow-lg bg-white relative"
+              ref={containerRef}
             >
-              
               <h3 className="text-xl font-semibold uppercase">VIEW LAYOUT</h3>
               <hr className="my-4 border-t-2 border-gray-200" />
 
@@ -738,13 +731,6 @@ const JointFillersVisuals = () => {
                         }
                       </div>
                     )}
-                    {/* <button
-                      onClick={handleDownload}
-                      className="bg-green-500 text-white font-semibold py-2 px-4 rounded-full shadow-md hover:bg-green-600 transition-colors duration-200 uppercase"
-                    >
-                      DOWNLOAD THIS IMAGE
-                    </button> */}
-                    
                   </div>
                 </div>
               )}
@@ -837,23 +823,40 @@ const JointFillersVisuals = () => {
                       padding: "20px",
                       display: "flex",
                       justifyContent: "center",
-                      
+
                       alignItems: "center",
                     }}
                   >
-
                     {renderTileGrid()}
                   </div>
                   <p className="mt-4 text-sm text-gray-500 text-center">
                     <sup>*</sup>Pictures shown are for visual representation
                     purpose only. Actual product/result may vary.
                   </p>
+                  <div className="flex justify-center mt-8 ">
+                    <button
+                      onClick={handleDownload}
+                      className="bg-green-500 text-white  font-semibold py-2 px-4 rounded-full shadow-md hover:bg-green-600 transition-colors duration-200 uppercase cursor-pointer"
+                    >
+                      DOWNLOAD THIS IMAGE
+                    </button>
+                  </div>
                 </div>
               )}
             </div>
           </div>
         </div>
       </div>
+      {loading && (
+        <div
+          className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+                  bg-white shadow-lg rounded-lg px-6 py-4 flex items-center gap-3 z-50"
+        >
+          <div className="animate-spin rounded-full h-6 w-6 border-t-2 border-b-2 border-blue-500"></div>
+          <p className="text-gray-800 font-medium">Downloading image...</p>
+        </div>
+      )}
+
       <style jsx>{`
         .wall-visuals-container {
           position: absolute;

@@ -102,11 +102,12 @@ const Header = () => {
       products: tileAdhesive.map(product => ({
         name: product.name,
         image: product.image,
-        slug: product.slug
+        slug: product.slug,
+        itemNo: product.itemNo
       }))
     },
     "epoxy-grout": {
-      name: "Epoxy Grout",
+      name: "Grouting Solutions",
       products: [
         ...epoxyGrout.map(product => ({
           name: product.name,
@@ -308,14 +309,17 @@ const Header = () => {
                                 alt={product.name}
                                 className="w-20 h-20 mx-auto mb-2 object-contain"
                               />
+                              <p className="text-sm text-gray-900 mb-1 font-bold">
+                                {product.itemNo || ""}
+                              </p>
                               <p className="text-sm text-gray-700 font-medium">
-                                {product.name}
+                                {product.name} 
                               </p>
                             </div>
                           ))}
                         </div>
                       </div>
-                    </div>
+                    </div>  
                   </div>
                 )}
               </div>

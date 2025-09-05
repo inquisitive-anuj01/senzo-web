@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 
 const ColorVisuals = () => {
   const [selectedColor, setSelectedColor] = useState(null);
@@ -10,33 +11,34 @@ const ColorVisuals = () => {
 
   const navigate = useNavigate();
 
-  // The list of colors to display. You can add more as needed.
   const jointColors = [
-    { name: "PASTEL BROWN", hex: "#904140" },
-    { name: "TERRACOTTA", hex: "#812c2c" },
-    { name: "RED", hex: "#ad393c" },
-    { name: "SCARLET", hex: "#b82c37" },
-    { name: "BURGUNDY", hex: "#a97362" },
-    { name: "ARCTIC BLUE", hex: "#4a7697" },
-    { name: "SAPPHIRE BLUE", hex: "#29446f" },
-    { name: "SKY BLUE", hex: "#82bfc9" },
-    { name: "ALPINE BLUE", hex: "#135a7f" },
-    { name: "MEDOW GREEN", hex: "#314512" },
-    { name: "DARK GREEN", hex: "#2d5345" },
-    { name: "PASTEL GREEN", hex: "#639f9e" },
-    { name: "BEIGE", hex: "#a89957" },
-    { name: "JAISALMER", hex: "#c28e2a" },
-    { name: "LILY WHITE", hex: "#fef2bc" },
-    //  { name: "SNOW WHITE", hex: "#e9ebe7" },
-    { name: "PASTEL GREY", hex: "#979992" },
-    { name: "IVORY", hex: "#c5bca9" },
-    { name: "KHAKI", hex: "#b79f8b" },
-    { name: "BURLYWOOD", hex: "#7f6a64" },
-    { name: "SLATE GREY", hex: "#5a5051" },
-    { name: "STEEL GREY", hex: "#4d4d53" },
-    { name: "COFFEE BROWN", hex: "#382c2c" },
-    { name: "DARK GREY", hex: "#373437" },
-    { name: "JET BLACK", hex: "#292929" },
+    { name: "BRIGHT WHITE 24", hex: "#FFFFFF" },
+    { name: "QUARRY RED 46", hex: "#613e3a" },
+    { name: "SILK 03", hex: "#ffe7c4" },
+    { name: "ANTIQUE 33", hex: "#c5b6a7" },
+    { name: "DUSTY ROSE 54", hex: "#bb8a84" },
+    { name: "PARCHMENT 61", hex: "#b39981" },
+
+    { name: "BUFF 51", hex: "#736766" },
+    { name: "MOCHA 35", hex: "#d4beac" },
+    { name: "SANDSTONE", hex: "#736766" },
+    { name: "MARBLE BEIGE 17", hex: "#b8a89b" },
+    { name: "MIDNIGHT BLACK 22", hex: "#212829" },
+    { name: "SKY BLUE 101", hex: "#a1cecd" },
+
+    { name: "ALPINE BLUE 108", hex: "#6a92af" },
+    { name: "BURGUNDY 101", hex: "#795b5d" },
+    { name: "SILVER SHADOW 88", hex: "#b8bec0" },
+    { name: "SLATE GREY 91", hex: "#6d7b84" },
+    { name: "PLATINUM 42", hex: "#5c6669" },
+    { name: "RAVEN 45", hex: "#36434c" },
+
+    { name: "MUSHROOM 105", hex: "#fff1c0" },
+    { name: "SABLE 05", hex: "#462624" },
+    { name: "HEMP 27", hex: "#9b8879" },
+    { name: "IVY 25", hex: "#667f50" },
+    { name: "INCA GOLD 11", hex: "#cc9667" },
+    { name: "SMOKE GREY 89", hex: "#cdcbc2" },
   ];
 
   const hexTileImage =
@@ -72,20 +74,22 @@ const ColorVisuals = () => {
   const currentColor = selectedColor || jointColors[animationIndex]?.hex;
 
   const colorsPerPage = window.innerWidth < 768 ? 4 : 7;
-  const totalPages = Math.ceil(jointColors.length / colorsPerPage);
-  const colorsToShow = jointColors.slice(
-    colorPage * colorsPerPage,
-    (colorPage + 1) * colorsPerPage
-  );
+
+  const step = 4; 
+  const totalPages = Math.ceil((jointColors.length - colorsPerPage) / step) + 1;
 
   const handleNextPage = () => {
-    setColorPage((prevPage) => (prevPage + 1) % totalPages);
+    setColorPage((prevPage) =>
+      prevPage + 1 >= totalPages ? prevPage : prevPage + 1
+    );
   };
 
   const handlePrevPage = () => {
-    setColorPage((prevPage) => (prevPage - 1 + totalPages) % totalPages);
+    setColorPage((prevPage) => (prevPage - 1 < 0 ? 0 : prevPage - 1));
   };
 
+  const startIdx = colorPage * step;
+  const colorsToShow = jointColors.slice(startIdx, startIdx + colorsPerPage);
   const handleViewMore = () => {
     navigate("/tools/tile-joint-filler-visualizer");
   };
@@ -95,10 +99,10 @@ const ColorVisuals = () => {
       <div className="relative z-10 w-full max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-center gap-x-24 overflow-hidden">
         {/* Left Section: Image and Color Swatches */}
         <div className="relative z-10 flex flex-col items-center py-12 px-4 w-full md:w-auto">
-          <div className="relative w-full md:w-[500px] h-[250px] bg-gray-500 rounded-lg shadow-xl overflow-hidden">
+          <div className="relative w-full md:w-[600px] h-[350px] rounded-lg shadow-xl overflow-hidden">
             {/* Dynamic Background */}
             <div
-              className="absolute inset-0 transition-colors duration-1000 ease-in-out"
+              className="absolute inset-0 transition-colors duration-500 ease-in-out"
               style={{ backgroundColor: currentColor }}
             ></div>
 
@@ -117,54 +121,62 @@ const ColorVisuals = () => {
           </div>
 
           {/* Color Swatches */}
-          <div className="mt-8 w-full md:w-[500px]">
-            <div className="w-full bg-white p-4 rounded-full shadow-lg">
-              <div className="flex items-center justify-center">
-                {/* Prev Button */}
-                <button
-                  onClick={handlePrevPage}
-                  disabled={colorPage === 0}
-                  className={`p-1 rounded-full transition-colors duration-200 ${
-                    colorPage === 0
-                      ? "text-gray-400 cursor-not-allowed"
-                      : "text-gray-800 hover:bg-gray-300"
-                  }`}
-                >
-                  <ChevronLeft size={26} />
-                </button>
+<div className="mt-8 w-full md:w-[550px]">
+  <div className="w-full bg-white p-4 rounded-full shadow-lg overflow-hidden">
+    <div className="flex items-center justify-center">
+      {/* Prev Button */}
+      <button
+        onClick={handlePrevPage}
+        disabled={colorPage === 0}
+        className={`p-1 rounded-full transition-colors duration-200 ${
+          colorPage === 0
+            ? "text-gray-400 cursor-not-allowed"
+            : "text-gray-800 hover:bg-gray-300"
+        }`}
+      >
+        <ChevronLeft size={26} />
+      </button>
 
-                {/* Color Circles */}
-                <div className="flex items-center gap-3 overflow-hidden flex-1 justify-center flex-wrap">
-                  {colorsToShow.map((color, index) => (
-                    <div
-                      key={index}
-                      onClick={() => handleColorSelect(color.hex)}
-                      title={color.name}
-                      className={`w-10 h-10 rounded-full border-2 border-teal-200 cursor-pointer transition-transform duration-200 hover:scale-110 shadow-md ${
-                        selectedColor === color.hex
-                          ? "ring-1 ring-blue-500 ring-offset-1"
-                          : ""
-                      }`}
-                      style={{ backgroundColor: color.hex }}
-                    ></div>
-                  ))}
-                </div>
+      {/* Sliding Container */}
+      <div className="relative w-full h-12 flex-1 overflow-hidden">
+        <motion.div
+          animate={{ x: -(colorPage * (100 / colorsPerPage)) + "%" }}
+          transition={{ type: "tween", duration: 0.6, ease: "easeInOut" }}
+          className="flex items-center gap-3"
+          style={{ width: `${(jointColors.length / colorsPerPage) * 100}%` }}
+        >
+          {jointColors.map((color, index) => (
+            <div
+              key={index}
+              onClick={() => handleColorSelect(color.hex)}
+              title={color.name}
+              className={`w-10 h-10 rounded-full border-2 border-black/30 cursor-pointer transition-transform duration-200 hover:scale-110 shadow-md ${
+                selectedColor === color.hex
+                  ? "ring-1 ring-yellow-400 ring-offset-1"
+                  : ""
+              }`}
+              style={{ backgroundColor: color.hex }}
+            ></div>
+          ))}
+        </motion.div>
+      </div>
 
-                {/* Next Button */}
-                <button
-                  onClick={handleNextPage}
-                  disabled={colorPage === totalPages - 1}
-                  className={`p-1 rounded-full transition-colors duration-200 ${
-                    colorPage === totalPages - 1
-                      ? "text-gray-400 cursor-not-allowed"
-                      : "text-gray-800 hover:bg-gray-300"
-                  }`}
-                >
-                  <ChevronRight size={26} />
-                </button>
-              </div>
-            </div>
-          </div>
+      {/* Next Button */}
+      <button
+        onClick={handleNextPage}
+        disabled={colorPage === totalPages - 1}
+        className={`p-1 rounded-full transition-colors duration-200 ${
+          colorPage === totalPages - 1
+            ? "text-gray-400 cursor-not-allowed"
+            : "text-gray-800 hover:bg-gray-300"
+        }`}
+      >
+        <ChevronRight size={26} />
+      </button>
+    </div>
+  </div>
+</div>
+
         </div>
 
         {/* Right Section: Text */}
