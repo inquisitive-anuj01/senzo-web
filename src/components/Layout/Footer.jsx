@@ -26,7 +26,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className=" relative z-50 bg-gradient-to-b from-gray-800 to-gray-900 text-gray-300 pt-16 pb-8 px-6 sm:px-12 rounded-t-[48px] overflow-hidden mt-[-45px] ">
+    <footer className=" relative z-50 bg-gradient-to-b from-gray-800 to-gray-900 text-gray-300 pt-16 pb-8 px-6 sm:px-12 rounded-t-[48px] overflow-hidden mt-[-80px] ">
       <motion.div
         initial="hidden"
         whileInView="visible"

@@ -6,19 +6,16 @@ const pointers = [
     title: "Premium Quality Control",
     description: "Every batch is tested for performance and durability.",
   },
-
   {
     id: 2,
     title: "Advanced R & D",
     description: "Continuous innovation for evolving construction needs.",
   },
-
   {
     id: 3,
     title: "Pan-India/Global Reach",
     description: "Available across major cities with reliable distribution.",
   },
-
   {
     id: 4,
     title: "Eco-Friendly Solutions",
@@ -33,95 +30,99 @@ const pointers = [
   {
     id: 6,
     title: "Trusted by Experts",
-    description: "Used by top contractors architects, and builders.",
+    description: "Used by top contractors, architects, and builders.",
   },
 ];
 
 function Pointers() {
-  // Split data into two columns
-  const column1Data = pointers.slice(0, 3); // Items 1-3
-  const column2Data = pointers.slice(3, 6); // Items 4-6
-
-  // Create duplicated arrays for infinite scroll
-  const column1Items = [...column1Data, ...column1Data, ...column1Data];
-  const column2Items = [...column2Data, ...column2Data, ...column2Data];
+  // duplicate data to make scrolling seamless
+  const row1Items = [...pointers, ...pointers];
+  const row2Items = [...[...pointers].reverse(), ...[...pointers].reverse()];
 
   return (
-    <div className="relative py-20 bg-[#F0EAD8] rounded-t-[48px] mt-[-50px] pt-[50px] z-40">
-      <div className="max-w-7xl mx-auto px-4">
+    <div className="relative py-16 bg-[#F0EAD8] rounded-t-[32px] mt-[-30px] pt-[40px] z-40 overflow-hidden mb-10">
+      <div className="mx-auto px-4">
         {/* Heading */}
-        <h2 className="text-xl md:text-5xl font-semibold text-center text-gray-800 mb-10">
-          What Sets Us Apart
-        </h2>
+        <h2 className="relative text-2xl sm:text-4xl md:text-5xl font-semibold text-center text-gray-800 mb-10">
+  What Sets Us Apart
+  <span className="block w-20 md:w-28 h-[3px] bg-[#d97706] mx-auto mt-3 rounded-full"></span>
+</h2>
 
-        {/* Scrolling Columns Container */}
-        <div className="flex gap-8 justify-center overflow-hidden h-[600px] relative">
-          {/* Column 1 - Scrolls Up */}
-          <div className="flex flex-col w-80">
-            <div className="animate-scroll-up flex flex-col gap-6">
-              {column1Items.map((pointer, index) => (
+
+        {/* Rows container */}
+        <div className="space-y-5 md:space-y-8">
+          {/* Row 1 */}
+          <div className="flex overflow-hidden">
+            <div className="animate-scroll-left flex gap-4 md:gap-6">
+              {row1Items.map((pointer, index) => (
                 <div
-                  key={`col1-${pointer.id}-${index}`}
-                  className="bg-white rounded-xl p-6 shadow-lg border border-gray-200 min-h-[180px] flex flex-col justify-center"
+                  key={`row1-${pointer.id}-${index}`}
+                  className="bg-white rounded-xl p-4 md:p-6 shadow-lg border border-gray-200 
+                             max-w-[300px] sm:max-w-[310px] md:max-w-[350px] lg:max-w-[370px] 
+                             flex-shrink-0"
                 >
-                  <h3 className="font-bold text-xl text-gray-900 mb-3">
+                  <h3 className="font-bold text-base sm:text-lg md:text-xl text-gray-900 mb-2 md:mb-3">
                     {pointer.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
                     {pointer.description}
                   </p>
-                  <div className="w-12 h-1 bg-[#d97706] rounded-full mt-4"></div>
+                  <div className="w-10 md:w-12 h-1 bg-[#d97706] rounded-full mt-3 md:mt-4"></div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Column 2 - Scrolls Down */}
-          <div className="flex flex-col w-80">
-            <div className="animate-scroll-down flex flex-col gap-6">
-              {column2Items.map((pointer, index) => (
+          {/* Row 2 */}
+          <div className="flex overflow-hidden">
+            <div className="animate-scroll-right flex gap-4 md:gap-6">
+              {row2Items.map((pointer, index) => (
                 <div
-                  key={`col2-${pointer.id}-${index}`}
-                  className="bg-white rounded-xl p-6 shadow-lg border border-gray-200 min-h-[180px] flex flex-col justify-center"
+                  key={`row2-${pointer.id}-${index}`}
+                  className="bg-white rounded-xl p-4 md:p-6 shadow-lg border border-gray-200 
+                             max-w-[300px] sm:max-w-[310px] md:max-w-[350px] lg:max-w-[370px] 
+                             flex-shrink-0"
                 >
-                  <h3 className="font-bold text-xl text-gray-900 mb-3">
+                  <h3 className="font-bold text-base sm:text-lg md:text-xl text-gray-900 mb-2 md:mb-3">
                     {pointer.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
                     {pointer.description}
                   </p>
-                   <div className="w-12 h-1 bg-[#ec4899] rounded-full mt-4"></div>
+                  <div className="w-10 md:w-12 h-1 bg-[#ec4899] rounded-full mt-3 md:mt-4"></div>
                 </div>
               ))}
             </div>
           </div>
         </div>
       </div>
+
+      {/* Animations */}
       <style jsx>{`
-        @keyframes scroll-up {
+        @keyframes scroll-left {
           0% {
-            transform: translateY(0);
+            transform: translateX(0);
           }
           100% {
-            transform: translateY(-33.333%);
+            transform: translateX(-50%);
           }
         }
 
-        @keyframes scroll-down {
+        @keyframes scroll-right {
           0% {
-            transform: translateY(-33.333%);
+            transform: translateX(-50%);
           }
           100% {
-            transform: translateY(0);
+            transform: translateX(0);
           }
         }
 
-        .animate-scroll-up {
-          animation: scroll-up 15s linear infinite;
+        .animate-scroll-left {
+          animation: scroll-left 25s linear infinite;
         }
 
-        .animate-scroll-down {
-          animation: scroll-down 15s linear infinite;
+        .animate-scroll-right {
+          animation: scroll-right 25s linear infinite;
         }
       `}</style>
     </div>
