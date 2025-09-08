@@ -3,7 +3,7 @@ export const tileAdhesive = [
   {
     id: 1,
     name: "Tile Adhesive for Ceramic & Vitrified Tiles",
-    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1756894358/Gemini_Generated_Image_hbr0ikhbr0ikhbr0_q9poqz.png",
+    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146318/S-11_gajeor.png",
     description: "Polymer fibre modified grey cement based adhesive with no vertical slip, suitable for fixing ceramic and Gres tiles for floors and walls in internal applications",
     slug: "ceramic-tile",
     colours: "Grey & white",
@@ -21,7 +21,7 @@ export const tileAdhesive = [
   {
     id: 2,
     name: "Polymer Modified Improved Tile Adhesive",
-    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1756894358/Gemini_Generated_Image_hbr0ikhbr0ikhbr0_q9poqz.png",
+    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146320/S-21_onlbrd.png",
     description: "Cementitious, polymer fibre modified tile adhesive with no vertical slip with extended performance. Suitable for fixing ceramic & vitrified tiles for floor & walls in internal application.",
     slug: "polymer-modified",
     colours: "Grey & White",
@@ -38,7 +38,7 @@ export const tileAdhesive = [
   {
     id: 3,
     name: "HIGHLY DEFORMABLE TILE & STONE ADHESIVE",
-    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1756894358/Gemini_Generated_Image_hbr0ikhbr0ikhbr0_q9poqz.png",
+    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146320/S-51_yl5yjh.png",
     description: "Highly flexible, polymer fibre modified special adhesive mortar for installing vitrified and natural stone slabs with high safety reserves.",
     slug: "deformable-tile",
     colours: "Grey & White",
@@ -55,7 +55,7 @@ export const tileAdhesive = [
   {
     id: 4,
     name: "POLYMER MODIFIED TILE & STONE ADHESIVE",
-    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1756894358/Gemini_Generated_Image_hbr0ikhbr0ikhbr0_q9poqz.png",
+    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146320/S-31_gesscu.png",
     description: "Universal fibre modified, Thin bed and middle bed adhesive for application of ceramic tiles, vitrified tiles and natural stone on wall & floor in internal and external application.",
     slug: "polymer-modified-tile",
     colours: "Grey & White",
@@ -72,7 +72,7 @@ export const tileAdhesive = [
   {
     id: 5,
     name: "DEFORMABLE TILE & STONE ADHESIVE",
-    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1756894358/Gemini_Generated_Image_hbr0ikhbr0ikhbr0_q9poqz.png",
+    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146320/S-41_ppe6yv.png",
     description: "Deformable cementitious, polymer fibre modified adhesive with improved characteristic, slip resistance and extended open time. High performance adhesive for installing vitrified tiles, large scale tiles, thin tiles and slabs as well as natural stones.",
     slug: "deformable-tile",
     colours: "Grey & White",
@@ -92,7 +92,7 @@ export const epoxyGrout =[
   {
     id: 1,
     name: "EPOXY GROUT 1KG",
-    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1756894562/Gemini_Generated_Image_oio72boio72boio7_qh25n4.png",
+    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146319/Epoxy_Grout_1kg___iymtto.png",
     slug: "epoxy-grout-1kg",
     description: "Three component chemical resistant epoxy grout for grouting of tiles, mosaics and stones, where hygiene is of utmost importance such as bathrooms, kitchens, living room, bedroom, hospitals, laboratories, food & beverages industries, dairy industries, swimming pools, showrooms, airports and high traffic areas. It is stain free grout for interior and covered exterior floor and wall. It is chemical resistant Joint filler and is available in 24 colors.",
 
@@ -112,7 +112,7 @@ export const epoxyGrout =[
   {
     id: 2,
     name: "EPOXY GROUT 5KG",
-    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1756894562/Gemini_Generated_Image_oio72boio72boio7_qh25n4.png",
+    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146319/Epoxy_Grout_5kg_jc60gr.png",
     slug: "epoxy-grout-5kg",
     description: "",
     mixingRatio: "Part A (Resin) 900ml, Part B (Hardener) 450ml, Part C (Filler) 730kg",
@@ -135,7 +135,7 @@ export const tileGrout = [
   {
     id: 1,
     name: "TILE GROUT",
-    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1756894562/Gemini_Generated_Image_oio72boio72boio7_qh25n4.png",
+    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146329/Tile_Grout_nd7www.png",
     slug: "tile-grout",
     description: "SENZO Tile Grout is a polymer based un sanded cement grout. It is a fine, high quality grout mortar for tile and stone joints of 1 to 6 mm width on wall and floor.",
     packaging: "1 kg Pouch",
@@ -151,7 +151,7 @@ export const groutGlitter = [
   {
     id: 1,
     name: "EPOXY GROUT GLITTER",
-    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1756894562/Gemini_Generated_Image_oio72boio72boio7_qh25n4.png",
+    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146319/Epoxy_filler_o3tshe.png",
     slug: "epoxy-grout-glitter",
     description: "SENZO Glitter are specially designed to be used as an additive and metalized effect and enhance the beauty of tiling area. It should be mixed with epoxy-based tile grout to get sparkling joints. It is recommended to use in internal & external areas under wet & dry conditions on wall & floor.",
     colours: "Gold, Silver, Copper",
@@ -169,7 +169,7 @@ export const groutHardner = [
   {
     id: 1,
     name: "HARDENER FOR CEMENT BASED TILE GROUTS",
-    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1756894562/Gemini_Generated_Image_oio72boio72boio7_qh25n4.png",
+    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146319/Grout_HARDNER_cvkuqr.png",
     slug: "grout-hardener",
 
     description: "SENZO Grout Hardener is a synthetic polymer emulsion additive to use with cement based grout such as Cement Grout for tile/stone joint grouting works. It improves the adhesion strength to tiles/stones, abrasion resistance, flexibility and reduces the water permeability of the cement grouts.",
@@ -191,7 +191,7 @@ export const TileCleaner = [
   {
     id: 1,
     name: "TILE CLEANER",
-    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1756894736/Gemini_Generated_Image_usszpdusszpdussz_pgfovh.png",
+    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146318/Tile_Cleaner_lqrt3k.png",
     slug: "tile-cleaner",
     description: "SENZO TILE CLEANER is powerful, fast acting, heavy duty Hydrochloric based cleaner for regular cleaning of dirt and stains on tile surfaces, designed for daily maintenance of tiles. It may also be used as general-purpose cleaner on other acid resistant surface. It is designed for removal of cement residues, efflorescence and most oxide stains",
 
@@ -215,7 +215,7 @@ export const BlockAdhesive = [
     id: 1,
     name: "BLOCK ADHESIVE",
     heading: "ADHESIVE FOR CONCRETE BLOCKS, AAC BLOCKS, SIPOREX BLOCKS AND FLYASH BRICKS",
-    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1756894736/Gemini_Generated_Image_usszpdusszpdussz_pgfovh.png",
+    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146320/Block_Adhesive_40_Kg_Bag_ewts2v.png",
     slug: "block-adhesive",
 
     description: "SENZO BLOCK ADHESIVE is a pre-mixed cementitious powder adhesive composed of Portland cement, hydraulic binders, bonding agents, silica sand and special adhesives. It is formulated as a crack free, superior, flexible, high bonding adhesive for AAC Blocks. It can also be used to fix Concrete, Cement blocks, Siporex Blocks and clay bricks to prevent clay absorption of water for adhesive mix. It is a masonry mortar for use in laying bricks, block. When mixed with water, SENZO BLOCK ADHESIVE produces a workable mortar that generates, once cured, a high adhesive power between blocks.",
@@ -241,7 +241,7 @@ export const grout2k = [
   {
     id : 1,
     name: "2k GROUT",
-    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1756894562/Gemini_Generated_Image_oio72boio72boio7_qh25n4.png",
+    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146319/2K_Grout_uk6bne.png",
     slug: "2k-grout",
     coverage: "The 2K Highly polymer Grout is a cutting-edge, two-component system designed to deliver exceptional results in tile grouting. This exceptional product comes in two parts: a liquid component and a powder compnent, which are mixed onsite to unleash its full ptential.",
 

@@ -44,10 +44,9 @@ function Pointers() {
       <div className="mx-auto px-4">
         {/* Heading */}
         <h2 className="relative text-2xl sm:text-4xl md:text-5xl font-semibold text-center text-gray-800 mb-10">
-  What Sets Us Apart
-  <span className="block w-20 md:w-28 h-[3px] bg-[#d97706] mx-auto mt-3 rounded-full"></span>
-</h2>
-
+          What Sets Us Apart
+          <span className="block w-20 md:w-28 h-[3px] bg-[#d97706] mx-auto mt-3 rounded-full"></span>
+        </h2>
 
         {/* Rows container */}
         <div className="space-y-5 md:space-y-8">

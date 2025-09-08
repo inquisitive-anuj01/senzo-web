@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 
-import one from "../../assets/Images/1.png";
-import two from "../../assets/Images/2.png";
-import three from "../../assets/Images/3.png";
+const  one =  "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757152171/1_wl10m2.png";
+const two = "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757152036/2_e5ltbb.png";
+const three = "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757152043/3_wdfmda.png";
 
 const sections = [
   {
@@ -118,7 +118,7 @@ const HeroSection = () => {
                 className="absolute flex justify-center w-full"
                 style={{
                   top: isMobile ? "25%" : "30%",
-                  zIndex: 20, // Ensures button is clickable above image
+                  zIndex: 20, 
                   pointerEvents: "auto"
                 }}
               >
@@ -126,7 +126,6 @@ const HeroSection = () => {
                   to={`/category/${section.slug}`}
                   className="px-6 py-2 bg-white text-black font-semibold rounded-full shadow-lg hover:bg-gray-200 transition-colors duration-300"
                   style={{ zIndex: 25, pointerEvents: "auto" }}
-                  // Stop propagation so main div's onClick doesn't fire on button click
                   onClick={(e) => e.stopPropagation()}
                 >
                   View Products
@@ -139,13 +138,13 @@ const HeroSection = () => {
           <motion.img
             src={section.image}
             alt={section.title}
-            className="absolute object-contain"
-            style={{ zIndex: 5, pointerEvents: "none" }} // Image cannot intercept pointer events
+            className="absolute object-contain "
+            style={{ zIndex: 5, pointerEvents: "none" }} 
             initial={{
               bottom: isMobile ? "8%" : "2%",
               left: "50%",
               x: "-50%",
-              opacity: 0.8,
+              opacity: 0,
               width: "90%",
               scale: 0.7,
             }}
@@ -153,15 +152,15 @@ const HeroSection = () => {
               bottom:
                 expanded === index
                   ? isMobile
-                    ? "5%"
-                    : "-14%"
+                    ? "3%"
+                    : "3%"
                   : isMobile
                   ? "8%"
-                  : "2%",
+                  : "10%",
               left: "50%",
               x: "-50%",
-              opacity: expanded === index ? 1 : 0.8,
-              width: expanded === index ? (isMobile ? "65%" : "50%") : "90%",
+               opacity: expanded === index ? 1 : isMobile ? 0 : 0.8,
+              width: expanded === index ? (isMobile ? "95%" : "70%") : "90%",
               scale: expanded === index ? (isMobile ? 1.1 : 1) : 0.7,
             }}
             transition={{ duration: 1.2, ease: "easeInOut" }}

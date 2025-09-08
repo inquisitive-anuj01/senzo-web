@@ -10,6 +10,7 @@ const seven = "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757050942/9_f
 
 function Certification() {
   const logos = [one, two, three, four, five, six, seven]
+  
   const duplicateLogos = [...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos];
 
 
