@@ -15,7 +15,7 @@ function Certification() {
 
 
   return (
-    <div className="bg-[#ffffff] w-full py-16 mt-8 mb-20 ">
+    <div className="bg-[#CFCFCF] w-full py-16 mt-8 mb-20 ">
       <div className="flex justify-center items-center">
         <div className="overflow-hidden w-full ">
           <div className="flex animate-scroll">

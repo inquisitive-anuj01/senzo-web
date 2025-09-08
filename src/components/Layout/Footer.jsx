@@ -2,6 +2,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 
+const logo =
+  "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757323270/senzo_white_png_am9mkk.png";
+
 const productsLink = [
   {
     name: "Tile & Stone Adhesive",
@@ -71,89 +74,19 @@ const Footer = () => {
         variants={containerVariants}
         className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 pb-12"
       >
-        {/* Left Section - Brand */}
         <motion.div
           variants={itemVariants}
-          className="flex flex-col items-center md:items-start text-center md:text-left"
+          className="flex flex-col items-start text-left space-y-6"
         >
-          <motion.div
-            whileHover={{ scale: 1.05, rotate: 2 }}
-            className="w-24 h-24 bg-gradient-to-br from-amber-500 to-amber-700 rounded-full flex items-center justify-center mb-6 shadow-lg shadow-amber-500/20"
-          >
-            <span className="text-white text-lg font-bold">S</span>
-          </motion.div>
-          <motion.p
-            whileHover={{ x: 5 }}
-            className="text-white font-bold text-xl mb-6 text-start"
-          >
-            Senzo - strength beyond limits.
-          </motion.p>
+          <img src={logo} alt="Senzo Logo" className="h-25 w-auto" />
 
-          {/* Social Icons */}
-          <div className="flex space-x-5">
-            {/* Facebook */}
-            <motion.a
-              href="#"
-              aria-label="Facebook"
-              whileHover={{ scale: 1.2, y: -5 }}
-              whileTap={{ scale: 0.9 }}
-              className="text-gray-400 hover:text-[#4267B2] transition-colors duration-300 p-2 rounded-full bg-gray-700 hover:bg-gray-600"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path d="M12 2C6.477 2 2 6.477 2 12c0 5.016 3.655 9.184 8.441 9.923V14.86h-2.54v-2.91h2.54V9.873c0-2.522 1.54-3.91 3.79-3.91 1.07 0 1.99.08 2.26.115v2.417h-1.42c-1.248 0-1.49.593-1.49 1.46v1.948h2.91l-.47 2.91h-2.44v7.063C18.345 21.184 22 17.016 22 12c0-5.523-4.477-10-10-10z" />
-              </svg>
-            </motion.a>
-
-            {/* Instagram */}
-            <motion.a
-              href="#"
-              aria-label="Instagram"
-              whileHover={{ scale: 1.2, y: -5 }}
-              whileTap={{ scale: 0.9 }}
-              className="text-gray-400 hover:text-[#E1306C] transition-colors duration-300 p-2 rounded-full bg-gray-700 hover:bg-gray-600"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.653 1.594 4.865 4.865.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.148 3.252-1.594 4.653-4.865 4.865-.19.058-.57.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.653-1.594-4.865-4.865-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.148-3.252 1.594-4.653 4.865-4.865 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.266 0-3.67.013-4.947.072-4.358.21-6.78 2.632-6.99 6.99-.059 1.277-.072 1.681-.072 4.947s.013 3.67.072 4.947c.21 4.358 2.632 6.78 6.99 6.99 1.277.059 1.681.072 4.947.072s3.67-.013 4.947-.072c4.358-.21 6.78-2.632 6.99-6.99.059-1.277.072-1.681.072-4.947s-.013-3.67-.072-4.947c-.21-4.358-2.632-6.78-6.99-6.99-1.277-.059-1.681-.072-4.947-.072zM12 5.836a6.164 6.164 0 100 12.328 6.164 6.164 0 000-12.328zM12 7a5 5 0 110 10 5 5 0 010-10zm6.5-1.5c-.828 0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5 1.5-.672 1.5-1.5-.672-1.5-1.5-1.5z" />
-              </svg>
-            </motion.a>
-
-            {/* LinkedIn */}
-            <motion.a
-              href="#"
-              aria-label="LinkedIn"
-              whileHover={{ scale: 1.2, y: -5 }}
-              whileTap={{ scale: 0.9 }}
-              className="text-gray-400 hover:text-[#0A66C2] transition-colors duration-300 p-2 rounded-full bg-gray-700 hover:bg-gray-600"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.766s.784-1.764 1.75-1.764c.967 0 1.75 1.344 1.75 1.764s-.783 1.766-1.75 1.766zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-              </svg>
-            </motion.a>
-          </div>
+          
         </motion.div>
 
         {/* Middle Section - Products */}
         <motion.div
           variants={itemVariants}
-          className="flex flex-col items-center md:items-start text-center md:text-left"
+          className="flex flex-col items-start md:items-start text-left md:text-left"
         >
           <motion.h4
             whileHover={{ x: 5 }}
@@ -162,7 +95,7 @@ const Footer = () => {
             Products
             <span className="absolute -bottom-2 left-0 w-12 h-1 bg-amber-500 rounded-full"></span>
           </motion.h4>
-          <ul className="space-y-4">
+          <ul className="space-y-4 ">
             {productsLink.map((product, index) => (
               <motion.li
                 key={index}
@@ -186,7 +119,7 @@ const Footer = () => {
         {/* Right Section - Contact */}
         <motion.div
           variants={itemVariants}
-          className="flex flex-col items-center md:items-start text-center md:text-left"
+          className="flex flex-col items-start md:items-start text-left md:text-left"
         >
           <motion.h4
             whileHover={{ x: 5 }}
@@ -197,28 +130,50 @@ const Footer = () => {
           </motion.h4>
           <div className="space-y-5">
             {/* Address */}
-            <motion.div whileHover={{ x: 5 }} className="flex items-start">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                className="mt-1 mr-3 text-amber-500 flex-shrink-0"
-              >
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                <circle cx="12" cy="10" r="3"></circle>
-              </svg>
-              <p className="max-w-xs text-left">
-                {" "}
-                Inquisitive Digital, Noida, Uttar Pradesh, UP-201030, India
-              </p>
-            </motion.div>
+            <div className="space-y-4">
+              <motion.div whileHover={{ x: 5 }} className="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  className="mt-1 mr-3 text-amber-500 flex-shrink-0"
+                >
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <p className="max-w-xs text-left">
+                  Plot D-15, Gopalpur Industrial Area, Sikandrabad - 203205
+                  Distt. Bulandshahr (UP) India
+                </p>
+              </motion.div>
+
+              <motion.div whileHover={{ x: 5 }} className="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  className="mt-1 mr-3 text-amber-500 flex-shrink-0"
+                >
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <p className="max-w-xs text-left">
+                  8A National Highway, OPP.132 Kva Sub-Station, At Lalpar,
+                  Morbi-363642, Gujarat, India.
+                </p>
+              </motion.div>
+            </div>
 
             {/* Phone Numbers */}
-            {["+91 9810470965", "+91 8810655337"].map((phone, index) => (
+            {["8700630602"].map((phone, index) => (
               <motion.div
                 key={index}
                 whileHover={{ x: 5 }}

@@ -12,7 +12,8 @@ import {
 } from "react-icons/fi";
 import { Link, useNavigate } from "react-router-dom";
 
-import logo from "../../assets/Images/senzo-black.png"
+// import logo from "../../assets/Images/senzo-black.png"
+const logo = "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757323271/senzo_png_dmj1mk.png";
 
 // Import your product data
 import { tileAdhesive } from "../ProductsInfo/product.js";
@@ -182,7 +183,7 @@ const Header = () => {
   ];
 
   const openWhatsApp = () => {
-    const phoneNumber = "1234567890";
+    const phoneNumber = "+918700630602";
     window.open(`https://wa.me/${phoneNumber}`, "_blank");
   };
 

@@ -1,53 +1,54 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const adhesives = [
   {
-    id: "nca",
-    name: "New Construction Adhesive (NCA)",
-    imgUrl: "https://placehold.co/400x400/90EE90/000000?text=Roff+NCA",
+    id: "1",
+    name: "Tile Adhesive for Ceramic & Vitrified Tiles",
+    imgUrl: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146318/S-11_gajeor.png",
     coverageRate: 0.125,
+    slug: "ceramic-tile",
   },
   {
-    id: "nsa",
-    name: "Non-Skid Adhesive (NSA)",
-    imgUrl: "https://placehold.co/400x400/F08080/000000?text=Roff+NSA",
+    id: "2",
+    name: "Polymer Modified Improved Tile Adhesive",
+    imgUrl: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146320/S-21_onlbrd.png",
     coverageRate: 0.13,
+    slug: "polymer-modified",
   },
   {
-    id: "vit",
-    name: "Vitrofix Adhesive",
-    imgUrl: "https://placehold.co/400x400/87CEFA/000000?text=Roff+Vitrofix",
+    id: "3",
+    name: "POLYMER MODIFIED TILE & STONE ADHESIVE",
+    imgUrl: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146320/S-31_gesscu.png",
     coverageRate: 0.14,
+    slug: "polymer-modified-tile",
   },
   {
-    id: "vua",
-    name: "Vitrofix Ultra Adhesive",
-    imgUrl:
-      "https://placehold.co/400x400/FFD700/000000?text=Roff+Vitrofix+Ultra",
+    id: "4",
+    name: "DEFORMABLE TILE & STONE ADHESIVE",
+    imgUrl: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146320/S-41_ppe6yv.png",
     coverageRate: 0.15,
+    slug: "deformable-tile-stone",
   },
   {
-    id: "yga",
-    name: "Yogafix Adhesive",
-    imgUrl: "https://placehold.co/400x400/DDA0DD/000000?text=Roff+Yogafix",
+    id: "5",
+    name: "HIGHLY DEFORMABLE TILE & STONE ADHESIVE",
+    imgUrl: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146320/S-51_yl5yjh.png",
     coverageRate: 0.135,
-  },
-  {
-    id: "exa",
-    name: "Extrofix Adhesive",
-    imgUrl: "https://placehold.co/400x400/C0C0C0/000000?text=Roff+Extrofix",
-    coverageRate: 0.145,
+    slug: "deformable-tile",
   },
 ];
 
 const thicknesses = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 const AdhesiveCoverage = () => {
+  const navigate = useNavigate();
+
   const [selectedAdhesive, setSelectedAdhesive] = useState(null);
   const [area, setArea] = useState("");
   const [selectedThickness, setSelectedThickness] = useState(6);
   const [requiredKgs, setRequiredKgs] = useState(0);
-  const [error, setError] = useState(""); 
+  const [error, setError] = useState("");
 
   useEffect(() => {
     if (selectedAdhesive && area > 0) {
@@ -82,11 +83,23 @@ const AdhesiveCoverage = () => {
     setSelectedThickness(Number(e.target.value));
   };
 
+  // ✅ Contact Us function
+  const handleContact = () => {
+    window.location.href = "tel:+918700630602";
+  };
+
+  // ✅ Navigate to product details
+  const handleViewDetails = () => {
+    if (selectedAdhesive) {
+      navigate(`/products/${selectedAdhesive.slug}`);
+    }
+  };
+
   const activeStep = selectedAdhesive ? (area > 0 ? 3 : 2) : 1;
 
   return (
     <div>
-      <div className="w-full min-h-screen mx-auto bg-white overflow-hidden p-6 rounded-b-3xl mb-14">
+      <div className="w-full min-h-screen mx-auto bg-gray-100 font-sans text-gray-800 overflow-hidden p-6 rounded-b-3xl mb-16">
         <h1 className="text-xl md:text-5xl font-semibold text-center text-gray-800 mb-2">
           Adhesive Coverage Calculator
         </h1>
@@ -97,12 +110,12 @@ const AdhesiveCoverage = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Left Panel */}
-          <div className="bg-gray-800 text-white rounded-2xl p-8 space-y-8">
+          <div className="bg-white text-black rounded-2xl p-8 space-y-8">
             {/* Step 1 */}
             <div>
               <h2
                 className={`text-2xl font-bold mb-4 ${
-                  activeStep === 1 ? "text-lime-400" : "text-gray-300"
+                  activeStep === 1 ? "text-lime-700" : "text-black"
                 }`}
               >
                 1 Select Adhesive
@@ -115,12 +128,12 @@ const AdhesiveCoverage = () => {
                     className={`relative p-4 rounded-xl border-2 transition-transform transform hover:scale-105
                       ${
                         selectedAdhesive && selectedAdhesive.id === adhesive.id
-                          ? "border-lime-500 bg-lime-700"
-                          : "border-gray-700 bg-gray-900 hover:border-lime-500"
+                          ? "border-lime-500 bg-gray-200"
+                          : "border-gray-700 bg-gray-300 hover:border-lime-300"
                       }
-                      focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-offset-2 focus:ring-offset-gray-800`}
+                      focus:outline-none focus:ring-2 focus:ring-lime-200 focus:ring-offset-2 focus:ring-offset-gray-800`}
                   >
-                    <span className="text-sm font-semibold text-white">
+                    <span className="text-sm font-semibold text-black">
                       {adhesive.name}
                     </span>
                   </button>
@@ -133,23 +146,23 @@ const AdhesiveCoverage = () => {
               <div>
                 <h2
                   className={`text-2xl font-bold mb-4 ${
-                    activeStep === 2 ? "text-lime-400" : "text-gray-300"
+                    activeStep === 2 ? "text-lime-700" : "text-black"
                   }`}
                 >
                   2 Enter Area
                 </h2>
-                <label className="block text-gray-400 mb-2">
+                <label className="block text-black mb-2 ">
                   Total area of application
                 </label>
-                <div className="flex items-center bg-gray-900 rounded-xl p-2 border border-gray-700">
+                <div className="flex items-center bg-gray-100 rounded-xl p-2 border border-gray-700">
                   <input
                     type="text"
                     value={area}
                     onChange={handleAreaChange}
                     placeholder="0"
-                    className="w-full bg-transparent text-white placeholder-gray-500 outline-none px-2 text-lg"
+                    className="w-full bg-transparent text-black placeholder-black-500 outline-none px-2 text-lg"
                   />
-                  <span className="text-gray-400 px-2">Sq.Ft</span>
+                  <span className="text-black px-2">Sq.Ft</span>
                 </div>
                 {error && <p className="text-red-400 text-sm mt-2">{error}</p>}
               </div>
@@ -159,8 +172,8 @@ const AdhesiveCoverage = () => {
             {area && !error && (
               <div>
                 <h2
-                  className={`text-2xl font-bold mb-4 ${
-                    activeStep === 3 ? "text-lime-400" : "text-gray-300"
+                  className={`text-2xl font-bold mb-4  ${
+                    activeStep === 3 ? "text-lime-700" : "text-black"
                   }`}
                 >
                   3 Select Thickness
@@ -168,8 +181,8 @@ const AdhesiveCoverage = () => {
                 <select
                   value={selectedThickness}
                   onChange={handleThicknessChange}
-                  className="block w-full sm:w-full max-w-full rounded-md border-gray-300 shadow-sm py-3 px-4 
-             focus:outline-none focus:ring-lime-500 focus:border-lime-500 
+                  className="block w-full sm:w-full max-w-full rounded-md border border-black shadow-sm py-3 px-4 
+             focus:outline-none focus:ring-gray-500 focus:border-gray-500 
              bg-white text-gray-800 text-base sm:text-sm"
                 >
                   {thicknesses.map((thickness) => (
@@ -192,7 +205,7 @@ const AdhesiveCoverage = () => {
                 <img
                   src={selectedAdhesive.imgUrl}
                   alt={selectedAdhesive.name}
-                  className="w-48 h-48 mb-8 rounded-xl shadow-lg"
+                  className="w-full h-64 object-contain mb-8 rounded-xl shadow-lg bg-white"
                   onError={(e) => {
                     e.target.onerror = null;
                     e.target.src =
@@ -211,12 +224,18 @@ const AdhesiveCoverage = () => {
                   application methodology.
                 </p>
 
-                {/* Two Buttons instead of dropdown */}
+                {/* Two Buttons */}
                 <div className="flex gap-4">
-                  <button className="bg-lime-600 text-white px-4 py-2 rounded-lg shadow hover:bg-lime-700">
+                  <button
+                    onClick={handleContact}
+                    className="bg-lime-600 text-white px-4 py-2 rounded-lg shadow hover:bg-lime-700"
+                  >
                     Contact Us
                   </button>
-                  <button className="border border-lime-600 text-lime-600 px-4 py-2 rounded-lg shadow hover:bg-lime-50">
+                  <button
+                    onClick={handleViewDetails}
+                    className="border border-lime-600 text-lime-600 px-4 py-2 rounded-lg shadow hover:bg-lime-50"
+                  >
                     View Product Details
                   </button>
                 </div>
@@ -246,7 +265,6 @@ const AdhesiveCoverage = () => {
           </div>
         </div>
       </div>
-      
     </div>
   );
 };

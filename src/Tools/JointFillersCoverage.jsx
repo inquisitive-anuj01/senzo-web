@@ -158,12 +158,12 @@ function JointFillersCoverage() {
   }, [totalArea, areaUnit, tileWidth, tileLength, totalLength, lengthUnit, jointWidth, tileThickness])
 
   return (
-    <div className="w-full min-h-screen mx-auto bg-white overflow-hidden p-6 rounded-b-3xl mb-16">
+    <div className="w-full min-h-screen mx-auto bg-gray-200 overflow-hidden p-6 rounded-b-3xl mb-16">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-xl md:text-5xl font-semibold text-center text-gray-800 mb-2">Joint Filler Coverage Calculator</h1>
-          <p className="text-center text-gray-500 mb-12">
+          <h1 className="text-xl md:text-5xl font-semibold text-center text-black mb-2">Joint Filler Coverage Calculator</h1>
+          <p className="text-center text-gray-800 mb-12">
             A tool to estimate the right quantity of tile joint filler for your requirements.
           </p>
         </div>
@@ -171,7 +171,7 @@ function JointFillersCoverage() {
         <div className="flex flex-col lg:flex-row gap-8 lg:h-[600px]">
           {/* Left Panel - Input Form (60% width) */}
           <div className="lg:w-3/5">
-            <Card className="bg-slate-800 text-white h-full">
+            <Card className="bg-white text-black h-full">
               <CardContent className="p-6 h-full flex flex-col">
                 {/* Step 1: Area Input and Length Input Side by Side */}
                 <div className="mb-8">
@@ -186,7 +186,7 @@ function JointFillersCoverage() {
                     {/* Area Calculation Section */}
                     <div className="lg:w-1/2 space-y-4">
                       <div>
-                        <Label htmlFor="totalArea" className="text-white mb-2 block text-sm">
+                        <Label htmlFor="totalArea" className="text-black mb-2 block text-sm">
                           Total Area
                         </Label>
                         <div className="flex gap-2">
@@ -196,7 +196,7 @@ function JointFillersCoverage() {
                             value={totalArea}
                             onChange={(e) => setTotalArea(e.target.value)}
                             placeholder="200"
-                            className="bg-white text-black transition-all duration-200 focus:ring-2 focus:ring-green-500 text-sm"
+                            className="bg-white text-black transition-all duration-200   text-sm outline-none"
                           />
                           <Select value={areaUnit} onValueChange={setAreaUnit}>
                             <SelectTrigger className="w-20 bg-white text-black text-sm">
@@ -365,7 +365,7 @@ function JointFillersCoverage() {
                 </div>
 
                 {errors.general && (
-                  <div className="mt-4 p-3 bg-blue-500/20 border border-blue-500 rounded-md">
+                  <div className="mt-4 p-3 bg-gray-500 border border-black rounded-md">
                     <p className="text-white text-sm">{errors.general}</p>
                   </div>
                 )}
@@ -373,9 +373,9 @@ function JointFillersCoverage() {
             </Card>
           </div>
 
-          {/* Right Panel - Results (40% width) */}
-          <div className="lg:w-2/5">
-            <Card className="h-full">
+          {/* Right Panel  */}
+          <div className="lg:w-2/5 ">
+            <Card className="h-full bg-gray-100">
               <CardContent className="p-6 h-full flex flex-col">
                 <h3 className="text-lg font-semibold mb-4">Required Tile Joint Filler</h3>
 
@@ -387,7 +387,7 @@ function JointFillersCoverage() {
                     </p>
                   </div>
                 ) : (
-                  <div className="flex-1 flex flex-col">
+                  <div className="flex-1 flex flex-col bg-gray-100">
                     <div className="grid grid-cols-2 gap-3 flex-1 overflow-y-auto max-h-80">
                       {jointFillerProducts.map((product) => {
                         const requiredQty = calculateRequiredQuantity(product)

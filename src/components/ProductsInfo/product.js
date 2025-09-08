@@ -12,8 +12,8 @@ export const tileAdhesive = [
     packaging: "20 Kg Bag",
     coverage: "As a guide: 1.2kg/m/mm of thickness (Consumption may vary depending on the evenness on the substrate, trowel notch size, type of tile and the application technique.)",
     shelflife: "Until 12 months since the date of production when stored in undamaged dry conditions and original packaging.",
-    characteristics: "For Gres and vitrified tiles, Control tile slippage ceramic tiles, Application up to 10mm, Prolonged workability, Adjustable surfaces, Excellent workability, plaster, cement ground coat",
-    scope: "SENZO S-11 is a tile adhesive designed, for Gres tiles and glazed, terracotta, Indoor use, On horizontal and vertical, On cement and cement-lime, Cement screeds and concrete",
+    characteristics: "For Gres and vitrified tiles, Control tile slippage ceramic tiles, Application up to 10mm, Prolonged workability, Adjustable surfaces, Excellent workability plaster cement ground coat",
+    scope: "SENZO S-11 is a tile adhesive designed for Gres tiles and glazed terracotta, Indoor use, On horizontal and vertical, On cement and cement-lime, Cement screeds and concrete",
     itemNo: "S-11"
     
   },
@@ -30,30 +30,13 @@ export const tileAdhesive = [
     packaging: "20 Kg Bag",
     coverage: "As a guide: 1.2kg/m/mm of thickness (Consumption may vary depending on the evenness on the substrate, trowel notch size, type of tile and the application technique.)",
     shelflife: "Until 12 months since the date of production when stored in undamaged dry conditions and original packaging.",
-    characteristics: "Perfect adherence adhesive, Allows installation of tiles from top towards the bottom, Ideal for new tile flooring surfaces-Application up to 10mm plaster & Creamy ground coats Bled open time",
-    scope: "SENZO S-21 is a tile adhesive designed for vitrified tiles and glazed, terracotta Indoor use On horizontal and vertical On cement and cement-lime Cement screeds and concrete",
+    characteristics: "Perfect adherence adhesive, Allows installation of tiles from top towards the bottom, Ideal for new tile flooring surfaces, Application up to 10mm plaster, Smooth & Creamy ground coats, Extended open time",
+    scope: "SENZO S-21 is a tile adhesive designed for vitrified tiles and glazed terracotta, Indoor use,On horizontal and vertical, On cement and cement-lime, Cement screeds and concrete",
     itemNo: "S-21",
   },
 
   {
     id: 3,
-    name: "HIGHLY DEFORMABLE TILE & STONE ADHESIVE",
-    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146320/S-51_yl5yjh.png",
-    description: "Highly flexible, polymer fibre modified special adhesive mortar for installing vitrified and natural stone slabs with high safety reserves.",
-    slug: "deformable-tile",
-    colours: "Grey & White",
-    achievedThickness: "Upto 15 mm",
-    standard: "C2 TE S2 as per EN/TYPE 4 T S2 as per IS",
-    packaging: "20 Kg Bag",
-    coverage: "As a guide: 1.2kg/m/mm of thickness (Consumption may vary depending on the evenness on the substrate, trowel notch size, type of tile and the application technique.)",
-    shelflife: "Until 12 months since the date of production when stored in undamaged dry conditions and original packaging.",
-    characteristics: "For use on difficult substrates For tile and stones of size more than 1200 x 1200 mm",
-    scope: "SENZO S-51 is used to laying vitrified tiles (semi and fully), cement and stone tiles, large format and heavy duty tiles, thin tiles.Its features keep elastic connection with substrate which allowed to carry over shear stresses between tile and substrate.On horizontal and vertical surfaces",
-    itemNo: "S-51",
-  },
-
-  {
-    id: 4,
     name: "POLYMER MODIFIED TILE & STONE ADHESIVE",
     image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146320/S-31_gesscu.png",
     description: "Universal fibre modified, Thin bed and middle bed adhesive for application of ceramic tiles, vitrified tiles and natural stone on wall & floor in internal and external application.",
@@ -64,26 +47,43 @@ export const tileAdhesive = [
     packaging: "20 Kg Bag",
     coverage: "As a guide: 1.2kg/m/mm of thickness (Consumption may vary depending on the evenness on the substrate, trowel notch size, type of tile and the application technique.)",
     shelflife: "Until 12 months since the date of production when stored in undamaged dry conditions and original packaging.",
-    characteristics: "For ceramic, vitrified (semi and fully) tiles, glass mosaic and natural stone (non-sensitive) On balconies, terraces, wet rooms and bathrooms Da water proof and moisture proof layers For inside and outside useLonger open time for safer application Application up to 12mm For Tile on Tile application",
-    scope: "SENZO S-31 adhesive mortar for layramic tile, vitrified (semi and fully) tiles and al stone (non sensitive & color fast).Indoors and Outdoors.Senzo S-31mortars can be used in room exposed to water.It is recommended for floors with elevated functional loads, in shopping malls, staircas",
+    characteristics: "For ceramic vitrified (semi and fully) tiles glass mosaic and natural stone (non-sensitive)., On balconies terraces wet rooms and bathrooms., Oa water proof and moisture proof layers For inside and outside use, Longer open time for safer application, Application Up to 12mm., For Tile on Tile application",
+    scope: "SENZO S-31 adhesive mortar for layramic tile  vitrified (semi and fully) tiles and al stone (non sensitive & color fast),Indoors and Outdoors.,Senzo S-31mortars can be used in room exposed to water.,It is recommended for floors with elevated functional loads in shopping malls staircas.",
     itemNo: "S-31",
   },
 
   {
-    id: 5,
+    id: 4,
     name: "DEFORMABLE TILE & STONE ADHESIVE",
     image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146320/S-41_ppe6yv.png",
     description: "Deformable cementitious, polymer fibre modified adhesive with improved characteristic, slip resistance and extended open time. High performance adhesive for installing vitrified tiles, large scale tiles, thin tiles and slabs as well as natural stones.",
-    slug: "deformable-tile",
+    slug: "deformable-tile-stone",
     colours: "Grey & White",
     achievedThickness: "Upto 15 mm",
     standard: "C2 TEST as per EN/TYPE 4T S1 as per IS",
     packaging: "20 Kg Bag",
     coverage: "As a guide: 1.2kg/m/mm of thickness (Consumption may vary depending on the evenness on the substrate, trowel notch size, type of tile and the application technique.)",
     shelflife: "Until 12 months since the date of production when stored in undamaged dry conditions and original packaging.",
-    characteristics: "With visible fibres for strength and flexibility balancing substrate deformations on critical surfaces like balconies, terraces, wet rooms, bathrooms, swimming pool and external facade etc. For ceramic, vitrified tiles (semi and fully), glass mosaic and natural stone (non-sensitive) Suitable for large scale and heavy duty vitrified tiles",
-    scope: "SENZO S-41 is used to laying vitrified tilles (semi and fully), cement and stone tihus, large format and heavy duty tiles, thin tiles. Its features keep elastic connection with substrate which allowed to carry over shear stresses between tile and substrate. On horizontal and vertical surface - Polymer Modified Bonds with various substrates",
+    characteristics: "With visible fibres for strength and flexibility balancing substrate deformations on critical surfaces like balconies terraces wet rooms bathrooms swimming pool and external facade etc., For ceramic vitrified tiles (semi and fully) glass mosaic and natural stone (non-sensitive), Suitable for large scale and heavy duty vitrified tiles",
+    scope: "SENZO S-41 is used to laying vitrified tilles (semi and fully) cement and stone tihus large format and heavy duty tiles thin tiles., Its features keep elastic connection with substrate which allowed to carry over shear stresses between tile and substrate., On horizontal and vertical surface - Polymer Modified Bonds with various substrates",
     itemNo: "S-41",
+  },
+
+    {
+    id: 5,
+    name: "HIGHLY DEFORMABLE TILE & STONE ADHESIVE",
+    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146320/S-51_yl5yjh.png",
+    description: "Highly flexible, polymer fibre modified special adhesive mortar for installing vitrified and natural stone slabs with high safety reserves.",
+    slug: "deformable-tile",
+    colours: "Grey & White",
+    achievedThickness: "Upto 15 mm",
+    standard: "C2 TE S2 as per EN/TYPE 4 T S2 as per IS",
+    packaging: "20 Kg Bag",
+    coverage: "As a guide: 1.2kg/m/mm of thickness (Consumption may vary depending on the evenness on the substrate, trowel notch size, type of tile and the application technique.)",
+    shelflife: "Until 12 months since the date of production when stored in undamaged dry conditions and original packaging.",
+    characteristics: "For use on difficult substrates, For tile and stones of size more than 1200 x 1200 mm, For indoor and Outdoor use, Application up to 15mm",
+    scope: "SENZO S-51 is used to laying vitrified tiles (semi and fully) cement and stone tiles large format and heavy duty tiles thin tiles., Its features keep elastic connection with substrate which allowed to carry over shear stresses between tile and substrate., On horizontal and vertical surfaces",
+    itemNo: "S-51",
   },
 ]
 
@@ -164,10 +164,11 @@ export const groutGlitter = [
     dose: "50 gm in 1kg of SENZO PREMIUM EPOXY GROUT",
     shelfLife: "Best Before 24 Months from the month of packing if stored properly In undamaged original sealed packaging in dry and cooled conditions",
     characteristics: "Mix easily - Permanent shine - Eco friendly - Stain free - Water resistant - Excellent chemical resistance",
-    scope: "All types of ceramic tile, glazed tiles, porcelain tiles, vitrified & fully vitrified tiles, natural stones, large format tiles, glass mosaic tiles, composites & engineered stone",
+    scope: "All types of ceramic tile glazed tiles porcelain tiles vitrified & fully vitrified tiles natural stones large format tiles glass mosaic tiles composites & engineered stone",
 
   }
 ]
+
 
 
 export const groutHardner = [
@@ -206,7 +207,7 @@ export const TileCleaner = [
 
     shelfLife: "24 months (in original unopened container. Store in dry conditions between 5°C and 30°C, Protect from direct sunlight.",
 
-    characteristics: "Ready to Use - Fast acting - Easy to apply and use - Removes cement film = Removes, residues, efflorescence and most - oxide stains - For interior & exterior cleaning applications of - Tiles surfaces floor and wall",
+    characteristics: "Ready to Use - Fast acting - Easy to apply and use - Removes cement film - Removes, residues, efflorescence and most oxide stains - For interior & exterior cleaning applications of Tiles surfaces floor and wall",
 
     scope: "All Unglazed Ceramic Tile - Glazed ceramic Tile - Glass Tile - Vitrified Tile - Glass Mosaic Tile - Porcelain Tile - Quarry (Pre-wet surface prior to application to reduce absorption) - Terracotta (Pre-wet surface prior to application to reduce absorption) - Stone (Pre-wet surface prior to application to reduce absorption)",
 
@@ -250,7 +251,7 @@ export const grout2k = [
     slug: "2k-grout",
     coverage: "The 2K Highly polymer Grout is a cutting-edge, two-component system designed to deliver exceptional results in tile grouting. This exceptional product comes in two parts: a liquid component and a powder compnent, which are mixed onsite to unleash its full ptential.",
 
-    applications: "Indoor and outdoor tile grouting Residential and commercial projects Bathrooms, kitchens, living spaces and other areas with tiled surfaces.Swimming pools and water feature.",
+    applications: "Indoor and outdoor tile grouting Residential and commercial projects, Bathrooms kitchens living spaces and other areas with tiled surfaces., Swimming pools and water feature.",
 
 
     keyFeatures: [

@@ -104,7 +104,7 @@ export default function ProductDetail() {
   }, [slug]);
 
     const handleClick = () => {
-    const phoneNumber = "919876543210"; 
+    const phoneNumber = "+918700630602"; 
     const message = `Hello, I’m interested in ${product?.name}. Please share more details.`;
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");

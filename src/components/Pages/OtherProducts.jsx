@@ -84,7 +84,7 @@ const OtherProducts = () => {
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="px-5 py-2 text-sm font-medium text-white bg-gradient-to-r from-red-500 to-red-700 rounded-full shadow-md hover:shadow-lg transition"
+                      className="px-5 py-2 text-sm font-medium text-white bg-gradient-to-r from-purple-500 to-purple-700 rounded-full shadow-md hover:shadow-lg transition cursor-pointer"
                     >
                       View Details →
                     </motion.button>

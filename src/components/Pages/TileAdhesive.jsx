@@ -57,8 +57,9 @@ const TileAdhesive = () => {
                   </p>
 
                   {/* Badges */}
+
                   <div className="flex flex-wrap gap-2 mb-6">
-                    <span className="flex items-center gap-1 bg-gradient-to-r from-red-100 to-red-200 text-red-800 text-xs px-3 py-1 rounded-full">
+                    <span className="flex items-center gap-1 bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">
                       <Palette size={14} /> {product.colours}
                     </span>
                     <span className="flex items-center gap-1 bg-gradient-to-r from-blue-100 to-blue-200 text-blue-800 text-xs px-3 py-1 rounded-full">
@@ -74,7 +75,7 @@ const TileAdhesive = () => {
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="px-5 py-2 text-sm font-medium text-white bg-gradient-to-r from-red-500 to-red-700 rounded-full shadow-md hover:shadow-lg transition cursor-pointer"
+                      className="px-5 py-2 text-sm font-medium text-white bg-gradient-to-r from-purple-500 to-purple-700 rounded-full shadow-md hover:shadow-lg transition cursor-pointer"
                     >
                       View Details →
                     </motion.button>

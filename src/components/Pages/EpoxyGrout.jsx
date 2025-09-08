@@ -28,7 +28,7 @@ const EpoxyGrout = () => {
         className="text-center py-16 px-6"
       >
         <h1 className="text-5xl font-bold text-gray-900 mb-4">
-          Epoxy Grout Products
+          Grouting Solutions
         </h1>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
           Premium grouting solutions for perfect tile joints. Our epoxy grouts
