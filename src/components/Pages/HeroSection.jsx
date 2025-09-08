@@ -11,21 +11,21 @@ const sections = [
     id: 0,
     title: "TILES ADHESIVE",
     image: one,
-    color: "#E7E7E7",
+    color: "#6b4843",
     slug: "tile-adhesive",
   },
   {
     id: 1,
     title: "EPOXY GROUT",
     image: two,
-    color: "#CFCFCF",
+    color: "#694440",
     slug: "epoxy-grout",
   },
   {
     id: 2,
     title: "OTHER PRODUCTS",
     image: three,
-    color: "#B6B6B6",
+    color: "#613e3a",
     slug: "other-products",
   },
 ];
@@ -69,7 +69,7 @@ const HeroSection = () => {
       {sections.map((section, index) => (
         <motion.div
           key={section.id}
-          className="relative flex-1 cursor-pointer overflow-hidden flex flex-col items-center justify-center p-8"
+          className="relative flex-1  overflow-hidden flex flex-col items-center justify-center p-8"
           style={{ backgroundColor: section.color }}
           initial={isMobile ? { flexBasis: "20%" } : { flexGrow: 1 }}
           animate={
@@ -82,7 +82,7 @@ const HeroSection = () => {
         >
           {/* Title */}
           <motion.h2
-            className="absolute text-[#6E6E6E] font-bold"
+            className="absolute text-white font-bold"
             style={{ zIndex: 3 }}
             initial={{
               top: "50%",

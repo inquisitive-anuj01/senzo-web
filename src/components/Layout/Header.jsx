@@ -12,6 +12,8 @@ import {
 } from "react-icons/fi";
 import { Link, useNavigate } from "react-router-dom";
 
+import logo from "../../assets/Images/senzo-black.png"
+
 // Import your product data
 import { tileAdhesive } from "../ProductsInfo/product.js";
 import { epoxyGrout, tileGrout, groutGlitter, groutHardner } from "../ProductsInfo/product.js";
@@ -189,7 +191,7 @@ const Header = () => {
       <header
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-white/70 backdrop-blur-md shadow-md"
+            ? "bg-white/20 backdrop-blur-md shadow-md"
             : "bg-white shadow-md"
         }`}
       >
@@ -200,29 +202,7 @@ const Header = () => {
                 <div className="relative cursor-pointer"
                   onClick={()=> navigate('/')}
                 >
-                  <svg
-                    width="120"
-                    height="40"
-                    viewBox="0 0 120 40"
-                    className="text-red-600"
-                  >
-                    <rect
-                      x="0"
-                      y="0"
-                      width="120"
-                      height="40"
-                      fill="currentColor"
-                      rx="8"
-                    />
-                    <text
-                      x="60"
-                      y="26"
-                      textAnchor="middle"
-                      className="fill-white font-bold text-lg"
-                    >
-                      SENZO
-                    </text>
-                  </svg>
+                <img src={logo} alt="Senzo Logo" className="h-20 w-auto" />
                 </div>
               </div>
             </div>
@@ -235,7 +215,7 @@ const Header = () => {
                 onMouseEnter={() => handleMouseEnter("products")}
                 onMouseLeave={handleMouseLeave}
               >
-                <button className="flex items-center space-x-1 text-gray-700 hover:text-red-600 font-medium py-9.5 relative">
+                <button className="flex items-center space-x-1 text-black hover:text-red-500 font-medium py-9.5 relative">
                   <span>Products</span>
                   {activeDropdown === "products" ? (
                     <FiChevronUp />
@@ -261,7 +241,7 @@ const Header = () => {
                           }
                         ></div>
                         <div className="relative z-10">
-                          <h3 className="font-semibold text-gray-800 px-3 mb-4 text-left">
+                          <h3 className="font-semibold text-black px-3 mb-4 text-left">
                             Categories
                           </h3>
                           <ul className="space-y-2">
@@ -272,7 +252,7 @@ const Header = () => {
                                     className={`w-full text-left px-3 py-2 rounded-md transition-colors ${
                                       activeProductCategory === key
                                         ? "bg-red-50 text-red-600 font-medium"
-                                        : "text-gray-600 hover:bg-gray-50"
+                                        : "text-black hover:bg-gray-50"
                                     }`}
                                     onMouseEnter={() =>
                                       setActiveProductCategory(key)
@@ -289,7 +269,7 @@ const Header = () => {
 
                       {/* Right Side - Products Grid */}
                       <div className="w-3/4 pl-6">
-                        <h3 className="font-semibold text-gray-800 mb-4">
+                        <h3 className="font-semibold text-black mb-4">
                           {productCategories[activeProductCategory]?.name}
                         </h3>
                         <div className="grid grid-cols-3 gap-4">
@@ -309,10 +289,10 @@ const Header = () => {
                                 alt={product.name}
                                 className="w-20 h-20 mx-auto mb-2 object-contain"
                               />
-                              <p className="text-sm text-gray-900 mb-1 font-bold">
+                              <p className="text-sm text-black mb-1 font-bold">
                                 {product.itemNo || ""}
                               </p>
-                              <p className="text-sm text-gray-700 font-medium">
+                              <p className="text-sm text-black font-medium">
                                 {product.name} 
                               </p>
                             </div>
@@ -330,10 +310,10 @@ const Header = () => {
                 onMouseEnter={() => handleMouseEnter("tools")}
                 onMouseLeave={handleMouseLeave}
               >
-                <button className="flex items-center space-x-1 text-gray-700 hover:text-red-600 font-medium py-9.5 relative">
+                <button className="flex items-center space-x-1 text-black hover:text-red-500 font-medium py-9.5 relative">
                   <span>Tools</span>
                   {activeDropdown === "tools" ? (
-                    <FiChevronUp />
+                    <FiChevronUp/>
                   ) : (
                     <FiChevronDown />
                   )}
@@ -350,10 +330,10 @@ const Header = () => {
                             setActiveDropdown(null);
                           }}
                           key={index}
-                          className="w-full flex items-center space-x-3 px-4 py-3 text-left rounded-lg hover:bg-gray-50 transition-colors"
+                          className="w-full flex items-center space-x-3 px-4 py-3 text-left rounded-lg hover:bg-gray-200 transition-colors"
                         >
                           <tool.icon className="text-red-600 text-lg" />
-                          <span className="text-gray-700 font-medium">
+                          <span className="text-black font-medium">
                             {tool.name}
                           </span>
                         </button>
@@ -363,20 +343,24 @@ const Header = () => {
                 )}
               </div>
 
-              <a
-                href="/about"
-                className="relative group text-gray-700 hover:text-red-600 font-medium py-9"
+              <Link
+                to="/about"
+                className="relative group text-black hover:text-red-500 font-medium py-9"
               >
                 <span>About Us</span>
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2  w-[140%] h-[2px] bg-red-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></div>
-              </a>
+              </Link>
             </nav>
 
             <div className="flex items-center space-x-4 ">
               {/* Helpline Button */}
               <button
                 onClick={openWhatsApp}
-                className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-full flex items-center space-x-2 transition-colors"
+                className={ ` text-black px-4 py-2 rounded-full flex items-center space-x-2 transition-colors border border-gray-300 shadow-md font-medium ${
+                    isScrolled
+                      ? "bg-white/20 backdrop-blur-md "
+                      : "bg-white hover:bg-gray-300"
+                  }`}
               >
                 <FiPhone className="text-lg" />
                 <span className="hidden sm:inline font-medium">Helpline</span>

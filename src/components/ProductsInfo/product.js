@@ -93,6 +93,9 @@ export const epoxyGrout =[
     id: 1,
     name: "EPOXY GROUT 1KG",
     image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146319/Epoxy_Grout_1kg___iymtto.png",
+    hardnerImg: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146321/Hardner_1kg_xkbhxr.png",
+    resinImg: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146321/Resin_1_kg_ib0qw1.png",
+
     slug: "epoxy-grout-1kg",
     description: "Three component chemical resistant epoxy grout for grouting of tiles, mosaics and stones, where hygiene is of utmost importance such as bathrooms, kitchens, living room, bedroom, hospitals, laboratories, food & beverages industries, dairy industries, swimming pools, showrooms, airports and high traffic areas. It is stain free grout for interior and covered exterior floor and wall. It is chemical resistant Joint filler and is available in 24 colors.",
 
@@ -113,8 +116,10 @@ export const epoxyGrout =[
     id: 2,
     name: "EPOXY GROUT 5KG",
     image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146319/Epoxy_Grout_5kg_jc60gr.png",
+    hardnerImg: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146321/Hardner_5kg_stviab.png",
+    resinImg: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146321/Resin_5Kg_hfse9n.png",
     slug: "epoxy-grout-5kg",
-    description: "",
+    description: "Three component chemical resistant epoxy grout for grouting of tiles, mosaics and stones, where hygiene is of utmost importance such as bathrooms, kitchens, living room, bedroom, hospitals, laboratories, food & beverages industries, dairy industries, swimming pools, showrooms, airports and high traffic areas.It is stain free grout for interior and covered exterior floor and wall. It is chemical resistant joint filler and is available in 24 colors.",
     mixingRatio: "Part A (Resin) 900ml, Part B (Hardener) 450ml, Part C (Filler) 730kg",
 
     packaging: "1 kg Packing and 5 kg Packing (A+B+C)",
@@ -201,7 +206,7 @@ export const TileCleaner = [
 
     shelfLife: "24 months (in original unopened container. Store in dry conditions between 5°C and 30°C, Protect from direct sunlight.",
 
-    characteristics: "Ready to Use - Fast acting = Easy to apply and use - Removes cement film = Removes, residues, efflorescence and most - oxide stains - For interior & exterior cleaning applications of - Tiles surfaces floor and wall",
+    characteristics: "Ready to Use - Fast acting - Easy to apply and use - Removes cement film = Removes, residues, efflorescence and most - oxide stains - For interior & exterior cleaning applications of - Tiles surfaces floor and wall",
 
     scope: "All Unglazed Ceramic Tile - Glazed ceramic Tile - Glass Tile - Vitrified Tile - Glass Mosaic Tile - Porcelain Tile - Quarry (Pre-wet surface prior to application to reduce absorption) - Terracotta (Pre-wet surface prior to application to reduce absorption) - Stone (Pre-wet surface prior to application to reduce absorption)",
 
