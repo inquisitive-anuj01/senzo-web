@@ -220,7 +220,7 @@ const Footer = () => {
                 href="mailto:senzoadhesives@gmail.com"
                 className="hover:text-white transition-colors duration-300"
               >
-                senzoadhesives@gmail.com
+                info@senzoadhesives.com
               </a>
             </motion.div>
           </div>

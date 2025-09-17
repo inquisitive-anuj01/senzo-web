@@ -12,14 +12,11 @@ import {
   grout2k,
 } from "../ProductsInfo/product";
 
-
-
-
 const splitPoints = (text) => {
   if (!text || typeof text !== "string") return [];
   const hasDash = text.includes(" - ");
   const parts = (hasDash ? text.split(" - ") : text.split(/[,;\n•]+/))
-    .map(s => s.replace(/^\-+/, "").trim())
+    .map((s) => s.replace(/^\-+/, "").trim())
     .filter(Boolean);
   return [...new Set(parts)];
 };
@@ -27,11 +24,18 @@ const splitPoints = (text) => {
 const collectImages = (p) => {
   const out = [];
   const keys = [
-    "images", "image", "imgUrl", "imageUrl",
-    "hardnerImg", "hardner",
-    "resinImg", "resin", "fillerImg", "filler",
+    "images",
+    "image",
+    "imgUrl",
+    "imageUrl",
+    "hardnerImg",
+    "hardner",
+    "resinImg",
+    "resin",
+    "fillerImg",
+    "filler",
   ];
-  keys.forEach(k => {
+  keys.forEach((k) => {
     if (Array.isArray(p?.[k])) out.push(...p[k]);
     else if (p?.[k]) out.push(p[k]);
   });
@@ -48,7 +52,9 @@ const FieldRow = ({ label, value }) => {
       className="bg-gray-50 border border-gray-200 p-4 rounded-lg shadow-sm hover:shadow-md transition"
     >
       <p className="text-sm font-medium text-gray-500">{label}</p>
-      <p className="text-gray-900 font-semibold mt-1 leading-relaxed">{value}</p>
+      <p className="text-gray-900 font-semibold mt-1 leading-relaxed">
+        {value}
+      </p>
     </motion.div>
   );
 };
@@ -68,9 +74,7 @@ const BulletList = ({ title, items, checkmark = false }) => {
             transition={{ delay: i * 0.03 }}
             className="flex items-start bg-gray-50 border border-gray-200 rounded-lg p-3 shadow-sm hover:shadow-md transition"
           >
-            <span className="mr-2 text-gray-900">
-              {checkmark ? "✔" : "•"}
-            </span>
+            <span className="mr-2 text-gray-900">{checkmark ? "✔" : "•"}</span>
             <span className="text-gray-700">{it}</span>
           </motion.li>
         ))}
@@ -103,10 +107,12 @@ export default function ProductDetail() {
     window.scrollTo(0, 0);
   }, [slug]);
 
-    const handleClick = () => {
-    const phoneNumber = "+918700630602"; 
+  const handleClick = () => {
+    const phoneNumber = "+918700630602";
     const message = `Hello, I’m interested in ${product?.name}. Please share more details.`;
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      message
+    )}`;
     window.open(url, "_blank");
   };
 
@@ -115,12 +121,15 @@ export default function ProductDetail() {
     if (!product) return [];
     return [
       { label: "Colours", value: product.colours },
-      { label: "Achieved Thickness", value: product.achievedThickness || product.thickness },
+      {
+        label: "Achieved Thickness",
+        value: product.achievedThickness || product.thickness,
+      },
       { label: "Standard", value: product.standard },
       { label: "Packaging", value: product.packaging },
       { label: "Coverage", value: product.coverage },
       { label: "Shelf Life", value: product.shelfLife || product.shelflife },
-    ].filter(f => !!f.value);
+    ].filter((f) => !!f.value);
   }, [product]);
 
   const technicalFields = useMemo(() => {
@@ -133,12 +142,18 @@ export default function ProductDetail() {
       { label: "Dose", value: product.dose },
       { label: "Recommended Joint", value: product.recommendedTileJoint },
       { label: "Item No.", value: product.itemNo },
-    ].filter(f => !!f.value);
+    ].filter((f) => !!f.value);
   }, [product]);
 
-  const characteristics = useMemo(() => splitPoints(product?.characteristics), [product]);
+  const characteristics = useMemo(
+    () => splitPoints(product?.characteristics),
+    [product]
+  );
   const scopes = useMemo(() => splitPoints(product?.scope), [product]);
-  const applications = useMemo(() => splitPoints(product?.applications), [product]);
+  const applications = useMemo(
+    () => splitPoints(product?.applications),
+    [product]
+  );
 
   if (loading) {
     return (
@@ -152,7 +167,9 @@ export default function ProductDetail() {
     return (
       <div className="min-h-screen flex items-center justify-center px-6">
         <div className="text-center">
-          <h2 className="text-2xl font-bold text-gray-900">Product Not Found</h2>
+          <h2 className="text-2xl font-bold text-gray-900">
+            Product Not Found
+          </h2>
           <p className="text-gray-600 mt-2">
             The product you’re looking for doesn’t exist.
           </p>
@@ -195,7 +212,11 @@ export default function ProductDetail() {
                     } bg-gray-50`}
                     aria-label={`thumbnail ${idx + 1}`}
                   >
-                    <img src={img} alt={`thumb-${idx}`} className="w-full h-full object-contain" />
+                    <img
+                      src={img}
+                      alt={`thumb-${idx}`}
+                      className="w-full h-full object-contain"
+                    />
                   </button>
                 ))}
               </div>
@@ -212,6 +233,20 @@ export default function ProductDetail() {
             >
               {product.name}
             </motion.h1>
+
+            {product.usage && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.35, delay: 0.1 }}
+                style={{ backgroundColor: product.bg || "#f5f5f5" }}
+                className="mt-4 border rounded-xl p-4 shadow-sm"
+              >
+                <p className="text-lg font-semibold text-white drop-shadow-sm">
+                  {product.usage}
+                </p>
+              </motion.div>
+            )}
 
             {product.heading && (
               <p className="mt-3 text-lg text-gray-600">{product.heading}</p>
@@ -236,8 +271,9 @@ export default function ProductDetail() {
                 Contact us for pricing and more details.
               </p>
               <button
-              onClick={handleClick}
-              className="bg-gray-900 hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                onClick={handleClick}
+                className="bg-gray-900 hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+              >
                 Request Quote
               </button>
             </motion.div>
@@ -245,9 +281,11 @@ export default function ProductDetail() {
         </div>
 
         {/* key specifications */}
-        {(specFields.length > 0) && (
+        {specFields.length > 0 && (
           <div className="mt-16">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Key Specifications</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              Key Specifications
+            </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {specFields.map((f, i) => (
                 <FieldRow key={i} label={f.label} value={f.value} />
@@ -257,9 +295,11 @@ export default function ProductDetail() {
         )}
 
         {/* technical data */}
-        {(technicalFields.length > 0) && (
+        {technicalFields.length > 0 && (
           <div className="mt-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Technical Data</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              Technical Data
+            </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {technicalFields.map((f, i) => (
                 <FieldRow key={i} label={f.label} value={f.value} />
@@ -274,31 +314,40 @@ export default function ProductDetail() {
         <BulletList title="Applications" items={applications} />
 
         {/* keyFeatures array support */}
-        {Array.isArray(product.keyFeatures) && product.keyFeatures.length > 0 && (
-          <div className="mt-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Key Features (Details)</h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              {product.keyFeatures.map((k) => (
-                <motion.div
-                  key={k.id || k.name}
-                  initial={{ opacity: 0, y: 8 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="bg-gray-50 border border-gray-200 rounded-xl p-5 shadow-sm hover:shadow-md transition"
-                >
-                  <p className="font-semibold text-gray-900 mb-1">{k.name}</p>
-                  <p className="text-gray-700 text-sm leading-relaxed">{k.description}</p>
-                </motion.div>
-              ))}
+        {Array.isArray(product.keyFeatures) &&
+          product.keyFeatures.length > 0 && (
+            <div className="mt-12">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                Key Features (Details)
+              </h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                {product.keyFeatures.map((k) => (
+                  <motion.div
+                    key={k.id || k.name}
+                    initial={{ opacity: 0, y: 8 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="bg-gray-50 border border-gray-200 rounded-xl p-5 shadow-sm hover:shadow-md transition"
+                  >
+                    <p className="font-semibold text-gray-900 mb-1">{k.name}</p>
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      {k.description}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
         {/* recommendations / notes */}
         {product.recommended && (
           <div className="mt-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Recommendations</h2>
-            <p className="text-gray-700 leading-relaxed">{product.recommended}</p>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+              Recommendations
+            </h2>
+            <p className="text-gray-700 leading-relaxed">
+              {product.recommended}
+            </p>
           </div>
         )}
       </div>

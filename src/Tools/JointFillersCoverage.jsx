@@ -20,12 +20,7 @@ const jointFillerProducts = [
     image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146329/Tile_Grout_nd7www.png",
     coverage: 0.12,
   },
-  {
-    id: "3",
-    name: "EPOXY GROUT GLITTER",
-    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146319/Epoxy_filler_o3tshe.png",
-    coverage: 0.18,
-  },
+  
 ]
 
 function JointFillersCoverage() {
@@ -204,7 +199,7 @@ function JointFillersCoverage() {
                             type="number"
                             value={totalArea}
                             onChange={(e) => setTotalArea(e.target.value)}
-                            placeholder="200"
+                            placeholder="Enter total area"
                             className="bg-white text-black transition-all duration-200   text-sm outline-none"
                           />
                           <Select value={areaUnit} onValueChange={setAreaUnit}>
@@ -221,7 +216,7 @@ function JointFillersCoverage() {
                       </div>
 
                       <div>
-                        <Label htmlFor="tileWidth" className="text-white mb-2 block text-sm">
+                        <Label htmlFor="tileWidth" className="text-black mb-2 block text-sm">
                           Tile Width (1-5000)
                         </Label>
                         <div className="flex gap-2">
@@ -230,7 +225,7 @@ function JointFillersCoverage() {
                             type="number"
                             value={tileWidth}
                             onChange={(e) => setTileWidth(e.target.value)}
-                            placeholder="60"
+                            placeholder="enter tile width"
                             min="1"
                             max="5000"
                             className="bg-white text-black transition-all duration-200 focus:ring-2 focus:ring-green-500 text-sm"
@@ -243,7 +238,7 @@ function JointFillersCoverage() {
                       </div>
 
                       <div>
-                        <Label htmlFor="tileLength" className="text-white mb-2 block text-sm">
+                        <Label htmlFor="tileLength" className="text-black mb-2 block text-sm">
                           Tile Length (1-5000)
                         </Label>
                         <div className="flex gap-2">
@@ -252,7 +247,7 @@ function JointFillersCoverage() {
                             type="number"
                             value={tileLength}
                             onChange={(e) => setTileLength(e.target.value)}
-                            placeholder="30"
+                            placeholder="enter tile length"
                             min="1"
                             max="5000"
                             className="bg-white text-black transition-all duration-200 focus:ring-2 focus:ring-green-500 text-sm"
@@ -289,8 +284,8 @@ function JointFillersCoverage() {
                     <div className="lg:w-1/2">
                       <h4 className="font-semibold mb-4 text-sm">Enter Length of Tile Joint Filler</h4>
                       <div>
-                        <Label htmlFor="totalLength" className="text-white mb-2 block text-sm">
-                          Total Length of Tile Joint Filler
+                        <Label htmlFor="totalLength" className="text-black mb-2 block text-sm">
+                          Total Length
                         </Label>
                         <div className="flex gap-2">
                           <Input
@@ -328,7 +323,7 @@ function JointFillersCoverage() {
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <Label htmlFor="jointWidth" className="text-white mb-2 block text-sm">
+                      <Label htmlFor="jointWidth" className="text-black mb-2 block text-sm">
                         Joint Width (1-5000)
                       </Label>
                       <div className="flex gap-2">
@@ -337,7 +332,7 @@ function JointFillersCoverage() {
                           type="number"
                           value={jointWidth}
                           onChange={(e) => setJointWidth(e.target.value)}
-                          placeholder="10"
+                          placeholder="Enter joint width"
                           min="1"
                           max="5000"
                           className="bg-white text-black transition-all duration-200 focus:ring-2 focus:ring-green-500 text-sm"
@@ -350,7 +345,7 @@ function JointFillersCoverage() {
                     </div>
 
                     <div>
-                      <Label htmlFor="tileThickness" className="text-white mb-2 block text-sm">
+                      <Label htmlFor="tileThickness" className="text-black mb-2 block text-sm">
                         Tile Thickness (1-5000)
                       </Label>
                       <div className="flex gap-2">
@@ -359,7 +354,7 @@ function JointFillersCoverage() {
                           type="number"
                           value={tileThickness}
                           onChange={(e) => setTileThickness(e.target.value)}
-                          placeholder="20"
+                          placeholder="Enter tile thickness"
                           min="1"
                           max="5000"
                           className="bg-white text-black transition-all duration-200 focus:ring-2 focus:ring-green-500 text-sm"
@@ -408,7 +403,7 @@ function JointFillersCoverage() {
                             <img
                               src={product.image || "/placeholder.svg"}
                               alt={product.name}
-                              className="w-40 h-40 mx-auto mb-2 object-contain"
+                              className="w-50 h-50 mx-auto mb-2 object-contain"
                             />
                             <h4 className="font-medium text-xs mb-1 leading-tight">{product.name}</h4>
                             <p className="text-gray-600 text-xs font-semibold">{requiredQty.toFixed(2)} Kg Required</p>

@@ -5,35 +5,40 @@ const adhesives = [
   {
     id: "1",
     name: "Tile Adhesive for Ceramic & Vitrified Tiles",
-    imgUrl: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146318/S-11_gajeor.png",
+    imgUrl:
+      "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146318/S-11_gajeor.png",
     coverageRate: 0.125,
     slug: "ceramic-tile",
   },
   {
     id: "2",
     name: "Polymer Modified Improved Tile Adhesive",
-    imgUrl: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146320/S-21_onlbrd.png",
+    imgUrl:
+      "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146320/S-21_onlbrd.png",
     coverageRate: 0.13,
     slug: "polymer-modified",
   },
   {
     id: "3",
     name: "POLYMER MODIFIED TILE & STONE ADHESIVE",
-    imgUrl: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146320/S-31_gesscu.png",
+    imgUrl:
+      "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146320/S-31_gesscu.png",
     coverageRate: 0.14,
     slug: "polymer-modified-tile",
   },
   {
     id: "4",
     name: "DEFORMABLE TILE & STONE ADHESIVE",
-    imgUrl: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146320/S-41_ppe6yv.png",
+    imgUrl:
+      "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146320/S-41_ppe6yv.png",
     coverageRate: 0.15,
     slug: "deformable-tile-stone",
   },
   {
     id: "5",
     name: "HIGHLY DEFORMABLE TILE & STONE ADHESIVE",
-    imgUrl: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146320/S-51_yl5yjh.png",
+    imgUrl:
+      "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146320/S-51_yl5yjh.png",
     coverageRate: 0.135,
     slug: "deformable-tile",
   },
@@ -84,7 +89,7 @@ const AdhesiveCoverage = () => {
   };
 
   //  Contact Us function
-const openWhatsApp = () => {
+  const openWhatsApp = () => {
     const phoneNumber = "+918700630602";
     window.open(`https://wa.me/${phoneNumber}`, "_blank");
   };
@@ -206,13 +211,21 @@ const openWhatsApp = () => {
                 <img
                   src={selectedAdhesive.imgUrl}
                   alt={selectedAdhesive.name}
-                  className="w-full h-64 object-contain mb-8 rounded-xl shadow-lg bg-white"
+                  className="w-auto h-64 object-contain mb-8 rounded-xl shadow-lg "
                   onError={(e) => {
                     e.target.onerror = null;
                     e.target.src =
                       "https://placehold.co/400x400/CCCCCC/000000?text=Image+Not+Found";
                   }}
                 />
+
+                {/*  Bags Needed */}
+                <div className="bg-lime-100 border border-lime-400 text-lime-800 px-6 py-3 rounded-xl mb-4 shadow-md">
+                  <p className="text-2xl font-bold">
+                    {Math.ceil(requiredKgs / 20)} Bags Needed
+                  </p>
+                  <p className="text-sm text-gray-600">1 Bag = 20kg</p>
+                </div>
                 <p className="text-5xl font-extrabold text-lime-600 mb-2">
                   {requiredKgs.toFixed(2)} kgs
                 </p>
