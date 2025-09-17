@@ -96,6 +96,7 @@ export const epoxyGrout =[
     image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146319/Epoxy_Grout_1kg___iymtto.png",
     hardnerImg: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146321/Hardner_1kg_xkbhxr.png",
     resinImg: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146321/Resin_1_kg_ib0qw1.png",
+    fillerImg: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146319/Epoxy_filler_o3tshe.png",
 
     slug: "epoxy-grout-1kg",
     description: "Three component chemical resistant epoxy grout for grouting of tiles, mosaics and stones, where hygiene is of utmost importance such as bathrooms, kitchens, living room, bedroom, hospitals, laboratories, food & beverages industries, dairy industries, swimming pools, showrooms, airports and high traffic areas. It is stain free grout for interior and covered exterior floor and wall. It is chemical resistant Joint filler and is available in 24 colors.",
@@ -119,6 +120,7 @@ export const epoxyGrout =[
     image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146319/Epoxy_Grout_5kg_jc60gr.png",
     hardnerImg: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146321/Hardner_5kg_stviab.png",
     resinImg: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146321/Resin_5Kg_hfse9n.png",
+    fillerImg: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146319/Epoxy_filler_o3tshe.png",
     slug: "epoxy-grout-5kg",
     description: "Three component chemical resistant epoxy grout for grouting of tiles, mosaics and stones, where hygiene is of utmost importance such as bathrooms, kitchens, living room, bedroom, hospitals, laboratories, food & beverages industries, dairy industries, swimming pools, showrooms, airports and high traffic areas.It is stain free grout for interior and covered exterior floor and wall. It is chemical resistant joint filler and is available in 24 colors.",
     mixingRatio: "Part A (Resin) 900ml, Part B (Hardener) 450ml, Part C (Filler) 730kg",
@@ -157,7 +159,7 @@ export const groutGlitter = [
   {
     id: 1,
     name: "EPOXY GROUT GLITTER",
-    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146319/Epoxy_filler_o3tshe.png",
+    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1758096539/Glitter_1_i3io2h.png",
     slug: "epoxy-grout-glitter",
     description: "SENZO Glitter are specially designed to be used as an additive and metalized effect and enhance the beauty of tiling area. It should be mixed with epoxy-based tile grout to get sparkling joints. It is recommended to use in internal & external areas under wet & dry conditions on wall & floor.",
     colours: "Gold, Silver, Copper",

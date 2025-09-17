@@ -29,7 +29,7 @@ const collectImages = (p) => {
   const keys = [
     "images", "image", "imgUrl", "imageUrl",
     "hardnerImg", "hardner",
-    "resinImg", "resin",
+    "resinImg", "resin", "fillerImg", "filler",
   ];
   keys.forEach(k => {
     if (Array.isArray(p?.[k])) out.push(...p[k]);

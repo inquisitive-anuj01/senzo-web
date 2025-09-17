@@ -122,7 +122,8 @@ const Header = () => {
           image: product.image,
           slug: product.slug
         })),
-        ...groutGlitter.map(product => ({
+        
+        ...grout2k.map(product => ({
           name: product.name,
           image: product.image,
           slug: product.slug
@@ -150,11 +151,11 @@ const Header = () => {
           image: product.image,
           slug: product.slug
         })),
-        ...grout2k.map(product => ({
+        ...groutGlitter.map(product => ({
           name: product.name,
           image: product.image,
           slug: product.slug
-        }))
+        })),
       ]
     },
   };
