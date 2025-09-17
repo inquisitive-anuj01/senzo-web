@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const ColorVisuals = () => {
   const [selectedColor, setSelectedColor] = useState(null);
@@ -10,6 +10,7 @@ const ColorVisuals = () => {
   const [animationIndex, setAnimationIndex] = useState(0);
 
   const navigate = useNavigate();
+  const intervalRef = useRef(null);
 
   const jointColors = [
     { name: "BRIGHT WHITE 24", hex: "#FFFFFF" },
@@ -44,13 +45,9 @@ const ColorVisuals = () => {
   const hexTileImage =
     "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1756450498/tilebg_n2aspr.png";
 
-  const intervalRef = useRef(null);
-
   useEffect(() => {
     if (selectedColor) {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
+      if (intervalRef.current) clearInterval(intervalRef.current);
       setIsAnimating(false);
       return;
     }
@@ -61,9 +58,7 @@ const ColorVisuals = () => {
     }, 2000);
 
     return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
+      if (intervalRef.current) clearInterval(intervalRef.current);
     };
   }, [selectedColor, jointColors.length]);
 
@@ -73,9 +68,9 @@ const ColorVisuals = () => {
 
   const currentColor = selectedColor || jointColors[animationIndex]?.hex;
 
+  // Responsive: colors per page and step
   const colorsPerPage = window.innerWidth < 768 ? 4 : 7;
-
-  const step = 4; 
+  const step = window.innerWidth < 768 ? 2 : 4;
   const totalPages = Math.ceil((jointColors.length - colorsPerPage) / step) + 1;
 
   const handleNextPage = () => {
@@ -88,8 +83,6 @@ const ColorVisuals = () => {
     setColorPage((prevPage) => (prevPage - 1 < 0 ? 0 : prevPage - 1));
   };
 
-  const startIdx = colorPage * step;
-  const colorsToShow = jointColors.slice(startIdx, startIdx + colorsPerPage);
   const handleViewMore = () => {
     navigate("/tools/tile-joint-filler-visualizer");
   };
@@ -97,16 +90,13 @@ const ColorVisuals = () => {
   return (
     <div className="relative z-20 w-full min-h-[640px] mt-[-40px] pt-[40px] flex justify-center py-12 px-4 overflow-hidden bg-[#F0EAD8] font-sans text-black rounded-t-[48px] shadow-lg">
       <div className="relative z-10 w-full max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-center gap-x-24 overflow-hidden">
-        {/* Left Section: Image and Color Swatches */}
+        {/* Left Section */}
         <div className="relative z-10 flex flex-col items-center py-12 px-4 w-full md:w-auto">
           <div className="relative w-full md:w-[600px] h-[350px] rounded-lg shadow-xl overflow-hidden">
-            {/* Dynamic Background */}
             <div
               className="absolute inset-0 transition-colors duration-500 ease-in-out"
               style={{ backgroundColor: currentColor }}
             ></div>
-
-            {/* Tile Overlay */}
             <div
               className="absolute inset-0 z-10 w-full h-full"
               style={{
@@ -121,65 +111,75 @@ const ColorVisuals = () => {
           </div>
 
           {/* Color Swatches */}
-<div className="mt-8 w-full md:w-[550px]">
-  <div className="w-full bg-white p-4 rounded-full shadow-lg overflow-hidden">
-    <div className="flex items-center justify-center">
-      {/* Prev Button */}
-      <button
-        onClick={handlePrevPage}
-        disabled={colorPage === 0}
-        className={`p-1 rounded-full transition-colors duration-200 ${
-          colorPage === 0
-            ? "text-gray-400 cursor-not-allowed"
-            : "text-gray-800 hover:bg-gray-300"
-        }`}
-      >
-        <ChevronLeft size={26} />
-      </button>
+          <div className="mt-8 w-full md:w-[550px]">
+            <div className="w-full bg-white rounded-full shadow-lg overflow-hidden">
+              <div className="flex items-center justify-center">
+                {/* Prev Button */}
+                <button
+                  onClick={handlePrevPage}
+                  disabled={colorPage === 0}
+                  className={`p-1 rounded-full transition-colors duration-200 flex-shrink-0 ${
+                    colorPage === 0
+                      ? "text-gray-400 cursor-not-allowed"
+                      : "text-gray-800 hover:bg-gray-300"
+                  }`}
+                >
+                  <ChevronLeft size={26} />
+                </button>
 
-      {/* Sliding Container */}
-      <div className="relative w-full h-12 flex-1 overflow-hidden">
-        <motion.div
-          animate={{ x: -(colorPage * (100 / colorsPerPage)) + "%" }}
-          transition={{ type: "tween", duration: 0.6, ease: "easeInOut" }}
-          className="flex items-center gap-3"
-          style={{ width: `${(jointColors.length / colorsPerPage) * 100}%` }}
-        >
-          {jointColors.map((color, index) => (
-            <div
-              key={index}
-              onClick={() => handleColorSelect(color.hex)}
-              title={color.name}
-              className={`w-10 h-10 rounded-full border-2 border-black/30 cursor-pointer transition-transform duration-200 hover:scale-110 shadow-md ${
-                selectedColor === color.hex
-                  ? "ring-1 ring-yellow-400 ring-offset-1"
-                  : ""
-              }`}
-              style={{ backgroundColor: color.hex }}
-            ></div>
-          ))}
-        </motion.div>
-      </div>
+                {/* Sliding Container */}
+                <div className="relative flex-1 overflow-hidden py-3">
+                  <motion.div
+                    animate={{
+                      x: -(colorPage * step * 56) + "px", // 56px accounts for circle width + gap
+                    }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 30,
+                      mass: 0.8,
+                    }}
+                    className="flex items-center justify-center gap-3"
+                    style={{ 
+                      width: "max-content",
+                      paddingLeft: "50%",
+                      transform: `translateX(-${(colorsPerPage * 56) / 2}px)` // Center the visible items
+                    }}
+                  >
+                    {jointColors.map((color, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleColorSelect(color.hex)}
+                        title={color.name}
+                        className={`w-10 h-10 rounded-full border-2 border-black/30 cursor-pointer transition-all duration-200 hover:scale-110 shadow-md flex-shrink-0 ${
+                          selectedColor === color.hex
+                            ? "ring-2 ring-yellow-400 ring-offset-2"
+                            : ""
+                        }`}
+                        style={{ backgroundColor: color.hex }}
+                      ></div>
+                    ))}
+                  </motion.div>
+                </div>
 
-      {/* Next Button */}
-      <button
-        onClick={handleNextPage}
-        disabled={colorPage === totalPages - 1}
-        className={`p-1 rounded-full transition-colors duration-200 ${
-          colorPage === totalPages - 1
-            ? "text-gray-400 cursor-not-allowed"
-            : "text-gray-800 hover:bg-gray-300"
-        }`}
-      >
-        <ChevronRight size={26} />
-      </button>
-    </div>
-  </div>
-</div>
-
+                {/* Next Button */}
+                <button
+                  onClick={handleNextPage}
+                  disabled={colorPage === totalPages - 1}
+                  className={`p-1 rounded-full transition-colors duration-200 flex-shrink-0 ${
+                    colorPage === totalPages - 1
+                      ? "text-gray-400 cursor-not-allowed"
+                      : "text-gray-800 hover:bg-gray-300"
+                  }`}
+                >
+                  <ChevronRight size={26} />
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Right Section: Text */}
+        {/* Right Section */}
         <div className="relative z-10 w-full md:flex-1 flex flex-col justify-center items-center text-center md:text-left md:items-start p-6 md:p-12">
           <h2 className="text-2xl lg:text-4xl font-bold leading-tight">
             Tile Joint Filler Visualizer

@@ -5,29 +5,32 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Button } from "@/components/ui/button"
 import { Search } from "lucide-react"
+import { useNavigate } from "react-router-dom"
 
 const jointFillerProducts = [
   {
-    id: "home-pride-epoxy-2",
-    name: "Home Pride Epoxy - 2 Part",
-    image: "/yellow-epoxy-joint-filler-container.png",
+    id: "1",
+    name: "EPOXY GROUT 1KG",
+    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146319/Epoxy_Grout_1kg___iymtto.png",
     coverage: 0.15,
   },
   {
-    id: "home-pride-epoxy-3",
-    name: "Home Pride Epoxy - 3 Part",
-    image: "/yellow-epoxy-joint-filler-container.png",
+    id: "2",
+    name: "TILE GROUT",
+    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146329/Tile_Grout_nd7www.png",
     coverage: 0.12,
   },
   {
-    id: "home-pride-sanded",
-    name: "Home Pride Sanded Grout",
-    image: "/yellow-sanded-grout-container.png",
+    id: "3",
+    name: "EPOXY GROUT GLITTER",
+    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146319/Epoxy_filler_o3tshe.png",
     coverage: 0.18,
   },
 ]
 
 function JointFillersCoverage() {
+
+  const navigate = useNavigate()
   // Area calculation inputs
   const [totalArea, setTotalArea] = useState("")
   const [areaUnit, setAreaUnit] = useState("sqft")
@@ -144,6 +147,12 @@ function JointFillersCoverage() {
 
     return Math.ceil(weightKg * 100) / 100 // Round up to 2 decimal places
   }
+
+
+ const openWhatsApp = () => {
+    const phoneNumber = "+918700630602";
+    window.open(`https://wa.me/${phoneNumber}`, "_blank");
+  };
 
   // Effect to recalculate when inputs change
   useEffect(() => {
@@ -415,15 +424,17 @@ function JointFillersCoverage() {
                       </p>
                       <div className="flex flex-col gap-2">
                         <Button
+                          onClick={openWhatsApp}
                           variant="outline"
                           size="sm"
-                          className="w-full text-xs bg-transparent hover:bg-gray-100 transition-colors duration-200 h-8"
+                          className="w-full text-xs bg-transparent hover:bg-gray-100 transition-colors duration-200 h-8 cursor-pointer"
                         >
                           GET IN TOUCH WITH US
                         </Button>
                         <Button
+                          onClick={() => navigate("/category/epoxy-grout")}
                           size="sm"
-                          className="w-full text-xs bg-green-600 hover:bg-green-700 transition-colors duration-200 h-8"
+                          className="w-full text-xs bg-green-600 hover:bg-green-700 transition-colors duration-200 h-8 cursor-alias"
                         >
                           View products
                         </Button>

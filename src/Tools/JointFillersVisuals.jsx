@@ -272,7 +272,18 @@ const JointFillersVisuals = () => {
     const jointColorValue = jointColor;
     const tiles = [];
 
+    // For horizontal skew: Odd rows get an extra tile.
+    // For vertical skew: Odd columns get an extra tile in each row.
+
+    let isHorizontalSkew = tileLayout === "horizontalSkew";
+    let isVerticalSkew = tileLayout === "verticalSkew";
+
+
+
     for (let row = 0; row < rows; row++) {
+
+      // isHorizontalSkew && row % 2 === 1 ? cols +  : cols;
+
       for (let col = 0; col < cols; col++) {
         let extraStyle = {};
 
@@ -894,21 +905,21 @@ const JointFillersVisuals = () => {
           transition: all 0.3s ease;
         }
 
-        .wall .tile-grid.horizontalSkew .tile {
-          transform: skewX(-5deg);
-        }
+        // .wall .tile-grid.horizontalSkew .tile {
+        //   transform: skewX(-5deg);
+        // }
 
-        .wall .tile-grid.verticalSkew .tile {
-          transform: skewY(-5deg);
-        }
+        // .wall .tile-grid.verticalSkew .tile {
+        //   transform: skewY(-5deg);
+        // }
 
-        .floor .tile-grid.horizontalSkew .tile {
-          transform: skewY(15deg) rotate(5deg);
-        }
+        // .floor .tile-grid.horizontalSkew .tile {
+        //   transform: skewY(15deg) rotate(5deg);
+        // }
 
-        .floor .tile-grid.verticalSkew .tile {
-          transform: skewX(-15deg);
-        }
+        // .floor .tile-grid.verticalSkew .tile {
+        //   transform: skewX(-15deg);
+        // }
 
         .sparkle-overlay {
           position: absolute;

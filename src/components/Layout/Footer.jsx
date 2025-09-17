@@ -75,10 +75,11 @@ const Footer = () => {
         className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 pb-12"
       >
         <motion.div
+          
           variants={itemVariants}
-          className="flex flex-col items-start text-left space-y-6"
+          className="flex flex-col items-start text-left space-y-6 "
         >
-          <img src={logo} alt="Senzo Logo" className="h-25 w-auto" />
+          <img src={logo} alt="Senzo Logo" className="h-25 w-auto cursor-pointer"  />
 
           
         </motion.div>

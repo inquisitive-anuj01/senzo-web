@@ -83,12 +83,13 @@ const AdhesiveCoverage = () => {
     setSelectedThickness(Number(e.target.value));
   };
 
-  // ✅ Contact Us function
-  const handleContact = () => {
-    window.location.href = "tel:+918700630602";
+  //  Contact Us function
+const openWhatsApp = () => {
+    const phoneNumber = "+918700630602";
+    window.open(`https://wa.me/${phoneNumber}`, "_blank");
   };
 
-  // ✅ Navigate to product details
+  //  Navigate to product details
   const handleViewDetails = () => {
     if (selectedAdhesive) {
       navigate(`/products/${selectedAdhesive.slug}`);
@@ -227,7 +228,7 @@ const AdhesiveCoverage = () => {
                 {/* Two Buttons */}
                 <div className="flex gap-4">
                   <button
-                    onClick={handleContact}
+                    onClick={openWhatsApp}
                     className="bg-lime-600 text-white px-4 py-2 rounded-lg shadow hover:bg-lime-700"
                   >
                     Contact Us

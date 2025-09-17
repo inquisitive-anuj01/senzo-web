@@ -1,6 +1,9 @@
 import { useState, useRef } from "react"
+import { useNavigate } from "react-router-dom"
 
 function AdhesiveSelector() {
+  const navigate = useNavigate()
+
   const [currentStep, setCurrentStep] = useState(1)
   const [subStep, setSubStep] = useState(1)
   const [selections, setSelections] = useState({
@@ -12,7 +15,6 @@ function AdhesiveSelector() {
     tileSize: "",
   })
 
-  // Static data using useRef for performance
   const adhesiveData = useRef({
     roomCategories: {
       "Internal Area": {
@@ -77,13 +79,17 @@ function AdhesiveSelector() {
     productRecommendations: [
       {
         type: "Standard Recommendation",
-        name: "Roff Non-Skid Adhesive (NSA)",
-        description: "Roff non-skid adhesive (nsa) is suitable for fixing natural stones, clay, terracotta, and vitrified tiles of regular size on floor and wall.",
+        name: "Tile Adhesive for Ceramic & Vitrified Tiles",
+        description: "Polymer fibre modified grey cement based adhesive with no vertical slip, suitable for fixing ceramic and Gres tiles for floors and walls in internal applications",
+        image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146318/S-11_gajeor.png",
+        slug: "ceramic-tile"
       },
       {
         type: "Best Recommendation",
-        name: "Roff vitrofix Adhesive",
-        description: "Roff vitrofix adhesive is perfect for all kinds of ceramic, vitrified and natural stone tiles of all sizes for internal application – floor and wall.",
+        name: "Polymer Modified Improved Tile Adhesive",
+        description: "Cementitious, polymer fibre modified tile adhesive with no vertical slip with extended performance. Suitable for fixing ceramic & vitrified tiles for floor & walls in internal application.",
+        image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146320/S-21_onlbrd.png",
+        slug: "polymer-modified",
       },
     ],
   });
@@ -168,6 +174,11 @@ function AdhesiveSelector() {
       setSubStep(2);
       setSelections(prev => ({ ...prev, tileSize: "" }));
     }
+  };
+
+  const openWhatsApp = () => {
+    const phoneNumber = "+918700630602";
+    window.open(`https://wa.me/${phoneNumber}`, "_blank");
   };
 
   const isStep1Complete = getStepStatus(1);
@@ -399,15 +410,19 @@ function AdhesiveSelector() {
                   </div>
                   <div className="p-6">
                     <div className="w-24 h-24 bg-gray-200 rounded-lg mx-auto mb-4 flex items-center justify-center text-xs text-gray-500">
-                      Product Image
+                      <img src={product.image} alt={product.name} className="max-w-full max-h-full" />
                     </div>
                     <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-2">{product.name}</h3>
                     <p className="text-sm text-gray-600 mb-4">{product.description}</p>
                     <div className="flex flex-col sm:flex-row gap-2">
-                      <button className="flex-1 py-2 px-4 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors text-sm">
+                      <button
+                        onClick={openWhatsApp}
+                      className="flex-1 py-2 px-4 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors text-sm">
                         CONTACT US
                       </button>
-                      <button className="flex-1 py-2 px-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm">
+                      <button
+                        onClick={() => navigate(`/products/${product.slug}`)}
+                        className="flex-1 py-2 px-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm">
                         VIEW PRODUCT
                       </button>
                     </div>
