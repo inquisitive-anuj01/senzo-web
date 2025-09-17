@@ -408,7 +408,7 @@ function JointFillersCoverage() {
                             <img
                               src={product.image || "/placeholder.svg"}
                               alt={product.name}
-                              className="w-12 h-12 mx-auto mb-2 object-contain"
+                              className="w-40 h-40 mx-auto mb-2 object-contain"
                             />
                             <h4 className="font-medium text-xs mb-1 leading-tight">{product.name}</h4>
                             <p className="text-gray-600 text-xs font-semibold">{requiredQty.toFixed(2)} Kg Required</p>
