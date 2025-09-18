@@ -15,12 +15,27 @@ const productsLink = [
     slug: "/category/epoxy-grout",
   },
   {
-    name: "Tools",
-    slug: "/tools/tile-joint-filler-visualizer",
-  },
-  {
     name: "Cleaner",
     slug: "/products/tile-cleaner",
+  },
+];
+
+const toolsLinks = [
+  {
+    name: "Adhesive Coverage",
+    slug: "/tools/adhesive-coverage",
+  },
+  {
+    name: "Joint Filler Coverage",
+    slug: "/tools/joint-filler-coverage",
+  },
+  {
+    name: "Tile Adhesive Recommender",
+    slug: "/tools/tile-adhesive-recommender",
+  },
+  {
+    name: "Tile Joint Filler Visualizer",
+    slug: "/tools/tile-joint-filler-visualizer",
   },
 ];
 
@@ -72,19 +87,21 @@ const Footer = () => {
         whileInView="visible"
         viewport={{ once: true }}
         variants={containerVariants}
-        className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 pb-12"
+        className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 pb-12"
       >
         <motion.div
-          
           variants={itemVariants}
           className="flex flex-col items-start text-left space-y-6 "
         >
-          <img src={logo} alt="Senzo Logo" className="h-25 w-auto cursor-pointer"  />
-
-          
+          <img
+            src={logo}
+            alt="Senzo Logo"
+            className="h-25 w-auto cursor-pointer"
+          />
         </motion.div>
 
         {/* Middle Section - Products */}
+        {/* Products Section */}
         <motion.div
           variants={itemVariants}
           className="flex flex-col items-start md:items-start text-left md:text-left"
@@ -96,8 +113,41 @@ const Footer = () => {
             Products
             <span className="absolute -bottom-2 left-0 w-12 h-1 bg-amber-500 rounded-full"></span>
           </motion.h4>
-          <ul className="space-y-4 ">
+          <ul className="space-y-4 pl-0">
             {productsLink.map((product, index) => (
+              <motion.li
+                key={index}
+                className="group flex items-center"
+                whileHover={{ x: 5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                {/* <span className="w-2 h-2 bg-amber-500 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span> */}
+                <Link
+                  to={product.slug}
+                  className="relative transition-all duration-300 hover:text-amber-400"
+                >
+                  {product.name}
+                  <span className="absolute left-0 bottom-0 h-0.5 bg-amber-500 w-0 transition-all duration-300 group-hover:w-full"></span>
+                </Link>
+              </motion.li>
+            ))}
+          </ul>
+        </motion.div>
+
+        {/* Tools Section */}
+        <motion.div
+          variants={itemVariants}
+          className="flex flex-col items-start md:items-start text-left md:text-left"
+        >
+          <motion.h4
+            whileHover={{ x: 5 }}
+            className="text-xl text-white font-bold mb-6 relative inline-block"
+          >
+            Tools
+            <span className="absolute -bottom-2 left-0 w-12 h-1 bg-amber-500 rounded-full"></span>
+          </motion.h4>
+          <ul className="space-y-4 pl-0">
+            {toolsLinks.map((tool, index) => (
               <motion.li
                 key={index}
                 className="group"
@@ -105,11 +155,11 @@ const Footer = () => {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <Link
-                  to={product.slug}
+                  to={tool.slug}
                   className="relative transition-all duration-300 hover:text-amber-400 flex items-center"
                 >
-                  <span className="w-2 h-2 bg-amber-500 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                  {product.name}
+                  {/* <span className="w-2 h-2 bg-amber-500 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span> */}
+                  {tool.name}
                   <span className="absolute left-0 bottom-0 h-0.5 bg-amber-500 w-0 transition-all duration-300 group-hover:w-full"></span>
                 </Link>
               </motion.li>

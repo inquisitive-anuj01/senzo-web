@@ -295,3 +295,120 @@ export const grout2k = [
 
 
 
+export const discoverSolutions = [
+  {
+    id: 1,
+    name: "Breaking Old Tiles?",
+    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1758181276/oldTiles_pvj8rk.jpg",
+    slug: "breaking-old-tiles",
+    question: "Why break old floor tiles? It's messy, damaging, and expensive.",
+    pointers: " Slab damage - Time-consuming - Messy",
+    benefits: " Non-messy & Saves Time - prevent damage to floor slab - strong bond with virtified tiles - Economical",
+    recommendedSol: "Fast forward with Tile on Tile Applications",
+    recommendedImg1: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146320/S-21_onlbrd.png",
+    recommendedImg2: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146320/S-31_gesscu.png",
+  },
+
+  {
+    id: 2,
+    name: "New Floor, but Old Method?",
+    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1758181758/newfloor_1_p0mgjl.jpg",
+    slug: "new-floor-old-method",
+    question: "There are several limitations of the old cement method resulting in unlevelled floor, knocking sound and tile cracks.",
+    pointers: "Dries quickly & shrinks - Not strong enough to bond non-porous vitrified tiles - Unlevelled floor & tile cracks",
+    benefits: " Levelled & strong floor - Self-curing",
+    recommendedSol: "Say NO To Cement Machan + Cement Slurry",
+    recommendedImg1: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146318/S-11_gajeor.png",
+  },
+
+  {
+    id: 3,
+    name: "Big Tile & Stone Fixing?",
+    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1758181745/bigtilestone_1_l2yxse.jpg",
+    slug: "big-tile-stone-fixing",
+    question: "Fixing large-sized tiles and stones require quality adhesive to ensure durability and strong bonding.",
+    pointers: "Big tiles are heavy > 17 Kg with a higher tendency to bend - High risk of falling - Low strength & low open time for basic tile adhesives",
+    benefits1: " Senzo S-41 & S-51 Tile Adhesive  - Excellent adhesion - Anti-slip - Accommodates bends ",
+    benefits2: "PU Adhesive for extra heavy tiles - Adjusts tile deformities, no lippage",
+    recommendedSol: "Big Tiles & Stone Fixing?",
+     recommendedImg1: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146320/S-41_ppe6yv.png",
+    recommendedImg2: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146320/S-51_yl5yjh.png",
+
+  },
+  {
+    id: 4,
+    name: "External Elevation Tiles & Stone Fixing?",
+    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1758181761/external_1_em1fgi.jpg",
+    slug: "external-elevation-tiles",
+    question: "The probability of tiles falling off external facade is quite high. This is also very dangerous.",
+    pointers: "Low strength & initial grab - Adhesive being unable to sustain temperature & weather changes - Lacks flexibility to accommodate vibrations",
+    benefits: " Superior bond strength - High open time & strong initial grab - High flexibility (>2.5 mm) - Can withstand vibration and bends",
+    recommendedSol: "The Ultimate Adhesive For External Cladding",
+     recommendedImg1: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146320/S-41_ppe6yv.png",
+    recommendedImg2: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146320/S-51_yl5yjh.png",
+  },
+
+  {
+    id: 5,
+    name: "Chipped & Spoiled Swimming Pools?",
+    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1758181746/swimming_1_khwjut.jpg",
+    slug: "chipped-spoiled-swimming-pools",
+    question: "With time, chipped tiles and cracked grouts become common in swimming pools even with regular maintenance.",
+    pointers: "Ugly & chipped tiles - Leakage in swimming pool - Dirty tile joints",
+    benefits: " Levelled & strong floor - Self-curing",
+    recommendedSol: "3 Easy Steps To Lock The Beauty Of Your Swimming Pool",
+    recommendedImg1: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146320/S-41_ppe6yv.png",
+    recommendedImg2: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146320/S-51_yl5yjh.png",
+  },
+
+  {
+    id: 6,
+    name: "Fixing On Metal, Ply & Boards?",
+    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1758181747/metalply_1_ptpjyd.jpg",
+    slug: "fixing-on-metal-ply-boards",
+    question: "Tile and stone fixing on a variety of substrates like metal and ply is quickly gaining popularity.",
+    pointers: "Limited adhesion on non-porous surfaces - Movement and vibration issues",
+    benefits: " Strong bond with non-porous surfaces - Accommodates movement and vibration",
+    recommendedSol: "Speciality Solutions For Dry Wall Substrates",
+    recommendedImg1: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1758188901/Gemini_Generated_Image_dpm1zidpm1zidpm1_ygw8au.png",
+  },
+
+  {
+    id: 7,
+    name: "Dirty & Cracked Tile Joints?",
+    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1758181759/dirtycracked_kyeuc5.jpg",
+    slug: "dirty-cracked-tile-joints",
+    question: "Your aesthetic tiles have one big enemy. Dirty and cracked tile joints. But worry no more! We have the perfect solution.",
+    pointers: "Dirty & cracked tile joints - Difficult to clean",
+    benefits: " Restores original beauty - Long-lasting protection - Easy to clean & maintain",
+    recommendedSol: "Fill Tile Joints With Senzo Epoxy Grout and Sparkles",
+    recommendedImg1: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146319/Epoxy_Grout_1kg___iymtto.png",
+    recommendedImg2: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1758096539/Glitter_1_i3io2h.png",
+
+  },
+  {
+    id: 8,
+    name: "Stones & Tiles Loosing its Beauty?",
+    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1758182025/stoetiles_ciae1k.jpg",
+    slug: "stones-tiles-loosing-beauty",
+    question: "Stone flooring tends to lose its beauty over time owing to dirt and stains. Regular cleaning and maintenance is a must.",
+    pointers: "Dirt and stains - Regular maintenance required",
+    benefits: " Restores original beauty - Long-lasting protection - Easy to clean & maintain",
+    recommendedSol: "Gives 5-Level Protection To Stone",
+    recommendedImg1: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146318/Tile_Cleaner_lqrt3k.png",
+  },
+
+  {
+    id: 9,
+    name: "Fixing in Vibration Areas?",
+    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1758182133/virbaritonal_1_nsq6xq.jpg",
+    slug: "fixing-in-vibration-areas",
+    question: "Areas prone to vibration like lift lobbies, door and window frames, and staircases can be among the most challenging surfaces for tile and stone fixing.",
+    pointers: "Low flexibility of adhesive - Expansion & contraction - Low bond strength - Low initial grab",
+    benefits: " Deformable at >2.5 mm - Can withstand vibration - Superior bond strength - High open time & strong initial grab",
+    recommendedSol: "Speciality Solution For Vibration Prone Areas",
+    recommendedImg1: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146320/S-51_yl5yjh.png",
+    recommendedImg2: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146320/S-51_yl5yjh.png",
+  }
+]
+

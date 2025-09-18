@@ -131,7 +131,7 @@ const ColorVisuals = () => {
                 <div className="relative flex-1 overflow-hidden py-3">
                   <motion.div
                     animate={{
-                      x: -(colorPage * step * 56) + "px", // 56px accounts for circle width + gap
+                      x: -(colorPage * step * 56) + "px", 
                     }}
                     transition={{
                       type: "spring",
@@ -139,11 +139,9 @@ const ColorVisuals = () => {
                       damping: 30,
                       mass: 0.8,
                     }}
-                    className="flex items-center justify-center gap-3"
-                    style={{ 
-                      width: "max-content",
-                      paddingLeft: "50%",
-                      transform: `translateX(-${(colorsPerPage * 56) / 2}px)` // Center the visible items
+                    className="flex items-center gap-4"
+                    style={{
+                      width: `${jointColors.length * 56}px`,
                     }}
                   >
                     {jointColors.map((color, index) => (

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const products = [
   {
-    name: "Tile, Block & Stone Adhesive",
+    name: "Tile & Stone Adhesive",
     slug: "/category/tile-adhesive",
     img: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757152171/1_wl10m2.png",
   },
@@ -14,14 +14,14 @@ const products = [
     img: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757326898/2_1_dlkmlk.png",
   },
   {
-    name: "Epoxy Grout Glitter",
-    slug: "/products/epoxy-grout-glitter",
-    img: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146319/Epoxy_filler_o3tshe.png",
+    name: "Block Adhesive",
+    slug: "/products/block-adhesive",
+    img: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146320/Block_Adhesive_40_Kg_Bag_ewts2v.png",
   },
   {
-    name: "Grout Hardener",
-    slug: "/products/grout-hardener",
-    img: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757326897/1_1_tpmde2.png",
+    name: "2k GROUT",
+    slug: "/products/2k-grout",
+    img: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146319/2K_Grout_uk6bne.png",
   },
   {
     name: "Tile Cleaner",

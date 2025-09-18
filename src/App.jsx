@@ -20,6 +20,7 @@ import EpoxyGrout from "./components/Pages/EpoxyGrout.jsx";
 import OtherProducts from "./components/Pages/OtherProducts.jsx";
 import PrivacyPolicy from "./components/Extra/PrivacyPolicy.jsx";
 import TermsAndConditions from "./components/Extra/TermsAndConditions.jsx";
+import DiscoverSolutions from "./components/Pages/DiscoverSolutions.jsx";
 
 function App() {
   return (
@@ -58,6 +59,8 @@ function App() {
             <Route path="/about" element={<AboutUs />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+
+            <Route path="/discover-solution/:slug" element={<DiscoverSolutions />} />
 
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>

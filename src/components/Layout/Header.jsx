@@ -12,14 +12,19 @@ import {
 } from "react-icons/fi";
 import { Link, useNavigate } from "react-router-dom";
 
-// import logo from "../../assets/Images/senzo-black.png"
-const logo = "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757323271/senzo_png_dmj1mk.png";
+const logo =
+  "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757323271/senzo_png_dmj1mk.png";
 
-// Import your product data
 import { tileAdhesive } from "../ProductsInfo/product.js";
-import { epoxyGrout, tileGrout, groutGlitter, groutHardner } from "../ProductsInfo/product.js";
+import {
+  epoxyGrout,
+  tileGrout,
+  groutGlitter,
+  groutHardner,
+} from "../ProductsInfo/product.js";
 import { TileCleaner } from "../ProductsInfo/product.js";
 import { BlockAdhesive, grout2k } from "../ProductsInfo/product.js";
+import { discoverSolutions } from "../ProductsInfo/product.js";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -32,7 +37,7 @@ const Header = () => {
   const [isOverlayAnimatingOut, setIsOverlayAnimatingOut] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const [activeProductCategory, setActiveProductCategory] = 
+  const [activeProductCategory, setActiveProductCategory] =
     useState("tiles-adhesive");
   const dropdownTimeoutRef = useRef(null);
 
@@ -48,7 +53,7 @@ const Header = () => {
       setActiveDropdown(null);
     }, 150);
   };
-  
+
   useEffect(() => {
     if (isMobileMenuOpen) {
       setIsSidebarClosing(false);
@@ -98,66 +103,72 @@ const Header = () => {
     }, 500);
   };
 
-  // Define product categories with data from your product files
   const productCategories = {
     "tiles-adhesive": {
       name: "Tiles Adhesive",
-      products: tileAdhesive.map(product => ({
+      products: tileAdhesive.map((product) => ({
         name: product.name,
         image: product.image,
         slug: product.slug,
-        itemNo: product.itemNo
-      }))
+        itemNo: product.itemNo,
+      })),
     },
     "epoxy-grout": {
       name: "Grouting Solutions",
       products: [
-        ...epoxyGrout.map(product => ({
+        ...epoxyGrout.map((product) => ({
           name: product.name,
           image: product.image,
-          slug: product.slug
+          slug: product.slug,
         })),
-        ...tileGrout.map(product => ({
+        ...tileGrout.map((product) => ({
           name: product.name,
           image: product.image,
-          slug: product.slug
+          slug: product.slug,
         })),
-        
-        ...grout2k.map(product => ({
+
+        ...grout2k.map((product) => ({
           name: product.name,
           image: product.image,
-          slug: product.slug
+          slug: product.slug,
         })),
-        ...groutHardner.map(product => ({
+        ...groutHardner.map((product) => ({
           name: product.name,
           image: product.image,
-          slug: product.slug
-        }))
-      ]
+          slug: product.slug,
+        })),
+      ],
     },
     "tile-cleaner": {
       name: "Tile Cleaner",
-      products: TileCleaner.map(product => ({
+      products: TileCleaner.map((product) => ({
         name: product.name,
         image: product.image,
-        slug: product.slug
-      }))
+        slug: product.slug,
+      })),
     },
     "other-products": {
       name: "Other Products",
       products: [
-        ...BlockAdhesive.map(product => ({
+        ...BlockAdhesive.map((product) => ({
           name: product.name,
           image: product.image,
-          slug: product.slug
+          slug: product.slug,
         })),
-        ...groutGlitter.map(product => ({
+        ...groutGlitter.map((product) => ({
           name: product.name,
           image: product.image,
-          slug: product.slug
+          slug: product.slug,
         })),
-      ]
+      ],
     },
+  };
+
+  const categoryRoutes = {
+    "tiles-adhesive": "/category/tile-adhesive",
+    "epoxy-grout": "/category/epoxy-grout",
+    "tile-cleaner": "/products/tile-cleaner",
+    "other-products": "/category/other-products",
   };
 
   const tools = [
@@ -201,10 +212,15 @@ const Header = () => {
           <div className="flex items-center justify-between h-24 lg:h-25">
             <div className="flex-shrink-0">
               <div className="flex items-center">
-                <div className="relative cursor-pointer"
-                  onClick={()=> navigate('/')}
+                <div
+                  className="relative cursor-pointer"
+                  onClick={() => navigate("/")}
                 >
-                <img src={logo} alt="Senzo Logo" className="h-20 w-auto" />
+                  <img
+                    src={logo || "/placeholder.svg"}
+                    alt="Senzo Logo"
+                    className="h-20 w-auto"
+                  />
                 </div>
               </div>
             </div>
@@ -251,7 +267,8 @@ const Header = () => {
                               ([key, category]) => (
                                 <li key={key}>
                                   <button
-                                    className={`w-full text-left px-3 py-2 rounded-md transition-colors ${
+                                    // onClick={() => navigate("/category/tile-adhesive")}
+                                    className={`w-full text-left px-3 py-2 rounded-md transition-colors cursor-pointer ${
                                       activeProductCategory === key
                                         ? "bg-red-50 text-red-600 font-medium"
                                         : "text-black hover:bg-gray-50"
@@ -259,6 +276,10 @@ const Header = () => {
                                     onMouseEnter={() =>
                                       setActiveProductCategory(key)
                                     }
+                                    onClick={() => {
+                                      navigate(categoryRoutes[key]);
+                                      setActiveDropdown(null);
+                                    }}
                                   >
                                     {category.name}
                                   </button>
@@ -295,13 +316,62 @@ const Header = () => {
                                 {product.itemNo || ""}
                               </p>
                               <p className="text-sm text-black font-medium">
-                                {product.name} 
+                                {product.name}
                               </p>
                             </div>
                           ))}
                         </div>
                       </div>
-                    </div>  
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              <div
+                className="relative group"
+                onMouseEnter={() => handleMouseEnter("discover")}
+                onMouseLeave={handleMouseLeave}
+              >
+                <button className="flex items-center space-x-1 text-black hover:text-red-500 font-medium py-9.5 relative">
+                  <span>Discover Solution</span>
+                  {activeDropdown === "discover" ? (
+                    <FiChevronUp />
+                  ) : (
+                    <FiChevronDown />
+                  )}
+                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[140%] h-[2px] bg-red-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></div>
+                </button>
+
+                {activeDropdown === "discover" && (
+                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-[800px] bg-white rounded-lg shadow-xl border border-gray-200 p-6 mt-0">
+                    <div className="mb-4">
+                      <h3 className="text-lg font-semibold text-black text-center mb-2">
+                        Solution to Modern Tile & Stone Fixing Challenges
+                      </h3>
+                      <div className="w-16 h-0.5 bg-red-600 mx-auto rounded-full"></div>
+                    </div>
+
+                    <div className="grid grid-cols-3 gap-4">
+                      {discoverSolutions.map((solution) => (
+                        <div
+                          key={solution.id}
+                          onClick={() => {
+                            navigate(`/discover-solution/${solution.slug}`);
+                            setActiveDropdown(null);
+                          }}
+                          className="text-center p-3 rounded-lg hover:bg-green-50 cursor-pointer transition-colors border border-gray-100"
+                        >
+                          <img
+                            src={solution.image || "/placeholder.svg"}
+                            alt={solution.name}
+                            className="w-20 h-20 mx-auto mb-2 object-contain"
+                          />
+                          <p className="text-sm text-black font-medium leading-tight">
+                            {solution.name}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
@@ -315,7 +385,7 @@ const Header = () => {
                 <button className="flex items-center space-x-1 text-black hover:text-red-500 font-medium py-9.5 relative">
                   <span>Tools</span>
                   {activeDropdown === "tools" ? (
-                    <FiChevronUp/>
+                    <FiChevronUp />
                   ) : (
                     <FiChevronDown />
                   )}
@@ -332,9 +402,9 @@ const Header = () => {
                             setActiveDropdown(null);
                           }}
                           key={index}
-                          className="w-full flex items-center space-x-3 px-4 py-3 text-left rounded-lg hover:bg-gray-200 transition-colors"
+                          className="w-full flex items-center space-x-3 px-4 py-3 text-left rounded-lg hover:bg-green-200 transition-colors"
                         >
-                          <tool.icon className="text-red-600 text-lg" />
+                          <tool.icon className="text-yellow-600 text-lg" />
                           <span className="text-black font-medium">
                             {tool.name}
                           </span>
@@ -358,11 +428,11 @@ const Header = () => {
               {/* Helpline Button */}
               <button
                 onClick={openWhatsApp}
-                className={ ` text-black px-4 py-2 rounded-full flex items-center space-x-2 transition-colors border border-gray-300 shadow-md font-medium ${
-                    isScrolled
-                      ? "bg-white/20 backdrop-blur-md "
-                      : "bg-white hover:bg-gray-300"
-                  }`}
+                className={` text-black px-4 py-2 rounded-full flex items-center space-x-2 transition-colors border border-gray-300 shadow-md font-medium ${
+                  isScrolled
+                    ? "bg-white/20 backdrop-blur-md "
+                    : "bg-white hover:bg-gray-300"
+                }`}
               >
                 <FiPhone className="text-lg" />
                 <span className="hidden sm:inline font-medium">Helpline</span>
@@ -404,7 +474,11 @@ const Header = () => {
               }`}
             >
               <div className="flex items-center justify-between p-4 border-b border-gray-200 py-10">
-                <div className="font-bold text-red-600">SENZO</div>
+                <img
+                  src={logo || "/placeholder.svg"}
+                  alt="Senzo Logo"
+                  className="h-20 w-auto"
+                />
                 <button
                   onClick={handleCloseMobileMenu}
                   className="p-2 text-gray-700 hover:text-red-600"
@@ -419,6 +493,13 @@ const Header = () => {
                   categories={productCategories}
                   onLinkClick={handleCloseMobileMenu}
                 />
+
+                <MobileDropdown
+                  title="Discover Solution"
+                  items={discoverSolutions}
+                  onLinkClick={handleCloseMobileMenu}
+                />
+
                 <MobileDropdown
                   title="Tools"
                   items={tools}
@@ -463,8 +544,8 @@ const MobileDropdown = ({ title, items, onLinkClick }) => {
           {items.map((item, index) => (
             <Link
               key={index}
-              to={`/tools/${item.slug}`}
-              className="block py-1 text-sm text-black text-sm hover:text-red-600"
+              to={`/discover-solution/${item.slug}`}
+              className="block py-1 text-sm text-black hover:text-red-600"
               onClick={() => handleClick(item)}
             >
               {item.name}
@@ -475,7 +556,6 @@ const MobileDropdown = ({ title, items, onLinkClick }) => {
     </div>
   );
 };
-
 
 const MobileProductsDropdown = ({ title, categories, onLinkClick }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -514,9 +594,13 @@ const MobileProductsDropdown = ({ title, categories, onLinkClick }) => {
                 className="flex items-center justify-between w-full py-4 text-lg text-black hover:text-red-600"
               >
                 <span>{category.name}</span>
-                {openCategory === key ? <FiChevronUp size={14} /> : <FiChevronDown size={14} />}
+                {openCategory === key ? (
+                  <FiChevronUp size={14} />
+                ) : (
+                  <FiChevronDown size={14} />
+                )}
               </button>
-              
+
               {openCategory === key && (
                 <div className="pl-4 mt-1 space-y-5">
                   {category.products.map((product, index) => (
