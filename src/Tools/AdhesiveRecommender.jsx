@@ -423,31 +423,30 @@ function AdhesiveSelector() {
         </div>
       </div>
 
-      {/* Main content grid with yellow left sidebar */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-6">
         {/* Left Sidebar - Steps Summary */}
-        <div className="lg:col-span-1 bg-yellow-200 p-6 rounded-2xl shadow-lg h-fit">
-          <h3 className="text-xl md:text-2xl font-bold mb-4 text-red-500">Steps</h3>
+        <div className="lg:col-span-1 bg-white p-6 rounded-2xl shadow-lg h-fit">
+          <h3 className="text-xl md:text-2xl font-bold mb-4 text-gray-700">Steps</h3>
           <div className="space-y-6">
             <div className="relative pl-8">
               <div
-                className={`absolute top-0 left-0 w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold transition-colors duration-300 ${isStep1Complete ? "bg-green-600 text-white" : "bg-red-500 text-black"}`}
+                className={`absolute top-0 left-0 w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold transition-colors duration-300 ${isStep1Complete ? "bg-gray-700 text-white" : "bg-gray-400 text-white"}`}
               >
                 1
               </div>
               <span
-                className={`font-medium text-base md:text-lg ${isStep1Complete ? "text-green-600" : "text-gray-700"}`}
+                className={`font-medium text-base md:text-lg ${isStep1Complete ? "text-gray-600" : "text-gray-700"}`}
               >
                 Choose Area / Room
               </span>
               {selections.roomCategory && (
                 <div className="ml-2 mt-2 text-xs md:text-sm text-gray-500 break-words space-y-1">
-                  <div className={getSubStepStatus(1, 1) ? "text-green-600" : "text-gray-700"}>- Select the Area</div>
+                  <div className={getSubStepStatus(1, 1) ? "text-gray-600" : "text-gray-700"}>- Select the Area</div>
                   {selections.specificRoom && (
-                    <div className={getSubStepStatus(1, 2) ? "text-green-600" : "text-gray-700"}>- Select the Room</div>
+                    <div className={getSubStepStatus(1, 2) ? "text-gray-600" : "text-gray-700"}>- Select the Room</div>
                   )}
                   {selections.applicationArea && (
-                    <div className={getSubStepStatus(1, 3) ? "text-green-600" : "text-gray-700"}>
+                    <div className={getSubStepStatus(1, 3) ? "text-gray-600" : "text-gray-700"}>
                       - Select the Application Area
                     </div>
                   )}
@@ -457,27 +456,27 @@ function AdhesiveSelector() {
 
             <div className="relative pl-8">
               <div
-                className={`absolute top-0 left-0 w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold transition-colors duration-300 ${isStep2Complete ? "bg-green-600 text-white" : "bg-red-500 text-black"}`}
+                className={`absolute top-0 left-0 w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold transition-colors duration-300 ${isStep2Complete ? "bg-gray-600 text-white" : "bg-gray-400 text-white"}`}
               >
                 2
               </div>
               <span
-                className={`font-medium text-base md:text-lg ${isStep2Complete ? "text-green-600" : "text-gray-700"}`}
+                className={`font-medium text-base md:text-lg ${isStep2Complete ? "text-gray-600" : "text-gray-700"}`}
               >
                 Size & Type Of Tile/Stone
               </span>
               {selections.substrateType && (
                 <div className="ml-2 mt-2 text-xs md:text-sm text-gray-500 break-words space-y-1">
-                  <div className={getSubStepStatus(2, 1) ? "text-green-600" : "text-gray-700"}>
+                  <div className={getSubStepStatus(2, 1) ? "text-gray-600" : "text-gray-700"}>
                     - Select the Substrate
                   </div>
                   {selections.tileType && (
-                    <div className={getSubStepStatus(2, 2) ? "text-green-600" : "text-gray-700"}>
+                    <div className={getSubStepStatus(2, 2) ? "text-gray-600" : "text-gray-700"}>
                       - Select the Tile Type
                     </div>
                   )}
                   {selections.tileSize && (
-                    <div className={getSubStepStatus(2, 3) ? "text-green-600" : "text-gray-700"}>
+                    <div className={getSubStepStatus(2, 3) ? "text-gray-600" : "text-gray-700"}>
                       - Select the Tile Size
                     </div>
                   )}
@@ -487,12 +486,12 @@ function AdhesiveSelector() {
 
             <div className="relative pl-8">
               <div
-                className={`absolute top-0 left-0 w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold transition-colors duration-300 ${currentStep === 3 ? "bg-green-600 text-white" : "bg-red-500 text-black"}`}
+                className={`absolute top-0 left-0 w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold transition-colors duration-300 ${currentStep === 3 ? "bg-gray-600 text-white" : "bg-gray-400 text-white"}`}
               >
                 3
               </div>
               <span
-                className={`font-medium text-base md:text-lg ${currentStep === 3 ? "text-green-600" : "text-gray-700"}`}
+                className={`font-medium text-base md:text-lg ${currentStep === 3 ? "text-gray-600" : "text-gray-700"}`}
               >
                 Recommended Adhesives
               </span>
@@ -648,7 +647,7 @@ function AdhesiveSelector() {
                     className="bg-gray-50 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl"
                   >
                     <div
-                      className={`p-4 font-bold text-white text-center ${product.type.startsWith("Best") || product.type.startsWith("Premium") ? "bg-green-600" : "bg-blue-600"}`}
+                      className={`p-4 font-bold text-white text-center ${product.type.startsWith("Best") || product.type.startsWith("Premium") ? "bg-gray-600" : "bg-gray-600"}`}
                     >
                       {product.type}
                     </div>
@@ -671,7 +670,7 @@ function AdhesiveSelector() {
                         </button>
                         <button
                           onClick={() => navigate(`/products/${product.slug}`)}
-                          className="flex-1 py-2 px-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm"
+                          className="flex-1 py-2 px-4 bg-lime-700 text-white rounded-lg hover:bg-lime-800 transition-colors text-sm"
                         >
                           VIEW PRODUCT
                         </button>

@@ -46,7 +46,7 @@ const UsefulTools = () => {
             <div
               key={tool.id}
               onClick={() => navigate(tool.link)}
-              className="group bg-[#F0EAD6] p-8 rounded-2xl cursor-pointer transition-all duration-300 hover:bg-lime-600 hover:shadow-xl flex flex-col items-center text-center"
+              className="group bg-[#F0EAD6] p-8 rounded-2xl cursor-pointer transition-all duration-300 hover:bg-gray-600 hover:shadow-xl flex flex-col items-center text-center"
             >
               <div className="w-20 h-20 flex items-center justify-center rounded-full bg-gray-700 group-hover:bg-white mb-6 transition-all">
                 <Icon className="w-10 h-10 text-lime-400 group-hover:text-lime-600" />

@@ -248,16 +248,7 @@ const Header = () => {
                     <div className="flex">
                       <div className="w-1/4 pr-6 border-r border-gray-200 relative">
                         <div className="absolute inset-0 bg-gray-50 opacity-30"></div>
-                        <div
-                          className="absolute inset-0"
-                          style={
-                            {
-                              // backgroundImage:
-                              //   "linear-gradient(to right, #e5e7eb 1px, transparent 1px), linear-gradient(to bottom, #e5e7eb 1px, transparent 1px)",
-                              // backgroundSize: "20px 20px",
-                            }
-                          }
-                        ></div>
+                        
                         <div className="relative z-10">
                           <h3 className="font-semibold text-black px-3 mb-4 text-left">
                             Categories
@@ -267,7 +258,6 @@ const Header = () => {
                               ([key, category]) => (
                                 <li key={key}>
                                   <button
-                                    // onClick={() => navigate("/category/tile-adhesive")}
                                     className={`w-full text-left px-3 py-2 rounded-md transition-colors cursor-pointer ${
                                       activeProductCategory === key
                                         ? "bg-red-50 text-red-600 font-medium"
@@ -402,7 +392,7 @@ const Header = () => {
                             setActiveDropdown(null);
                           }}
                           key={index}
-                          className="w-full flex items-center space-x-3 px-4 py-3 text-left rounded-lg hover:bg-green-200 transition-colors"
+                          className="w-full flex items-center space-x-3 px-4 py-3 text-left rounded-lg hover:bg-red-50  transition-colors"
                         >
                           <tool.icon className="text-yellow-600 text-lg" />
                           <span className="text-black font-medium">
