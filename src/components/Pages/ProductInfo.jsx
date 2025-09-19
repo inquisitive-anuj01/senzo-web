@@ -16,12 +16,12 @@ const products = [
   {
     name: "Block Adhesive",
     slug: "/products/block-adhesive",
-    img: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146320/Block_Adhesive_40_Kg_Bag_ewts2v.png",
+    img: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1758277686/Block_Adhesive_40_Kg_Bag_yvampp.png",
   },
   {
     name: "2k GROUT",
     slug: "/products/2k-grout",
-    img: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146319/2K_Grout_uk6bne.png",
+    img: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1758268804/senzo_crot_maoryq.png",
   },
   {
     name: "Tile Cleaner",
@@ -45,7 +45,7 @@ const cardVariants = {
 
 const ProductInfo = () => {
   return (
-    <section className="relative min-h-screen bg-gradient-to-b from-gray-50 to-white py-20 px-6 sm:px-12 rounded-t-[48px] mt-[-40px] pt-[40px] z-10">
+    <section className="relative h-auto bg-gradient-to-b from-gray-50 to-white py-20 px-6 sm:px-12 rounded-t-[48px] mt-[-40px] pt-[40px] z-10 mb-10">
       {/* Heading Section */}
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center mb-20">
         <motion.div
@@ -53,8 +53,8 @@ const ProductInfo = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold leading-tight text-gray-900">
-            Senzo Premium <br /> Tile Fixing & Stone Care Solutions
+          <h2 className="text-2xl md:text-3xl  leading-tight text-gray-900 ">
+           <span className="uppercase text-4xl md:text-6xl font-bold">Senzo Premium</span> <br /> <span className="text-2xl md:text-3xl font-semibold ">Tile Fixing & Stone Care Solutions</span> 
           </h2>
         </motion.div>
 
@@ -85,7 +85,7 @@ const ProductInfo = () => {
             variants={cardVariants}
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 250 }}
-            className="bg-white rounded-2xl shadow-md overflow-hidden group cursor-pointer hover:shadow-xl"
+            className="bg-white rounded-2xl shadow-md overflow-hidden group cursor-pointer hover:shadow-xl border hover:border-black"
           >
             <Link to={product.slug}>
               {/* Image */}
@@ -93,13 +93,13 @@ const ProductInfo = () => {
                 <img
                   src={product.img}
                   alt={product.name}
-                  className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105 bg-gray-50"
+                  className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105 border-b-2 border-gray-400"
                 />
               </div>
 
               {/* Product Name */}
               <div className="p-4 text-center">
-                <h3 className="text-base md:text-lg font-semibold text-gray-900 group-hover:text-red-600 transition-colors duration-300">
+                <h3 className="text-base md:text-lg font-semibold text-gray-900 group-hover:text-[#3944bc] transition-colors duration-300">
                   {product.name}
                 </h3>
               </div>

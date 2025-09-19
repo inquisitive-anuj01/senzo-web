@@ -2,30 +2,30 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 
-const  one =  "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757152171/1_wl10m2.png";
-const two = "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757152036/2_e5ltbb.png";
-const three = "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757152043/3_wdfmda.png";
+const  one =  "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1758264293/Your_paragraph_text_2_r5lu7s.png";
+const two = "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1758264294/Your_paragraph_text_z2gaib.png";
+const three = "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1758264294/Your_paragraph_text_1_kcglrt.png";
 
 const sections = [
   {
     id: 0,
     title: "TILES ADHESIVE",
     image: one,
-    color: "#6b4843",
+    color: "#2b1010",
     slug: "tile-adhesive",
   },
   {
     id: 1,
     title: "EPOXY GROUT",
     image: two,
-    color: "#694440",
+    color: "#10162b",
     slug: "epoxy-grout",
   },
   {
     id: 2,
     title: "OTHER PRODUCTS",
     image: three,
-    color: "#613e3a",
+    color: "#28102b",
     slug: "other-products",
   },
 ];
@@ -63,7 +63,7 @@ const HeroSection = () => {
 
   return (
     <div
-      className={`flex w-full h-[90vh] font-inter overflow-hidden relative 
+      className={`flex w-full h-[88vh] font-inter overflow-hidden relative 
         ${isMobile ? "flex-col" : "flex-row"}`}
     >
       {sections.map((section, index) => (
@@ -82,8 +82,8 @@ const HeroSection = () => {
         >
           {/* Title */}
           <motion.h2
-            className="absolute text-white font-bold"
-            style={{ zIndex: 3 }}
+            className="absolute text-white font-bold "
+            style={{ zIndex: 30 }} 
             initial={{
               top: "50%",
               left: "50%",
@@ -94,13 +94,13 @@ const HeroSection = () => {
               whiteSpace: "nowrap",
             }}
             animate={{
-              top: expanded === index ? (isMobile ? "15%" : "20%") : "50%",
+              top: expanded === index ? (isMobile ? "15%" : "9%") : "50%",
               left: "50%",
               x: "-50%",
               y: "-50%",
               rotate: isMobile ? 0 : expanded === index ? 0 : -90,
               fontSize:
-                expanded === index ? (isMobile ? "2rem" : "3rem") : "1.2rem",
+                expanded === index ? (isMobile ? "2rem" : "4rem") : "2rem",
             }}
             transition={{ duration: 1.2, ease: "easeInOut" }}
           >
@@ -117,7 +117,7 @@ const HeroSection = () => {
                 transition={{ duration: 0.5, delay: 0.4 }}
                 className="absolute flex justify-center w-full"
                 style={{
-                  top: isMobile ? "25%" : "30%",
+                  top: isMobile ? "25%" : "20%",
                   zIndex: 20, 
                   pointerEvents: "auto"
                 }}
@@ -142,10 +142,10 @@ const HeroSection = () => {
             style={{ zIndex: 5, pointerEvents: "none" }} 
             initial={{
               bottom: isMobile ? "8%" : "2%",
-              left: "50%",
+              left: "5%",
               x: "-50%",
               opacity: 0,
-              width: "90%",
+              width: "100%",
               scale: 0.7,
             }}
             animate={{
@@ -153,15 +153,15 @@ const HeroSection = () => {
                 expanded === index
                   ? isMobile
                     ? "3%"
-                    : "3%"
+                    : "0.8%"
                   : isMobile
                   ? "8%"
-                  : "10%",
+                  : "2%",
               left: "50%",
               x: "-50%",
                opacity: expanded === index ? 1 : isMobile ? 0 : 0.8,
-              width: expanded === index ? (isMobile ? "95%" : "70%") : "90%",
-              scale: expanded === index ? (isMobile ? 1.1 : 1) : 0.7,
+              width: expanded === index ? (isMobile ? "95%" : "99%") : "90%",
+              scale: expanded === index ? (isMobile ? 1.1 : 1) : 1.06,
             }}
             transition={{ duration: 1.2, ease: "easeInOut" }}
           />

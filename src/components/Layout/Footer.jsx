@@ -100,7 +100,6 @@ const Footer = () => {
           />
         </motion.div>
 
-        {/* Middle Section - Products */}
         {/* Products Section */}
         <motion.div
           variants={itemVariants}
@@ -108,10 +107,10 @@ const Footer = () => {
         >
           <motion.h4
             whileHover={{ x: 5 }}
-            className="text-xl text-white font-bold mb-6 relative inline-block"
+            className="text-xl text-white font-bold mb-6 relative inline-block uppercase"
           >
             Products
-            <span className="absolute -bottom-2 left-0 w-12 h-1 bg-amber-500 rounded-full"></span>
+            <span className="absolute -bottom-2 left-0 w-10 h-1 bg-[#fa5b3d] rounded-full"></span>
           </motion.h4>
           <ul className="space-y-4 pl-0">
             {productsLink.map((product, index) => (
@@ -141,10 +140,10 @@ const Footer = () => {
         >
           <motion.h4
             whileHover={{ x: 5 }}
-            className="text-xl text-white font-bold mb-6 relative inline-block"
+            className="text-xl text-white font-bold mb-6 relative inline-block uppercase"
           >
             Tools
-            <span className="absolute -bottom-2 left-0 w-12 h-1 bg-amber-500 rounded-full"></span>
+            <span className="absolute -bottom-2 left-0 w-6 h-1 bg-[#fa5b3d] rounded-full"></span>
           </motion.h4>
           <ul className="space-y-4 pl-0">
             {toolsLinks.map((tool, index) => (
@@ -160,7 +159,7 @@ const Footer = () => {
                 >
                   {/* <span className="w-2 h-2 bg-amber-500 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span> */}
                   {tool.name}
-                  <span className="absolute left-0 bottom-0 h-0.5 bg-amber-500 w-0 transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute left-0 bottom-0 h-0.5 bg-[#fa5b3d] w-0 transition-all duration-300 group-hover:w-full"></span>
                 </Link>
               </motion.li>
             ))}
@@ -174,10 +173,10 @@ const Footer = () => {
         >
           <motion.h4
             whileHover={{ x: 5 }}
-            className="text-xl text-white font-bold mb-6 relative inline-block"
+            className="text-xl text-white font-bold mb-6 relative inline-block uppercase"
           >
             Get In Touch
-            <span className="absolute -bottom-2 left-0 w-12 h-1 bg-amber-500 rounded-full"></span>
+            <span className="absolute -bottom-2 left-0 w-12 h-1 bg-[#fa5b3d] rounded-full"></span>
           </motion.h4>
           <div className="space-y-5">
             {/* Address */}
@@ -191,7 +190,7 @@ const Footer = () => {
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
-                  className="mt-1 mr-3 text-amber-500 flex-shrink-0"
+                  className="mt-1 mr-3 text-[#fa5b3d] flex-shrink-0"
                 >
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                   <circle cx="12" cy="10" r="3"></circle>
@@ -211,7 +210,7 @@ const Footer = () => {
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
-                  className="mt-1 mr-3 text-amber-500 flex-shrink-0"
+                  className="mt-1 mr-3 text-[#fa5b3d] flex-shrink-0"
                 >
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                   <circle cx="12" cy="10" r="3"></circle>
@@ -238,7 +237,7 @@ const Footer = () => {
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
-                  className="mr-3 text-amber-500"
+                  className="mr-3 text-[#fa5b3d]"
                 >
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72l.98 5.51a2 2 0 0 1-1.28 2.18l-1.92.73a1.94 1.94 0 0 0-.82 2.11 15.68 15.68 0 0 0 6 6 1.94 1.94 0 0 0 2.11-.82l.73-1.92a2 2 0 0 1 2.18-1.28l5.51.98a2 2 0 0 1 1.72 2z"></path>
                 </svg>
@@ -261,7 +260,7 @@ const Footer = () => {
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
-                className="mr-3 text-amber-500"
+                className="mr-3 text-[#fa5b3d]"
               >
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                 <polyline points="22,6 12,13 2,6"></polyline>

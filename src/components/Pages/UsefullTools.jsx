@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Layers, Square, SquareMousePointer  } from "lucide-react"; 
+import { Layers, Square, SquareMousePointer } from "lucide-react";
 
 const tools = [
   {
@@ -21,7 +21,7 @@ const tools = [
     id: "tile-adhesive-recommender",
     title: "Tile Adhesive Recommender",
     description: "Get the right adhesive recommendation for your tiles.",
-    icon: SquareMousePointer ,
+    icon: SquareMousePointer,
     link: "/tools/tile-adhesive-recommender",
   },
 ];
@@ -30,34 +30,41 @@ const UsefulTools = () => {
   const navigate = useNavigate();
 
   return (
-    <section id="tools" className="bg-[#B6B6B6] z-30 min-h-screen text-black py-20 px-6 sm:px-12 rounded-t-[48px] relative mt-[-40px] pt-[40px] ">
-      <div className="max-w-7xl mx-auto text-center mb-20">
-        <h2 className="text-3xl md:text-5xl font-bold">Useful Tools</h2>
-        <p className="mt-4 max-w-2xl mx-auto">
-          Friendly tools to help you select the right product, match shades to your tiles, 
-          and estimate the right quantity.
-        </p>
-      </div>
+    <section
+      id="tools"
+      className="bg-white z-30 min-h-screen text-black py-20 px-6 sm:px-12 rounded-t-[48px] relative mt-[-40px] pt-[40px] flex justify-center items-center"
+    >
+      {/* Inner Container */}
+      <div className="bg-[#fff8dd] rounded-3xl shadow-lg p-10 w-full max-w-6xl">
+        <div className="max-w-4xl mx-auto text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold uppercase">Useful Tools</h2>
+          <p className="mt-4  mx-auto">
+            Friendly tools to help you select the right product, match shades to your tiles, <br/>
+            and estimate the right quantity.
+          </p>
+        </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-        {tools.map((tool) => {
-          const Icon = tool.icon;
-          return (
-            <div
-              key={tool.id}
-              onClick={() => navigate(tool.link)}
-              className="group bg-[#F0EAD6] p-8 rounded-2xl cursor-pointer transition-all duration-300 hover:bg-gray-600 hover:shadow-xl flex flex-col items-center text-center"
-            >
-              <div className="w-20 h-20 flex items-center justify-center rounded-full bg-gray-700 group-hover:bg-white mb-6 transition-all">
-                <Icon className="w-10 h-10 text-lime-400 group-hover:text-lime-600" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 ">
+          {tools.map((tool) => {
+            const Icon = tool.icon;
+            return (
+              <div
+                key={tool.id}
+                onClick={() => navigate(tool.link)}
+                className="group bg-[#F0EAD6] p-8 rounded-2xl cursor-pointer transition-all duration-300 hover:bg-white hover:shadow-xl flex flex-col items-center text-center"
+              >
+                <div className="w-20 h-20 flex items-center justify-center rounded-full bg-[#fff8dd] group-hover:bg-[#fff8dd] mb-6 transition-all">
+                  <Icon className="w-10 h-10 text-black group-hover:text-[#3944bc]" />
+                </div>
+                <h3 className="text-xl font-bold mb-2 uppercase">{tool.title}</h3>
+                <div className="w-16 h-0.5 bg-[#fa5b3d] mx-auto rounded-full"></div>
+                <p className="text-black text-sm font-medium italic opacity-0 max-h-0 overflow-hidden transition-all duration-300 group-hover:opacity-100 group-hover:max-h-40 group-hover:mt-2 uppercase">
+    {tool.description}
+  </p>
               </div>
-              <h3 className="text-xl font-semibold mb-2">{tool.title}</h3>
-              <p className="text-black text-sm group-hover:text-white">
-                {tool.description}
-              </p>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </section>
   );

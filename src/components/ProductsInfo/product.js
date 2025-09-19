@@ -260,7 +260,7 @@ export const grout2k = [
   {
     id : 1,
     name: "2k GROUT",
-    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146319/2K_Grout_uk6bne.png",
+    image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1758268804/senzo_crot_maoryq.png",
     slug: "2k-grout",
     coverage: "The 2K Highly polymer Grout is a cutting-edge, two-component system designed to deliver exceptional results in tile grouting. This exceptional product comes in two parts: a liquid component and a powder compnent, which are mixed onsite to unleash its full ptential.",
 

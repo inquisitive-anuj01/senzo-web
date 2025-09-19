@@ -233,14 +233,14 @@ const Header = () => {
                 onMouseEnter={() => handleMouseEnter("products")}
                 onMouseLeave={handleMouseLeave}
               >
-                <button className="flex items-center space-x-1 text-black hover:text-red-500 font-medium py-9.5 relative">
+                <button className="flex items-center space-x-1 text-black hover:text-[#3944bc] font-medium py-9.5 relative">
                   <span>Products</span>
                   {activeDropdown === "products" ? (
                     <FiChevronUp />
                   ) : (
                     <FiChevronDown />
                   )}
-                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[140%] h-[2px] bg-red-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></div>
+                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[140%] h-[2px] bg-[#fa5b3d] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></div>
                 </button>
 
                 {activeDropdown === "products" && (
@@ -260,7 +260,7 @@ const Header = () => {
                                   <button
                                     className={`w-full text-left px-3 py-2 rounded-md transition-colors cursor-pointer ${
                                       activeProductCategory === key
-                                        ? "bg-red-50 text-red-600 font-medium"
+                                        ? "bg-white text-[#3944bc] font-medium border border-[#3944bc] transition-all duration-300"
                                         : "text-black hover:bg-gray-50"
                                     }`}
                                     onMouseEnter={() =>
@@ -295,7 +295,7 @@ const Header = () => {
                                 navigate(`/products/${product.slug}`);
                                 setActiveDropdown(null);
                               }}
-                              className="text-center p-3 rounded-lg hover:bg-green-200 cursor-pointer transition-colors border border-gray-100"
+                              className="text-center p-3 rounded-lg hover:bg-white cursor-pointer transition-colors border hover:border-[#3944bc]"
                             >
                               <img
                                 src={product.image || "/placeholder.svg"}
@@ -322,14 +322,14 @@ const Header = () => {
                 onMouseEnter={() => handleMouseEnter("discover")}
                 onMouseLeave={handleMouseLeave}
               >
-                <button className="flex items-center space-x-1 text-black hover:text-red-500 font-medium py-9.5 relative">
+                <button className="flex items-center space-x-1 text-black hover:text-[#3944bc] font-medium py-9.5 relative">
                   <span>Discover Solution</span>
                   {activeDropdown === "discover" ? (
                     <FiChevronUp />
                   ) : (
                     <FiChevronDown />
                   )}
-                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[140%] h-[2px] bg-red-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></div>
+                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[140%] h-[2px] bg-[#fa5b3d] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></div>
                 </button>
 
                 {activeDropdown === "discover" && (
@@ -338,7 +338,7 @@ const Header = () => {
                       <h3 className="text-lg font-semibold text-black text-center mb-2">
                         Solution to Modern Tile & Stone Fixing Challenges
                       </h3>
-                      <div className="w-16 h-0.5 bg-red-600 mx-auto rounded-full"></div>
+                      <div className="w-16 h-0.5 bg-[#fa5b3d] mx-auto rounded-full"></div>
                     </div>
 
                     <div className="grid grid-cols-3 gap-4">
@@ -349,7 +349,7 @@ const Header = () => {
                             navigate(`/discover-solution/${solution.slug}`);
                             setActiveDropdown(null);
                           }}
-                          className="text-center p-3 rounded-lg hover:bg-green-50 cursor-pointer transition-colors border border-gray-100"
+                          className="text-center p-3 rounded-lg hover:bg-white cursor-pointer transition-colors border hover:border-[#3944bc]"
                         >
                           <img
                             src={solution.image || "/placeholder.svg"}
@@ -372,14 +372,14 @@ const Header = () => {
                 onMouseEnter={() => handleMouseEnter("tools")}
                 onMouseLeave={handleMouseLeave}
               >
-                <button className="flex items-center space-x-1 text-black hover:text-red-500 font-medium py-9.5 relative">
+                <button className="flex items-center space-x-1 text-black hover:text-[#3944bc] font-medium py-9.5 relative">
                   <span>Tools</span>
                   {activeDropdown === "tools" ? (
                     <FiChevronUp />
                   ) : (
                     <FiChevronDown />
                   )}
-                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[140%] h-[2px] bg-red-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></div>
+                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[140%] h-[2px] bg-[#fa5b3d]transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></div>
                 </button>
 
                 {activeDropdown === "tools" && (
@@ -392,10 +392,10 @@ const Header = () => {
                             setActiveDropdown(null);
                           }}
                           key={index}
-                          className="w-full flex items-center space-x-3 px-4 py-3 text-left rounded-lg hover:bg-red-50  transition-colors"
+                          className="w-full flex items-center space-x-3 px-4 py-3 text-left rounded-lg hover:bg-white border hover:border-[#3944bc]  transition-colors"
                         >
-                          <tool.icon className="text-yellow-600 text-lg" />
-                          <span className="text-black font-medium">
+                          <tool.icon className="text-[#fa5b3d] text-lg" />
+                          <span className="text-black font-medium hover:text-[#3944bc]">
                             {tool.name}
                           </span>
                         </button>
@@ -407,10 +407,10 @@ const Header = () => {
 
               <Link
                 to="/about"
-                className="relative group text-black hover:text-red-500 font-medium py-9"
+                className="relative group text-black hover:text-[#3944bc] font-medium py-9"
               >
                 <span>About Us</span>
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2  w-[140%] h-[2px] bg-red-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></div>
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2  w-[140%] h-[2px] bg-[#fa5b3d] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></div>
               </Link>
             </nav>
 
@@ -418,20 +418,20 @@ const Header = () => {
               {/* Helpline Button */}
               <button
                 onClick={openWhatsApp}
-                className={` text-black px-4 py-2 rounded-full flex items-center space-x-2 transition-colors border border-gray-300 shadow-md font-medium ${
+                className={` text-black hover:text-white px-4 py-2 rounded-full flex items-center space-x-2 transition-colors border border-gray-300 shadow-md font-medium ${
                   isScrolled
-                    ? "bg-white/20 backdrop-blur-md "
-                    : "bg-white hover:bg-gray-300"
+                    ? "bg-white/20 backdrop-blur-md hover:bg-black"
+                    : "bg-white hover:bg-black"
                 }`}
               >
                 <FiPhone className="text-lg" />
-                <span className="hidden sm:inline font-medium">Helpline</span>
+                <span className="hidden sm:inline font-medium hover:text-white">Helpline</span>
               </button>
 
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(true)}
-                className="lg:hidden p-2 text-gray-700 hover:text-red-600 transition-colors py-5"
+                className="lg:hidden p-2 text-gray-700 hover:text-[#3944bc]  transition-colors py-5"
               >
                 <FiMenu className="text-3xl" />
               </button>
@@ -497,7 +497,7 @@ const Header = () => {
                 />
                 <Link
                   to="/about"
-                  className="block py-2 text-black text-lg font-bold hover:text-red-600"
+                  className="block py-2 text-black text-lg font-bold hover:[#3944bc] "
                   onClick={handleCloseMobileMenu}
                 >
                   About Us
@@ -535,7 +535,7 @@ const MobileDropdown = ({ title, items, onLinkClick }) => {
             <Link
               key={index}
               to={`/discover-solution/${item.slug}`}
-              className="block py-1 text-sm text-black hover:text-red-600"
+              className="block py-1 text-sm text-black hover:text-[#3944bc] "
               onClick={() => handleClick(item)}
             >
               {item.name}
@@ -581,7 +581,7 @@ const MobileProductsDropdown = ({ title, categories, onLinkClick }) => {
             <div key={key}>
               <button
                 onClick={() => handleCategoryClick(key)}
-                className="flex items-center justify-between w-full py-4 text-lg text-black hover:text-red-600"
+                className="flex items-center justify-between w-full py-4 text-lg text-black hover:text-[#3944bc] "
               >
                 <span>{category.name}</span>
                 {openCategory === key ? (
@@ -597,7 +597,7 @@ const MobileProductsDropdown = ({ title, categories, onLinkClick }) => {
                     <Link
                       key={index}
                       to={`/products/${product.slug}`}
-                      className="block py-1 text-sm text-black hover:text-red-600"
+                      className="block py-1 text-sm text-black hover:text-[#3944bc] "
                       onClick={handleProductClick}
                     >
                       {product.name}

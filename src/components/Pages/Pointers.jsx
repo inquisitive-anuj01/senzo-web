@@ -40,58 +40,68 @@ function Pointers() {
   const row2Items = [...[...pointers].reverse(), ...[...pointers].reverse()];
 
   return (
-    <div className="relative py-16 bg-[#F0EAD8] rounded-t-[32px] mt-[-30px] pt-[40px] z-40 overflow-hidden mb-10">
+    <div className="relative py-16 bg-[#fffaef] rounded-t-[32px] mt-[-30px] pt-[40px] z-40 overflow-hidden mb-10">
       <div className="mx-auto px-4">
         {/* Heading */}
-        <h2 className="relative text-2xl sm:text-4xl md:text-5xl font-semibold text-center text-gray-800 mb-10">
-          What Sets Us Apart
-          <span className="block w-20 md:w-28 h-[3px] bg-[#d97706] mx-auto mt-3 rounded-full"></span>
+        <h2 className="relative text-2xl sm:text-4xl md:text-5xl font-semibold text-center text-gray-800 mb-10 uppercase">
+          What <span className="italic text-[#3944bc] ">Sets Us</span> Apart
+          <span className="block w-20 md:w-28 h-[3px] bg-[#fa5b3d] mx-auto mt-3 rounded-full"></span>
         </h2>
 
         {/* Rows container */}
-        <div className="space-y-5 md:space-y-8">
-          {/* Row 1 */}
-          <div className="flex overflow-hidden">
-            <div className="animate-scroll-left flex gap-4 md:gap-6">
-              {row1Items.map((pointer, index) => (
-                <div
-                  key={`row1-${pointer.id}-${index}`}
-                  className="bg-white rounded-xl p-4 md:p-6 shadow-lg border border-gray-200 
-                             max-w-[300px] sm:max-w-[310px] md:max-w-[350px] lg:max-w-[370px] 
-                             flex-shrink-0"
-                >
-                  <h3 className="font-bold text-base sm:text-lg md:text-xl text-gray-900 mb-2 md:mb-3">
-                    {pointer.title}
-                  </h3>
-                  <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
-                    {pointer.description}
-                  </p>
-                  <div className="w-10 md:w-12 h-1 bg-[#d97706] rounded-full mt-3 md:mt-4"></div>
-                </div>
-              ))}
-            </div>
-          </div>
+        {/* Row 1 */}
+        <div className="flex overflow-hidden">
+          <div className="animate-scroll-left flex gap-4 md:gap-6">
+            {row1Items.map((pointer, index) => (
+              <div
+                key={`row1-${pointer.id}-${index}`}
+                className="bg-white rounded-xl p-4 md:p-6 shadow-lg border border-[#352710]  
+                   max-w-[300px] sm:max-w-[310px] md:max-w-[350px] lg:max-w-[370px] 
+                   flex-shrink-0"
+              >
+                <h3 className="font-bold text-base sm:text-lg md:text-xl text-gray-900 mb-2 md:mb-3">
+                  {pointer.title}
+                </h3>
+                <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
+                  {pointer.description}
+                </p>
 
-          {/* Row 2 */}
-          <div className="flex overflow-hidden">
-            <div className="animate-scroll-right flex gap-4 md:gap-6">
-              {row2Items.map((pointer, index) => (
+                {/* Alternate colors using index */}
                 <div
-                  key={`row2-${pointer.id}-${index}`}
-                  className="bg-white rounded-xl p-4 md:p-6 shadow-lg border border-gray-200 
-                             max-w-[300px] sm:max-w-[310px] md:max-w-[350px] lg:max-w-[370px] 
-                             flex-shrink-0"
-                >
-                  <h3 className="font-bold text-base sm:text-lg md:text-xl text-gray-900 mb-2 md:mb-3">
-                    {pointer.title}
-                  </h3>
-                  <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
-                    {pointer.description}
-                  </p>
-                  <div className="w-10 md:w-12 h-1 bg-[#ec4899] rounded-full mt-3 md:mt-4"></div>
-                </div>
-              ))}
-            </div>
+                  className={`w-10 md:w-7 h-1 rounded-full mt-3 md:mt-4 ${
+                    index % 2 === 0 ? "bg-[#fa5b3d]" : "bg-[#3944bc]"
+                  }`}
+                ></div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Row 2 */}
+        <div className="flex overflow-hidden mt-5">
+          <div className="animate-scroll-right flex gap-4 md:gap-6">
+            {row2Items.map((pointer, index) => (
+              <div
+                key={`row2-${pointer.id}-${index}`}
+                className="bg-white rounded-xl p-4 md:p-6 shadow-lg border border-[#352710] 
+                   max-w-[300px] sm:max-w-[310px] md:max-w-[350px] lg:max-w-[370px] 
+                   flex-shrink-0"
+              >
+                <h3 className="font-bold text-base sm:text-lg md:text-xl text-gray-900 mb-2 md:mb-3">
+                  {pointer.title}
+                </h3>
+                <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
+                  {pointer.description}
+                </p>
+
+                {/* Alternate colors */}
+                <div
+                  className={`w-10 md:w-7 h-1 rounded-full mt-3 md:mt-4 ${
+                    index % 2 === 0 ? "bg-[#fa5b3d]" : "bg-[#3944bc]"
+                  }`}
+                ></div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

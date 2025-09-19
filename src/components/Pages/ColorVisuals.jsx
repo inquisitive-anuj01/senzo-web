@@ -19,21 +19,18 @@ const ColorVisuals = () => {
     { name: "ANTIQUE 33", hex: "#c5b6a7" },
     { name: "DUSTY ROSE 54", hex: "#bb8a84" },
     { name: "PARCHMENT 61", hex: "#b39981" },
-
     { name: "BUFF 51", hex: "#736766" },
     { name: "MOCHA 35", hex: "#d4beac" },
     { name: "SANDSTONE", hex: "#736766" },
     { name: "MARBLE BEIGE 17", hex: "#b8a89b" },
     { name: "MIDNIGHT BLACK 22", hex: "#212829" },
     { name: "SKY BLUE 101", hex: "#a1cecd" },
-
     { name: "ALPINE BLUE 108", hex: "#6a92af" },
     { name: "BURGUNDY 101", hex: "#795b5d" },
     { name: "SILVER SHADOW 88", hex: "#b8bec0" },
     { name: "SLATE GREY 91", hex: "#6d7b84" },
     { name: "PLATINUM 42", hex: "#5c6669" },
     { name: "RAVEN 45", hex: "#36434c" },
-
     { name: "MUSHROOM 105", hex: "#fff1c0" },
     { name: "SABLE 05", hex: "#462624" },
     { name: "HEMP 27", hex: "#9b8879" },
@@ -68,7 +65,6 @@ const ColorVisuals = () => {
 
   const currentColor = selectedColor || jointColors[animationIndex]?.hex;
 
-  // Responsive: colors per page and step
   const colorsPerPage = window.innerWidth < 768 ? 4 : 7;
   const step = window.innerWidth < 768 ? 2 : 4;
   const totalPages = Math.ceil((jointColors.length - colorsPerPage) / step) + 1;
@@ -88,9 +84,27 @@ const ColorVisuals = () => {
   };
 
   return (
-    <div className="relative z-20 w-full min-h-[640px] mt-[-40px] pt-[40px] flex justify-center py-12 px-4 overflow-hidden bg-[#F0EAD8] font-sans text-black rounded-t-[48px] shadow-lg">
+    <div className="relative z-20 w-full min-h-[640px] mt-[-90px] pt-[40px] flex justify-center py-12 px-4 overflow-hidden bg-[#F0EAD8] font-sans text-black rounded-t-[48px] shadow-lg">
       <div className="relative z-10 w-full max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-center gap-x-24 overflow-hidden">
-        {/* Left Section */}
+        {/* LEFT SIDE → TEXT */}
+        <div className="relative z-10 w-full md:flex-1 flex flex-col justify-center items-center text-center md:text-left md:items-start p-6 md:p-12">
+          <h2 className="text-2xl lg:text-4xl font-bold leading-tight uppercase">
+            Tile Joint Filler Visualizer
+          </h2>
+          <p className="mt-4 text-base lg:text-lg max-w-lg mx-auto md:mx-0">
+            Keep it subtle with a matching grout shade or dive into a pop of fun
+            colors? Try it yourself. Decide.
+          </p>
+
+          <button
+            onClick={handleViewMore}
+            className="mt-6 px-8 py-3 w-fit mx-auto md:mx-0 text-md font-semibold text-black bg-gray-200 border-2 border-white rounded-full transition-all duration-300 hover:bg-white hover:text-teal-800 hover:scale-105"
+          >
+            EXPLORE POSSIBILITIES
+          </button>
+        </div>
+
+        {/* RIGHT SIDE → IMAGE + SWATCHES */}
         <div className="relative z-10 flex flex-col items-center py-12 px-4 w-full md:w-auto">
           <div className="relative w-full md:w-[600px] h-[350px] rounded-lg shadow-xl overflow-hidden">
             <div
@@ -130,9 +144,7 @@ const ColorVisuals = () => {
                 {/* Sliding Container */}
                 <div className="relative flex-1 overflow-hidden py-3">
                   <motion.div
-                    animate={{
-                      x: -(colorPage * step * 56) + "px", 
-                    }}
+                    animate={{ x: -(colorPage * step * 56) + "px" }}
                     transition={{
                       type: "spring",
                       stiffness: 300,
@@ -140,9 +152,7 @@ const ColorVisuals = () => {
                       mass: 0.8,
                     }}
                     className="flex items-center gap-4"
-                    style={{
-                      width: `${jointColors.length * 56}px`,
-                    }}
+                    style={{ width: `${jointColors.length * 56}px` }}
                   >
                     {jointColors.map((color, index) => (
                       <div
@@ -175,24 +185,6 @@ const ColorVisuals = () => {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Right Section */}
-        <div className="relative z-10 w-full md:flex-1 flex flex-col justify-center items-center text-center md:text-left md:items-start p-6 md:p-12">
-          <h2 className="text-2xl lg:text-4xl font-bold leading-tight">
-            Tile Joint Filler Visualizer
-          </h2>
-          <p className="mt-4 text-base lg:text-lg max-w-lg mx-auto md:mx-0">
-            Keep it subtle with a matching grout shade or dive into a pop of fun
-            colors? Try it yourself. Decide.
-          </p>
-
-          <button
-            onClick={handleViewMore}
-            className="mt-6 px-8 py-3 w-fit mx-auto md:mx-0 text-md font-semibold text-black bg-gray-200 border-2 border-white rounded-full transition-all duration-300 hover:bg-white hover:text-teal-800 hover:scale-105"
-          >
-            EXPLORE POSSIBILITIES
-          </button>
         </div>
       </div>
     </div>

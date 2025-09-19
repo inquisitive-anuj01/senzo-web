@@ -1,5 +1,7 @@
 import React from "react"
 
+const bgImge = "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1758268758/senzo_background_ua7v6a.png";
+
 const one = "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1756989947/4_bktwyq.png"
 const two = "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1756989947/6_jgqyrg.png"
 const three = "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1756989947/3_i9xdvh.png"
@@ -15,7 +17,8 @@ function Certification() {
 
 
   return (
-    <div className="bg-[#CFCFCF] w-full py-16 mt-8 mb-20 ">
+    <div className=" w-full py-25   " style={{ backgroundImage: `url(${bgImge})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+
       <div className="flex justify-center items-center">
         <div className="overflow-hidden w-full ">
           <div className="flex animate-scroll">
