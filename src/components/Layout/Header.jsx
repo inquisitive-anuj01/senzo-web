@@ -379,7 +379,7 @@ const Header = () => {
                   ) : (
                     <FiChevronDown />
                   )}
-                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[140%] h-[2px] bg-[#fa5b3d]transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></div>
+                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[140%] h-[2px] bg-[#fa5b3d] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></div>
                 </button>
 
                 {activeDropdown === "tools" && (
@@ -486,12 +486,14 @@ const Header = () => {
 
                 <MobileDropdown
                   title="Discover Solution"
+                  prefix="discover-solution" 
                   items={discoverSolutions}
                   onLinkClick={handleCloseMobileMenu}
                 />
 
                 <MobileDropdown
                   title="Tools"
+                  prefix="tools"
                   items={tools}
                   onLinkClick={handleCloseMobileMenu}
                 />
@@ -511,7 +513,7 @@ const Header = () => {
   );
 };
 
-const MobileDropdown = ({ title, items, onLinkClick }) => {
+const MobileDropdown = ({ title,prefix, items, onLinkClick }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = (item) => {
@@ -534,7 +536,7 @@ const MobileDropdown = ({ title, items, onLinkClick }) => {
           {items.map((item, index) => (
             <Link
               key={index}
-              to={`/discover-solution/${item.slug}`}
+              to={`/${prefix}/${item.slug}`}
               className="block py-1 text-sm text-black hover:text-[#3944bc] "
               onClick={() => handleClick(item)}
             >

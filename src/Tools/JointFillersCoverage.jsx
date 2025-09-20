@@ -422,14 +422,14 @@ function JointFillersCoverage() {
                           onClick={openWhatsApp}
                           variant="outline"
                           size="sm"
-                          className="w-full text-xs bg-transparent hover:bg-gray-100 transition-colors duration-200 h-8 cursor-pointer"
+                          className="bg-white text-black  px-4 py-2 rounded-lg shadow hover:bg-black hover:text-white border hover:border-blue-500 cursor-pointer"
                         >
                           GET IN TOUCH WITH US
                         </Button>
                         <Button
                           onClick={() => navigate("/category/epoxy-grout")}
                           size="sm"
-                          className="w-full text-xs bg-green-600 hover:bg-green-700 transition-colors duration-200 h-8 cursor-alias"
+                          className="bg-gray-200 text-black  px-4 py-2 rounded-lg shadow hover:bg-black hover:text-white border hover:border-orange-500 cursor-pointer"
                         >
                           View products
                         </Button>

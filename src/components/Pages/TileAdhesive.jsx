@@ -6,7 +6,7 @@ import { Package, Palette, Award } from "lucide-react";
 
 const TileAdhesive = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 mb-12">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 mb-12 ">
       {/* Hero Section */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -14,11 +14,11 @@ const TileAdhesive = () => {
         transition={{ duration: 0.7 }}
         className="text-center py-16 px-6"
       >
-        <h1 className="text-5xl font-bold text-gray-900 mb-4">
-          Tile Adhesive Products
+        <h1 className="text-5xl font-bold text-gray-900 mb-4 uppercase">
+          Tile<span className="text-[#3944bc]"> Adhesive</span>  Products
         </h1>
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-          Discover our premium range of adhesive solutions for tiles and stones -
+        <p className="text-lg text-gray-800 max-w-3xl mx-auto leading-relaxed">
+          Discover our premium range of adhesive solutions for tiles and stones <br/>
           engineered for strong bonding, durability, and flawless finishes.
         </p>
       </motion.div>
@@ -59,14 +59,14 @@ const TileAdhesive = () => {
                   {/* Badges */}
 
                   <div className="flex flex-wrap gap-2 mb-6">
-                    <span className="flex items-center gap-1 bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">
-                      <Palette size={14} /> {product.colours}
+                    <span className="flex items-center gap-1 bg-gray-100 text-[#3944bc] text-xs font-bold px-3 py-1 rounded-full">
+                      <Palette size={14} className="text-purple-500" /> {product.colours}
                     </span>
-                    <span className="flex items-center gap-1 bg-gradient-to-r from-blue-100 to-blue-200 text-blue-800 text-xs px-3 py-1 rounded-full">
-                      <Package size={14} /> {product.packaging}
+                    <span className="flex items-center gap-1 bg-gray-100 text-[#3944bc] text-xs font-bold px-3 py-1 rounded-full">
+                      <Package size={14} className="text-black" /> {product.packaging}
                     </span>
-                    <span className="flex items-center gap-1 bg-gradient-to-r from-green-100 to-green-200 text-green-800 text-xs px-3 py-1 rounded-full">
-                      <Award size={14} /> {product.standard}
+                    <span className="flex items-center gap-1 bg-gray-100 text-[#3944bc] text-xs font-bold px-3 py-1 rounded-full">
+                      <Award size={14} className="text-[#fa5b3d]" /> {product.standard}
                     </span>
                   </div>
 
@@ -75,7 +75,7 @@ const TileAdhesive = () => {
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="px-5 py-2 text-sm font-medium text-white bg-gradient-to-r from-purple-500 to-purple-700 rounded-full shadow-md hover:shadow-lg transition cursor-pointer"
+                      className="px-5 py-2 text-sm font-medium text-black border hover:border-[#fa5b3d] hover:bg-black hover:text-white rounded-full shadow-md hover:shadow-lg transition cursor-pointer"
                     >
                       View Details →
                     </motion.button>

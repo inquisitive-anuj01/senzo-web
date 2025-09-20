@@ -664,13 +664,13 @@ function AdhesiveSelector() {
                       <div className="flex flex-col sm:flex-row gap-2">
                         <button
                           onClick={openWhatsApp}
-                          className="flex-1 py-2 px-4 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors text-sm"
+                          className="bg-white text-black  px-4 py-2 rounded-lg shadow hover:bg-black hover:text-white border hover:border-blue-500 cursor-pointer"
                         >
                           CONTACT US
                         </button>
                         <button
                           onClick={() => navigate(`/products/${product.slug}`)}
-                          className="flex-1 py-2 px-4 bg-lime-700 text-white rounded-lg hover:bg-lime-800 transition-colors text-sm"
+                          className="bg-gray-200 text-black  px-4 py-2 rounded-lg shadow hover:bg-black hover:text-white border hover:border-orange-500 cursor-pointer"
                         >
                           VIEW PRODUCT
                         </button>

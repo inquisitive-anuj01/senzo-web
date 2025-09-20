@@ -17,12 +17,12 @@ const OtherProducts = () => {
         transition={{ duration: 0.7 }}
         className="text-center py-16 px-6"
       >
-        <h1 className="text-5xl font-bold text-gray-900 mb-4">
-          Other Products
+        <h1 className="text-5xl font-bold text-gray-900 mb-4 uppercase">
+          Other <span className="text-[#3944bc]">Products</span>
         </h1>
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-          Complementary products for your tiling projects. From cleaners to
-          specialized adhesives, we’ve got everything you need to achieve the
+        <p className="text-lg text-gray-800 max-w-3xl mx-auto leading-relaxed">
+          Complementary products for your tiling projects. From cleaners to 
+          specialized <br/> adhesives, we’ve got everything you need to achieve the
           perfect finish.
         </p>
       </motion.div>
@@ -61,20 +61,20 @@ const OtherProducts = () => {
                   </p>
 
                   {/* Badges */}
-                  <div className="flex flex-wrap gap-2 mb-6">
+                  <div className="flex flex-wrap gap-2 mb-6 font-bold ">
                     {product.colours && (
-                      <span className="flex items-center gap-1 bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">
-                        <Palette size={14} /> {product.colours}
+                      <span className="flex items-center gap-1 bg-gray-100 text-[#3944bc] text-md  px-3 py-1 rounded-full">
+                        <Palette size={14} className="text-purple-500"/> {product.colours}
                       </span>
                     )}
                     {product.packaging && (
-                      <span className="flex items-center gap-1 bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">
-                        <Package size={14} /> {product.packaging}
+                      <span className="flex items-center gap-1 bg-gray-100 text-[#3944bc] text-md px-3 py-1 rounded-full">
+                        <Package size={14} className="text-black" /> {product.packaging}
                       </span>
                     )}
                     {product.appearance && (
-                      <span className="flex items-center gap-1 bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">
-                        <Eye size={14} /> {product.appearance}
+                      <span className="flex items-center gap-1 bg-gray-100 text-[#3944bc] text-md px-3 py-1 rounded-full">
+                        <Eye size={14} className="text-orange-600" /> {product.appearance}
                       </span>
                     )}
                   </div>
@@ -84,7 +84,7 @@ const OtherProducts = () => {
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="px-5 py-2 text-sm font-medium text-white bg-gradient-to-r from-purple-500 to-purple-700 rounded-full shadow-md hover:shadow-lg transition cursor-pointer"
+                      className="px-5 py-2 text-sm font-medium text-black border hover:border-[#fa5b3d] hover:bg-black hover:text-white rounded-full shadow-md hover:shadow-lg transition cursor-pointer"
                     >
                       View Details →
                     </motion.button>

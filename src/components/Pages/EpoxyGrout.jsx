@@ -27,12 +27,12 @@ const EpoxyGrout = () => {
         transition={{ duration: 0.7 }}
         className="text-center py-16 px-6"
       >
-        <h1 className="text-5xl font-bold text-gray-900 mb-4">
-          Grouting Solutions
+        <h1 className="text-5xl font-bold text-gray-900 mb-4 uppercase">
+          <span className="text-[#3944bc]">Grouting </span>Solutions
         </h1>
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-lg text-gray-800 max-w-3xl mx-auto leading-relaxed">
           Premium grouting solutions for perfect tile joints. Our epoxy grouts
-          deliver superior stain resistance, durability, and vibrant finishes
+          deliver <br/> superior stain resistance, durability, and vibrant finishes
           that last.
         </p>
       </motion.div>
@@ -73,18 +73,18 @@ const EpoxyGrout = () => {
                   {/* Badges */}
                   <div className="flex flex-wrap gap-2 mb-6">
                     {product.colours && (
-                      <span className="flex items-center gap-1 bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">
-                        <Palette size={14} /> {product.colours}
+                      <span className="flex items-center gap-1 bg-gray-100 text-[#3944bc] text-xs font-bold px-3 py-1 rounded-full">
+                        <Palette size={14} className="text-purple-500" /> {product.colours}
                       </span>
                     )}
                     {product.packaging && (
-                      <span className="flex items-center gap-1 bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">
-                        <Package size={14} /> {product.packaging}
+                      <span className="flex items-center gap-1 bg-gray-100 text-[#3944bc] text-xs font-bold px-3 py-1 rounded-full">
+                        <Package size={14} className="text-black" /> {product.packaging}
                       </span>
                     )}
                     {product.shelfLife && (
-                      <span className="flex items-center gap-1 bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">
-                        <Hourglass size={14} /> Long Shelf Life
+                      <span className="flex items-center gap-1 bg-gray-100 text-[#3944bc] text-xs font-bold px-3 py-1 rounded-full">
+                        <Hourglass size={14} className="text-amber-900" /> Long Shelf Life
                       </span>
                     )}
                   </div>
@@ -94,7 +94,7 @@ const EpoxyGrout = () => {
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="px-5 py-2 text-sm font-medium text-white bg-gradient-to-r from-purple-500 to-purple-700 rounded-full shadow-md hover:shadow-lg transition cursor-pointer"
+                      className="px-5 py-2 text-sm font-medium text-black border hover:border-[#fa5b3d] hover:bg-black hover:text-white rounded-full shadow-md hover:shadow-lg transition cursor-pointer"
                     >
                       View Details →
                     </motion.button>

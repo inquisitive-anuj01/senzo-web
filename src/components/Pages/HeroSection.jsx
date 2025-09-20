@@ -117,14 +117,14 @@ const HeroSection = () => {
                 transition={{ duration: 0.5, delay: 0.4 }}
                 className="absolute flex justify-center w-full"
                 style={{
-                  top: isMobile ? "25%" : "20%",
+                  top: isMobile ? "25%" : "18.5%",
                   zIndex: 20, 
                   pointerEvents: "auto"
                 }}
               >
                 <Link
                   to={`/category/${section.slug}`}
-                  className="px-6 py-2 bg-white text-black font-semibold rounded-full shadow-lg hover:bg-gray-200 transition-colors duration-300"
+                  className="px-6 py-2 bg-white text-black font-semibold rounded-full shadow-lg hover:bg-gray-200 transition-colors duration-300  hover:text-[#3944bc]  hover:border-[#3944bc]"
                   style={{ zIndex: 25, pointerEvents: "auto" }}
                   onClick={(e) => e.stopPropagation()}
                 >

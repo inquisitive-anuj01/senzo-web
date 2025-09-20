@@ -233,7 +233,7 @@ export const BlockAdhesive = [
   {
     id: 1,
     name: "BLOCK ADHESIVE",
-    heading: "ADHESIVE FOR CONCRETE BLOCKS, AAC BLOCKS, SIPOREX BLOCKS AND FLYASH BRICKS",
+    heading: "BLOCK ADHESIVE",
     image: "https://res.cloudinary.com/dzvwqhzgf/image/upload/v1757146320/Block_Adhesive_40_Kg_Bag_ewts2v.png",
     slug: "block-adhesive",
 

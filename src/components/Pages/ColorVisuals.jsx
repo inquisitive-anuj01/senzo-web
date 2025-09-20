@@ -98,7 +98,7 @@ const ColorVisuals = () => {
 
           <button
             onClick={handleViewMore}
-            className="mt-6 px-8 py-3 w-fit mx-auto md:mx-0 text-md font-semibold text-black bg-gray-200 border-2 border-white rounded-full transition-all duration-300 hover:bg-white hover:text-teal-800 hover:scale-105"
+            className="mt-6 px-8 py-3 w-fit mx-auto md:mx-0 text-md font-semibold text-black bg-gray-200 border-2 border-white rounded-full transition-all duration-300 hover:bg-white hover:text-[#3944bc] hover:scale-105 hover:border-[#3944bc] cursor-pointer"
           >
             EXPLORE POSSIBILITIES
           </button>

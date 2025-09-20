@@ -121,25 +121,25 @@ const AdhesiveCoverage = () => {
             <div>
               <h2
                 className={`text-2xl font-bold mb-4 ${
-                  activeStep === 1 ? "text-lime-700" : "text-black"
+                  activeStep === 1 ? "text-[#3944bc]" : "text-black"
                 }`}
               >
-                1 Select Adhesive
+                1- Select Adhesive
               </h2>
               <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
                 {adhesives.map((adhesive) => (
                   <button
                     key={adhesive.id}
                     onClick={() => handleAdhesiveSelect(adhesive)}
-                    className={`relative p-4 rounded-xl border-2 transition-transform transform hover:scale-105
+                    className={`relative p-4 rounded-xl border-2 transition-transform transform hover:scale-105 
                       ${
                         selectedAdhesive && selectedAdhesive.id === adhesive.id
-                          ? "border-lime-500 bg-gray-200"
-                          : "border-gray-700 bg-gray-300 hover:border-lime-300"
+                          ? "border-blue-500 bg-white"
+                          : "border-gray-700 bg-gray-300 hover:border-blue-300 "
                       }
-                      focus:outline-none focus:ring-2 focus:ring-lime-200 focus:ring-offset-2 focus:ring-offset-gray-800`}
+                      focus:outline-none focus:ring-2 focus:ring-blue-200 focus:ring-offset-2 focus:ring-offset-gray-800`}
                   >
-                    <span className="text-sm font-semibold text-black">
+                    <span className="text-sm font-semibold ">
                       {adhesive.name}
                     </span>
                   </button>
@@ -152,7 +152,7 @@ const AdhesiveCoverage = () => {
               <div>
                 <h2
                   className={`text-2xl font-bold mb-4 ${
-                    activeStep === 2 ? "text-lime-700" : "text-black"
+                    activeStep === 2 ? "text-[#3944bc]" : "text-black"
                   }`}
                 >
                   2 Enter Area
@@ -179,7 +179,7 @@ const AdhesiveCoverage = () => {
               <div>
                 <h2
                   className={`text-2xl font-bold mb-4  ${
-                    activeStep === 3 ? "text-lime-700" : "text-black"
+                    activeStep === 3 ? "text-[#3944bc]" : "text-black"
                   }`}
                 >
                   3 Select Thickness
@@ -220,11 +220,11 @@ const AdhesiveCoverage = () => {
                 />
 
                 {/*  Bags Needed */}
-                <div className="bg-lime-100 border border-lime-400 text-lime-800 px-6 py-3 rounded-xl mb-4 shadow-md">
+                <div className="bg-blue-100 border border-blue-400 text-lime-800 px-6 py-3 rounded-xl mb-4 shadow-md">
                   <p className="text-2xl font-bold">
                     {Math.ceil(requiredKgs / 20)} Bags Needed
                   </p>
-                  <p className="text-sm text-gray-600">1 Bag = 20kg</p>
+                  <p className="text-sm text-black">1 Bag = 20kg</p>
                 </div>
                 <p className="text-5xl font-extrabold text-lime-600 mb-2">
                   {requiredKgs.toFixed(2)} kgs
@@ -242,13 +242,13 @@ const AdhesiveCoverage = () => {
                 <div className="flex gap-4">
                   <button
                     onClick={openWhatsApp}
-                    className="bg-lime-600 text-white px-4 py-2 rounded-lg shadow hover:bg-lime-700"
+                    className="bg-white text-black  px-4 py-2 rounded-lg shadow hover:bg-black hover:text-white border hover:border-blue-500 cursor-pointer"
                   >
                     Contact Us
                   </button>
                   <button
                     onClick={handleViewDetails}
-                    className="border border-lime-600 text-lime-600 px-4 py-2 rounded-lg shadow hover:bg-lime-50"
+                    className="bg-gray-200 text-black  px-4 py-2 rounded-lg shadow hover:bg-black hover:text-white border hover:border-orange-500 cursor-pointer"
                   >
                     View Product Details
                   </button>
